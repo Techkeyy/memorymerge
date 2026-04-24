@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.js.map
+.DS_Store
+tmp/
+.memory-index.json

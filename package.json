@@ -1,0 +1,30 @@
+{
+  "name": "memorymerge",
+  "version": "0.1.0",
+  "description": "Persistent decentralized memory OS for AI agent swarms, powered by 0G Storage and 0G Compute",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/orchestrator/index.ts",
+    "start": "ts-node src/orchestrator/index.ts",
+    "example": "ts-node examples/researchSwarm.ts",
+    "test:storage": "ts-node src/sdk/storageClient.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@0gfoundation/0g-ts-sdk": "^1.2.6",
+    "@0glabs/0g-serving-broker": "^0.7.5",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.13.1",
+    "openai": "^6.34.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
