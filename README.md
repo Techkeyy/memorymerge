@@ -33,7 +33,7 @@ with autonomous reflection loops powered by 0G Compute.
 
 | Name | Role | Contact |
 |------|------|---------|
-| [Your Name] | Solo Builder | [@yourhandle](https://t.me/yourhandle) |
+| [praise] | Solo Builder | [@yourhandle](https://t.me/iszee23) |
 
 **Telegram:** @yourhandle
 **X (Twitter):** @yourhandle
