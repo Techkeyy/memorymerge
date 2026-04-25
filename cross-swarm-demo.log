@@ -1,0 +1,4308 @@
+
+╔══════════════════════════════════════════════════════╗
+║   MemoryMerge — Cross-Swarm Knowledge Inheritance    ║
+║   Verifiable knowledge provenance via 0G PoRA        ║
+╚══════════════════════════════════════════════════════╝
+
+SOURCE SWARM
+  Swarm ID   : memorymerge-demo-001
+  Root Hash  : 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+  StorageScan: https://storagescan-galileo.0g.ai/tx/0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+
+TARGET SWARM
+  New Topic  : How can decentralized AI storage be applied to healthcare data in 2026
+  Swarm ID   : memorymerge-inherit-001
+
+STEP 1 — Initializing new swarm with inherited knowledge
+─────────────────────────────────────────────────────────
+
+[0G Storage] Loaded 15 keys from index
+STEP 2 — Downloading verified snapshot from 0G Storage
+         Proof: root hash anchored on 0G Chain via PoRA
+─────────────────────────────────────────────────────────
+
+[MemoryMerge] Inheriting from swarm: memorymerge-demo-001
+[MemoryMerge] Source hash: 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+[MemoryMerge] Downloading verified snapshot from 0G Storage...
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_inherit_1777148520539.json, proof: true
+Downloading single file with root hash: 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+Getting file locations for root hash: 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+Found 4 locations for 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+[MemoryMerge] ✓ Snapshot verified via 0G Storage PoRA
+[MemoryMerge] Found 5 insights to evaluate
+Starting upload for file of size: 356 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 123n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793056,
+  logSyncBlock: '0x7cba8f9886b88a4c5dd89fe86a71884995c827f4290046d2986d61d3ddf5ab7a',
+  nextTxSeq: 49513,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 356, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca size=356 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xae6eb0a7fcea6422170375615a16a2f76ac68f6752a71a2e2e2dc015142e5241
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793064)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49513
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/inherited_demo-001_insight_1" rootHash=0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+[MemoryMerge] Insight written: "inherited_demo-001_insight_1" importance=10
+Starting upload for file of size: 375 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 124n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793080,
+  logSyncBlock: '0x85bac68d29f38dc464e5fb477d1793342be02e16e19e1f65f4b716d636c4c107',
+  nextTxSeq: 49514,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 375, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51 size=375 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x4fe9d5d74ffef7f23022568b729696926593630b5e9c67e97754a56f0506382d
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793090)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49514
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/provenance_inherited_demo-001_insight_1" rootHash=0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+[MemoryMerge] Fact written: "provenance_inherited_demo-001_insight_1" by inherit-agent
+[MemoryMerge] Inherited: [10/10] 0G Labs uses blockchain technology to enhance the security a...
+Starting upload for file of size: 376 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 125n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793106,
+  logSyncBlock: '0xd22362c2bb6390469eb5a1f3eaa893acf1b2ed5b141dfe795541f284ec7dd316',
+  nextTxSeq: 49515,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 376, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b size=376 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x701c45c2186cf5d72bb755a344087bfc45f3921815bc261303fe7f36c50579a9
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793116)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49515
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/inherited_demo-001_insight_2" rootHash=0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+[MemoryMerge] Insight written: "inherited_demo-001_insight_2" importance=9
+Starting upload for file of size: 375 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 126n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793134,
+  logSyncBlock: '0x162654bfb7246bebc50f98e977f79af4b571edb7451d643651668b4d19f201b1',
+  nextTxSeq: 49516,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 375, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409 size=375 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x1b9f0d1b60a8fae511ebfed18cad6c4a618b9e15152752b3d3bc1d89ee61946b
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793144)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49516
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/provenance_inherited_demo-001_insight_2" rootHash=0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+[MemoryMerge] Fact written: "provenance_inherited_demo-001_insight_2" by inherit-agent
+[MemoryMerge] Inherited: [9/10] Decentralized AI storage can improve privacy by distributing...
+Starting upload for file of size: 391 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 127n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793160,
+  logSyncBlock: '0x57f314245dde00ab56d29a26dae66fd3ebd9914eb76a1150fb21a490399dc563',
+  nextTxSeq: 49517,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 391, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9 size=391 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x97ff41239406f3d3fa500c22327b31f7e1abdf75dfb63bc60c2ee723ab8f6e5b
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793168)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49517
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/inherited_demo-001_insight_4" rootHash=0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+[MemoryMerge] Insight written: "inherited_demo-001_insight_4" importance=9
+Starting upload for file of size: 375 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 128n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793184,
+  logSyncBlock: '0x20210cc7d7512076e999a6c465405adb6f634a5f0a693feee118804962a4b16c',
+  nextTxSeq: 49518,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 375, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780 size=375 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xa6298aaa512ed1d92abf0e68609f6611a245445c585b119488da6e60d101a721
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793194)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49518
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/provenance_inherited_demo-001_insight_4" rootHash=0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+[MemoryMerge] Fact written: "provenance_inherited_demo-001_insight_4" by inherit-agent
+[MemoryMerge] Inherited: [9/10] By 2026, decentralized AI storage could revolutionize sector...
+Starting upload for file of size: 370 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 129n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793210,
+  logSyncBlock: '0x70de17629303b082efcc359037830d5c42b6af1b8d032de342bcc4c415d12922',
+  nextTxSeq: 49519,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 370, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8 size=370 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x98fd563ffe52102a2bf52341a44d368915c7e8617848d11349571c465ac24f48
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793219)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49519
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/inherited_demo-001_insight_3" rootHash=0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+[MemoryMerge] Insight written: "inherited_demo-001_insight_3" importance=8
+Starting upload for file of size: 375 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 130n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793236,
+  logSyncBlock: '0xb5f2366d8cf8c3fbde628af79018afa727323684554edd61b414fc91e28b7280',
+  nextTxSeq: 49520,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 375, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83 size=375 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x3fd2b3accc060f27eee8d1a89c9deb020414b3ad57f485de83a2de9d79abd849
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793245)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49520
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/provenance_inherited_demo-001_insight_3" rootHash=0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+[MemoryMerge] Fact written: "provenance_inherited_demo-001_insight_3" by inherit-agent
+[MemoryMerge] Inherited: [8/10] Decentralized systems can reduce latency for users by access...
+Starting upload for file of size: 419 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 131n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793261,
+  logSyncBlock: '0x77f35a77d62db6941a72e820e331b36fd7c42695f12e962a500b41dcd5479169',
+  nextTxSeq: 49521,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 419, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e size=419 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xe7849646457395ef743e1fd98b10507e9729a5ec68bd094c1e100398383951d5
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793270)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49521
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/inherited_demo-001_insight_5" rootHash=0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+[MemoryMerge] Insight written: "inherited_demo-001_insight_5" importance=8
+Starting upload for file of size: 375 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 132n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793286,
+  logSyncBlock: '0x3d99217dd6f1a40c1e28d7cefa7b79d45cdd06a6a8315a09c0f53f2c97ace99c',
+  nextTxSeq: 49522,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 375, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d size=375 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x0b67e63411eae7279cbd1e8f94a74c7ce288c54e0e932e51059d7932e2e8b48a
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793295)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49522
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/provenance_inherited_demo-001_insight_5" rootHash=0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+[MemoryMerge] Fact written: "provenance_inherited_demo-001_insight_5" by inherit-agent
+[MemoryMerge] Inherited: [8/10] Further research is needed on the specific technologies and ...
+Starting upload for file of size: 420 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 133n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793312,
+  logSyncBlock: '0x54f1d317f21b92229950e08ccb3b62af3020153f050d600f0a59fa86f8cac253',
+  nextTxSeq: 49523,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 420, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7 size=420 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x413403bb2aa550879848f549842e4cb85f0c7c936b1e694a7a5876073a0853da
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793322)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49523
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/inherited_fact_demo-001_task_001_0g_labs_platform" rootHash=0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+[MemoryMerge] Fact written: "inherited_fact_demo-001_task_001_0g_labs_platform" by inherit-agent
+Starting upload for file of size: 474 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 134n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793339,
+  logSyncBlock: '0x6bd136984f1dea2416466f7b98a91af6492503ea5bb9bb2e88fa5ef11588cd47',
+  nextTxSeq: 49524,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 474, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3 size=474 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x76ca8c86f1469d2aa7ff6028b73ef3181f0afa5c9a89f75b2b8b3ec314d7d400
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793348)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49524
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/inherited_fact_demo-001_task_001_scalability_improvement" rootHash=0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+[MemoryMerge] Fact written: "inherited_fact_demo-001_task_001_scalability_improvement" by inherit-agent
+Starting upload for file of size: 486 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 135n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793366,
+  logSyncBlock: '0x461593027168cbd9a561bd5b558fcafc0a566a673b6014d6dd1c08ad9cae05ab',
+  nextTxSeq: 49525,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 486, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc size=486 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x7d4aeb7c42a0385dfa2fe123797af717c0a0271a0c2e7d1b20aa45bd735a3d7d
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793374)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49525
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/inherited_fact_demo-001_task_001_future_impact" rootHash=0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+[MemoryMerge] Fact written: "inherited_fact_demo-001_task_001_future_impact" by inherit-agent
+[MemoryMerge] ✓ Inheritance complete
+  Insights inherited : 5
+  Facts inherited    : 3
+  Verified by hash   : 0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+  Chain proof        : https://chainscan-galileo.0g.ai/address/0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079
+
+✓ INHERITANCE VERIFIED
+  Insights inherited : 5
+  Facts inherited    : 3
+  Verified by        : 0x1781b1553fbef4187767085f9906...
+  Chain proof        : https://chainscan-galileo.0g.ai/address/0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079
+
+STEP 3 — New swarm context after inheritance
+─────────────────────────────────────────────────────────
+
+[0G Storage] Key not found in index: "swarm/memorymerge-inherit-001/context/current_goal"
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148669761.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148669763.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148671722.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148672038.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148673398.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148673497.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148674870.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148674938.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148676312.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148676614.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148677765.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148679343.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148680873.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Facts available    : 8
+Insights available : 5
+
+Inherited insights:
+  1. [10/10] [Inherited from memorymerge-demo-001] 0G Labs uses blockchain technology to enhance the security and integrity of AI models and data.
+  2. [9/10] [Inherited from memorymerge-demo-001] Decentralized AI storage can improve privacy by distributing data across multiple nodes rather than a single entity.
+  3. [9/10] [Inherited from memorymerge-demo-001] By 2026, decentralized AI storage could revolutionize sectors like healthcare and finance through enhanced security and resilience.
+  4. [8/10] [Inherited from memorymerge-demo-001] Decentralized systems can reduce latency for users by accessing data from nearby nodes, enhancing performance.
+  5. [8/10] [Inherited from memorymerge-demo-001] Further research is needed on the specific technologies and protocols used by 0G Labs for decentralized AI storage, as well as real-world applications in 2026.
+
+STEP 4 — Running focused swarm on new topic
+         Starts with inherited knowledge — not from zero
+─────────────────────────────────────────────────────────
+
+
+╔════════════════════════════════════════════════╗
+║          MemoryMerge Swarm Starting            ║
+╚════════════════════════════════════════════════╝
+Goal    : How can decentralized AI storage be applied to healthcare data in 2026
+SwarmID : memorymerge-inherit-001
+Cycles  : 1
+Network : 0G Galileo Testnet
+─────────────────────────────────────────────────
+
+[Orchestrator] Initializing 0G Storage client...
+[0G Storage] Loaded 28 keys from index
+[Orchestrator] Initializing Memory Manager...
+[Orchestrator] Initializing Reflection Engine...
+[ReflectionEngine] Initialized. Trigger every 8 turns.
+[ReflectionEngine] Using 0G Compute model: qwen/qwen-2.5-7b-instruct
+[Orchestrator] Initializing agents...
+[Orchestrator] All agents ready. Starting swarm.
+
+
+[Planner] Initializing swarm with goal: "How can decentralized AI storage be applied to healthcare data in 2026"
+Starting upload for file of size: 198 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 136n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793421,
+  logSyncBlock: '0x735242a89343b57e52db64164fd091f9b74e723230742ee577cce487ca77b2d1',
+  nextTxSeq: 49526,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 198, numSegments: 1, numChunks: 1
+Data prepared to upload root=0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7 size=198 numSegments=1 numChunks=1
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 30733644962n
+Transaction submitted, hash: 0x28b7171f961528f0302c160210d407962c62442757e0d6858ee62d5045bbf91f
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793428)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49526
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/context/current_goal" rootHash=0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+[MemoryMerge] Goal set: "How can decentralized AI storage be applied to healthcare data in 2026"
+[AnchorClient] Goal set on-chain: 0xe6ae958a358a9b7bd24bbda9be2c286eeffd87deeb9b70bc3ddfa5651b07a553
+[Planner] Goal anchored on 0G Chain
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148703688.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148703691.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148703694.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148705875.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148706253.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148707600.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148707740.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148709459.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148709870.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148710965.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148711734.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148712454.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148713974.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148715462.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting upload for file of size: 312 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 137n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793509,
+  logSyncBlock: '0x5a8eb0dbc83e62496f4c55904b659c86cdbf43701c4c17eae4164503c79fc85a',
+  nextTxSeq: 49527,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 312, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x84948bae798e71bd1bc26e5f6be85b73fcb886a55149002d531ca7842b5c90dd size=312 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Upload failed with error: nonce has already been used (transaction="0xf901b2818984ee6b28078304db6a9422e03a6a89b950f1c82ec5e74f8eca321a105296850e4fbc6944b90144bc8c11f800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000be12fc7aade0631c313383bdb1d686c77db084000000000000000000000000000000000000000000000000000000000000000138000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000184948bae798e71bd1bc26e5f6be85b73fcb886a55149002d531ca7842b5c90dd00000000000000000000000000000000000000000000000000000000000000018281d7a0746ceaa37d1867c8a74b42f7a69ff087fa64c8697842f44375249fd3ffa9193fa016998551fe4b6af94ff163cd768e09e94dd95575ca126e65cd2deac81223df60", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 138, tx nonce 137" } }, code=NONCE_EXPIRED, version=6.14.0)
+Error stack: Error: nonce has already been used (transaction="0xf901b2818984ee6b28078304db6a9422e03a6a89b950f1c82ec5e74f8eca321a105296850e4fbc6944b90144bc8c11f800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000be12fc7aade0631c313383bdb1d686c77db084000000000000000000000000000000000000000000000000000000000000000138000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000184948bae798e71bd1bc26e5f6be85b73fcb886a55149002d531ca7842b5c90dd00000000000000000000000000000000000000000000000000000000000000018281d7a0746ceaa37d1867c8a74b42f7a69ff087fa64c8697842f44375249fd3ffa9193fa016998551fe4b6af94ff163cd768e09e94dd95575ca126e65cd2deac81223df60", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 138, tx nonce 137" } }, code=NONCE_EXPIRED, version=6.14.0)
+    at makeError (C:\Users\HomePC\Desktop\memorymerge\node_modules\ethers\src.ts\utils\errors.ts:694:21)
+    at JsonRpcProvider.getRpcError (C:\Users\HomePC\Desktop\memorymerge\node_modules\ethers\src.ts\providers\provider-jsonrpc.ts:1058:33)
+    at C:\Users\HomePC\Desktop\memorymerge\node_modules\ethers\src.ts\providers\provider-jsonrpc.ts:571:45
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[Planner] Failed to initialize swarm: Error: writeKV failed for key "swarm/memorymerge-inherit-001/tasks/task_001": Error: Upload failed: Error: nonce has already been used (transaction="0xf901b2818984ee6b28078304db6a9422e03a6a89b950f1c82ec5e74f8eca321a105296850e4fbc6944b90144bc8c11f800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000be12fc7aade0631c313383bdb1d686c77db084000000000000000000000000000000000000000000000000000000000000000138000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000184948bae798e71bd1bc26e5f6be85b73fcb886a55149002d531ca7842b5c90dd00000000000000000000000000000000000000000000000000000000000000018281d7a0746ceaa37d1867c8a74b42f7a69ff087fa64c8697842f44375249fd3ffa9193fa016998551fe4b6af94ff163cd768e09e94dd95575ca126e65cd2deac81223df60", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 138, tx nonce 137" } }, code=NONCE_EXPIRED, version=6.14.0)
+    at ZeroGStorageClient.writeKV (C:\Users\HomePC\Desktop\memorymerge\src\sdk\storageClient.ts:87:13)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async MemoryManager.writeTask (C:\Users\HomePC\Desktop\memorymerge\src\sdk\memoryManager.ts:169:5)
+    at async PlannerAgent.initializeSwarm (C:\Users\HomePC\Desktop\memorymerge\src\agents\plannerAgent.ts:105:9)
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:78:5)
+    at async runCrossSwarmDemo (C:\Users\HomePC\Desktop\memorymerge\examples\crossSwarmDemo.ts:99:18)
+Starting upload for file of size: 333 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 138n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793523,
+  logSyncBlock: '0xd511f728e93c01e4ab5d7fec1a9f779c99a0682e9e053510bf9daba56096af26',
+  nextTxSeq: 49527,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 333, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7 size=333 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x376a7518a3061397472c0a5cd04f8415aa47c04f1b7aa2c40b81d89f8d0a1add
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793531)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49527
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/tasks/task_001" rootHash=0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+[MemoryMerge] Task written: "task_001" → pending
+[ReflectionEngine] Turn 1/8
+
+╔═══ CYCLE 1/1 ═══════════════════════════════╗
+
+[Orchestrator] Researcher phase...
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148738090.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148738092.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148738094.json, proof: true
+Downloading single file with root hash: 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+Getting file locations for root hash: 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148738096.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148740321.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148740334.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148741767.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148741800.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148743232.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148743245.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148744681.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148744716.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148746360.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148748101.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148749550.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+
+[Researcher] Executing task: task_001
+[Researcher] Description: Research and gather information about: How can decentralized AI storage be applied to healthcare data in 2026
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148751026.json, proof: true
+Downloading single file with root hash: 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+Getting file locations for root hash: 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+Found 4 locations for 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xde3fbf730b7ee6a3bc02ad1af70ba96415c3296bddfba19c8db1c0029e278ac7
+Starting upload for file of size: 337 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 139n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793580,
+  logSyncBlock: '0x9108690531df380640029f0309a6296813e20f0371d062fafe4a332f1bfefe78',
+  nextTxSeq: 49528,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 337, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x4f98c1905e8f8a09cc1fa1b6b55744ca46cb1909e3dc663f8319369c67b04080 size=337 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x32dbcc3d943770b4b264c33f24457d4e11969e9883d505a4a99725e6f18493ba
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793589)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49528
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/tasks/task_001" rootHash=0x4f98c1905e8f8a09cc1fa1b6b55744ca46cb1909e3dc663f8319369c67b04080
+[MemoryMerge] Task status updated: "task_001" → in_progress
+Starting upload for file of size: 413 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 140n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793618,
+  logSyncBlock: '0xd556b10789761cb067ff717eb217344bdfcafdd7212443013cbde1f201f5f72e',
+  nextTxSeq: 49529,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 413, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4 size=413 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x11f920230b988b58c4798ab61c0b59b17c0ef8f67148a5b6e9a92cdadcc020c4
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793628)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49529
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_decentralized_storage_improves_privacy" rootHash=0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+[MemoryMerge] Fact written: "task_001_decentralized_storage_improves_privacy" by researcher
+Starting upload for file of size: 410 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 141n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793643,
+  logSyncBlock: '0x25f8b78b38818ebe15085480fec3e9d19131e84dc1a7c362c39cf4cccbc6d479',
+  nextTxSeq: 49530,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 410, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a size=410 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x1d15227421836f0b36e22d5965efb0b5c07137c9db5922494a6900c32b7079ea
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793653)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49530
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_enhanced_security_through_blockchain" rootHash=0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+[MemoryMerge] Fact written: "task_001_enhanced_security_through_blockchain" by researcher
+Starting upload for file of size: 431 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 142n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793669,
+  logSyncBlock: '0x6f092cb785a836ac6c6aec5f4777a6d0761fedad3a07b96d118175abbf2dcc0e',
+  nextTxSeq: 49531,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 431, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc size=431 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x5562124f0e5d3a66f525ab0656fa5bc63610766ab4541a04ccbab36295bb3924
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793677)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49531
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_scalability_in_healthcare" rootHash=0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+[MemoryMerge] Fact written: "task_001_scalability_in_healthcare" by researcher
+Starting upload for file of size: 388 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 143n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793694,
+  logSyncBlock: '0xe2263ee3dc049734c10ed022d5b3076253c106b8989119e980c230d223d9ab50',
+  nextTxSeq: 49532,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 388, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93 size=388 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xb1fc697546352f7f664a4d6ba2953da18f19b6a93653e17e86e2f85c6a40c3e9
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793702)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49532
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_resilience_of_data" rootHash=0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+[MemoryMerge] Fact written: "task_001_resilience_of_data" by researcher
+Starting upload for file of size: 404 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 144n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793718,
+  logSyncBlock: '0xbf3ec08f1dbffbe9c6e7da6692d7fca5d0f81b69f9cd18feb8fce8d187dc7330',
+  nextTxSeq: 49533,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 404, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53 size=404 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xe586f7a25bf2e7659d131eb1781a286f016a6c93552578e3539bd027519de611
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793727)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49533
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_patient_control_over_data" rootHash=0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+[MemoryMerge] Fact written: "task_001_patient_control_over_data" by researcher
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148823577.json, proof: true
+Downloading single file with root hash: 0x4f98c1905e8f8a09cc1fa1b6b55744ca46cb1909e3dc663f8319369c67b04080
+Getting file locations for root hash: 0x4f98c1905e8f8a09cc1fa1b6b55744ca46cb1909e3dc663f8319369c67b04080
+Found 4 locations for 0x4f98c1905e8f8a09cc1fa1b6b55744ca46cb1909e3dc663f8319369c67b04080: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x4f98c1905e8f8a09cc1fa1b6b55744ca46cb1909e3dc663f8319369c67b04080
+Starting upload for file of size: 627 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 145n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793747,
+  logSyncBlock: '0x094258a405f16302c5fc44f3d60656f266c7c59b0ce6f7e903d230e613c476ff',
+  nextTxSeq: 49534,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 627, numSegments: 1, numChunks: 3
+Data prepared to upload root=0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5 size=627 numSegments=1 numChunks=3
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 92200934886n
+Transaction submitted, hash: 0xfc32a5cb0a58f8bd58461c57e9480845d2e30e745921aebac827d7af8aed998a
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793756)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49534
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/tasks/task_001" rootHash=0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+[MemoryMerge] Task status updated: "task_001" → pending_review
+[Researcher] Task complete: task_001
+[Researcher] Facts written: 5
+[Researcher] Result: By 2026, decentralized AI storage can significantly enhance the privacy and security of healthcare data by enabling patients to have more control over their personal health information, while also improving the scalability and resilience of AI-driven healthcare applications.
+[ReflectionEngine] Turn 2/8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148836105.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148836107.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148836109.json, proof: true
+Downloading single file with root hash: 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Getting file locations for root hash: 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148836112.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 3 locations for 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 3 nodes for 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148838066.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148838325.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148839798.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148839818.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148841268.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148841290.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148842731.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148842772.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148844209.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148845693.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148847836.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148849532.json, proof: true
+Downloading single file with root hash: 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Getting file locations for root hash: 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Found 4 locations for 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148851720.json, proof: true
+Downloading single file with root hash: 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Getting file locations for root hash: 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Found 4 locations for 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148853502.json, proof: true
+Downloading single file with root hash: 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Getting file locations for root hash: 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Found 4 locations for 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148855236.json, proof: true
+Downloading single file with root hash: 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Getting file locations for root hash: 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Found 4 locations for 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148857091.json, proof: true
+Downloading single file with root hash: 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Getting file locations for root hash: 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Found 4 locations for 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+[Researcher] No pending tasks found.
+
+[Orchestrator] Critic phase...
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148858904.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148858907.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148858916.json, proof: true
+Downloading single file with root hash: 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Getting file locations for root hash: 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148858923.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148860792.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148861379.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148862522.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148862870.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148864021.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148864379.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148865519.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148865905.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148867008.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148868504.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148870023.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148871568.json, proof: true
+Downloading single file with root hash: 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Getting file locations for root hash: 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Found 4 locations for 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148873280.json, proof: true
+Downloading single file with root hash: 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Getting file locations for root hash: 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Found 4 locations for 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148874756.json, proof: true
+Downloading single file with root hash: 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Getting file locations for root hash: 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Found 4 locations for 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148876560.json, proof: true
+Downloading single file with root hash: 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Getting file locations for root hash: 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Found 4 locations for 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148878043.json, proof: true
+Downloading single file with root hash: 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Getting file locations for root hash: 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Found 4 locations for 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+
+[Critic] Reviewing 1 task(s)...
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148885074.json, proof: true
+Downloading single file with root hash: 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Getting file locations for root hash: 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Found 4 locations for 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xc962168f32ee86e30b53eac7eee233557086c21afebc9469aa8dbcff3221eef4
+Starting upload for file of size: 413 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 146n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793892,
+  logSyncBlock: '0x0f69d26fbde39a4e0eddbb1a3db04795233749fe05db67d84eb13923b2916e0b',
+  nextTxSeq: 49535,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 413, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3 size=413 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x6a59ceda4e6d6a2daa2a662dcddcc8a5c85a9c9009fe88d0a35e917c71d7fddb
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793900)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49535
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_decentralized_storage_improves_privacy" rootHash=0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+[MemoryMerge] Fact confidence updated: "task_001_decentralized_storage_improves_privacy" → 0.85
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148898533.json, proof: true
+Downloading single file with root hash: 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Getting file locations for root hash: 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Found 4 locations for 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x98bfde03210364509d8e025b518f61c69b3e257aa9e1b66534dcd5149761102a
+Starting upload for file of size: 409 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 147n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793920,
+  logSyncBlock: '0x791a7ff929ccd35b7f02ba5703388c0df910f993606d54f8442622b3e3642047',
+  nextTxSeq: 49536,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 409, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6 size=409 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x3509e4db337d7e6232d78ebb7230b6b5e77e16eb43d0fbcb9a930879a4a08186
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793931)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49536
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_enhanced_security_through_blockchain" rootHash=0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+[MemoryMerge] Fact confidence updated: "task_001_enhanced_security_through_blockchain" → 0.9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148912212.json, proof: true
+Downloading single file with root hash: 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Getting file locations for root hash: 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Found 4 locations for 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x2a6e33a3f6033f34257bf3bbfb41d7877a4333a48960049f8a4ceb80c1a70ddc
+Starting upload for file of size: 430 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 148n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793952,
+  logSyncBlock: '0x902bd97f49d4ba4c5c9c237306ad9d27ede50e580ab33483167ed6a97aa4879f',
+  nextTxSeq: 49537,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 430, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5 size=430 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x057c6421f8e1305d0af4f8cbde5e9b378a897bf0af75452121c6aaa0502f0f33
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793962)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49537
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_scalability_in_healthcare" rootHash=0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+[MemoryMerge] Fact confidence updated: "task_001_scalability_in_healthcare" → 0.75
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148925045.json, proof: true
+Downloading single file with root hash: 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Getting file locations for root hash: 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Found 4 locations for 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xccd331cf7585bc0cb5109a1f37465bf7b65b9bd63ee96c537b981ac573e88e93
+Starting upload for file of size: 387 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 149n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29793984,
+  logSyncBlock: '0x7a5535e2d3f53d73e07488e53e4d664155f50e8ceabb5e271e7542aa1edc0772',
+  nextTxSeq: 49538,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 387, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff size=387 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x99e8a8291ad694c2a0ad8e0d3c6164f0ea2ca87e829e5efa1ce9a0fc20b7025b
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29793993)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49538
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_resilience_of_data" rootHash=0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+[MemoryMerge] Fact confidence updated: "task_001_resilience_of_data" → 0.85
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148938526.json, proof: true
+Downloading single file with root hash: 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Getting file locations for root hash: 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Found 4 locations for 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xf282d71dd31d309d80d5093dddd49479987d306140f2999ea4a95e21ac6e4c53
+Starting upload for file of size: 403 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 150n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794012,
+  logSyncBlock: '0x5fe406e0a6d9ab3cac4b3ed4e9747ec3c38fb6d743b5376936c4f7ac96022173',
+  nextTxSeq: 49539,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 403, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148 size=403 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xce0ef2b69e3240bdbfb57a502723973687e03348008269116722d987317865b2
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794021)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49539
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/task_001_patient_control_over_data" rootHash=0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+[MemoryMerge] Fact confidence updated: "task_001_patient_control_over_data" → 0.9
+Starting upload for file of size: 478 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 151n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794036,
+  logSyncBlock: '0x5386a69db7fc33c78955238965b95ec49646defa9c5c05ea902ba302cd29a0e7',
+  nextTxSeq: 49540,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 478, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22 size=478 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x064445dc4fb5446b1364ada2cae9fdcf51b49435f55277fd27ea45d9fed18c0a
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794046)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49540
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/critic_review_task_001" rootHash=0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+[MemoryMerge] Fact written: "critic_review_task_001" by critic
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148961881.json, proof: true
+Downloading single file with root hash: 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Getting file locations for root hash: 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Found 4 locations for 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xe37dc708c8fa81752cf96278721a7fffc137772b4dc5b7f29edb4f2c9f210cd5
+Starting upload for file of size: 621 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 152n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794067,
+  logSyncBlock: '0x152aa255cdaf8726bb6b04ee462bfe56517b8ea244e996c91451d91acfc9db8d',
+  nextTxSeq: 49541,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 621, numSegments: 1, numChunks: 3
+Data prepared to upload root=0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d size=621 numSegments=1 numChunks=3
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 92200934886n
+Transaction submitted, hash: 0xef58ab3d6151769d89362df147f915aea893dacc2a8c078bf170348e3b377e6e
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794075)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49541
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/tasks/task_001" rootHash=0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+[MemoryMerge] Task status updated: "task_001" → complete
+[Critic] Task task_001 reviewed:
+  Quality: 0.8
+  Approved: true
+  Critique: The research provides a clear and concise overview of potential benefits of decentralized AI storage in healthcare, supported by relevant technologies such as blockchain. However, the confidence scores could be slightly adjusted for more precision.
+[ReflectionEngine] Turn 3/8
+
+[Orchestrator] Planner review phase...
+
+[Planner] Reviewing swarm progress...
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148974776.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148974778.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148974780.json, proof: true
+Downloading single file with root hash: 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Getting file locations for root hash: 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148974783.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 3 locations for 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 3 nodes for 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148976513.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148977791.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148978348.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148979836.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148980040.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148981427.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148981833.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148982945.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148984467.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148986007.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148987524.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148989019.json, proof: true
+Downloading single file with root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Getting file locations for root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Found 4 locations for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148990739.json, proof: true
+Downloading single file with root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Getting file locations for root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Found 4 locations for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148992500.json, proof: true
+Downloading single file with root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Getting file locations for root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Found 4 locations for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148994012.json, proof: true
+Downloading single file with root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Getting file locations for root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Found 4 locations for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148995487.json, proof: true
+Downloading single file with root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Getting file locations for root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Found 4 locations for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777148996971.json, proof: true
+Downloading single file with root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Getting file locations for root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Found 4 locations for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+[Planner] Assessment: 1. The goal is sufficiently researched with clear insights on security, privacy, and scalability improvements for healthcare data in decentralized AI storage.
+2. The most important gap remaining is specific implementation details and case studies demonstrating how decentralized AI storage can be effectively integrated into existing healthcare systems by 2026.
+3. Recommended next action: Conduct detailed case studies and feasibility analyses of integrating decentralized AI storage in various healthcare scenarios to bridge the implementation gap.
+Starting upload for file of size: 802 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 153n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794154,
+  logSyncBlock: '0x9d019ca4900c4a659051b5075fcd433ac1056aaf24fbae7198e27b3643db8ffc',
+  nextTxSeq: 49542,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 802, numSegments: 1, numChunks: 4
+Data prepared to upload root=0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853 size=802 numSegments=1 numChunks=4
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 122934579848n
+Transaction submitted, hash: 0x8bc72625740521050eef62cf49a03995bf0d4c19fbd4ccd39647d13a8dc15e2d
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794163)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49542
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/facts/planner_assessment_1777149001824" rootHash=0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+[MemoryMerge] Fact written: "planner_assessment_1777149001824" by planner
+[ReflectionEngine] Turn 4/8
+
+[Orchestrator] Cycle 1 complete.
+  Total turns      : 3
+  Reflection epoch : 0
+  Turns to next ↺  : 4
+
+[Orchestrator] Running final reflection and snapshot...
+[ReflectionEngine] Manual reflection triggered.
+
+[ReflectionEngine] ═══ REFLECTION EPOCH 1 ═══
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149013315.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149015231.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149016683.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149018157.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149019606.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149021063.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149022525.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149024289.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149025794.json, proof: true
+Downloading single file with root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Getting file locations for root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Found 4 locations for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149027267.json, proof: true
+Downloading single file with root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Getting file locations for root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Found 4 locations for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149028754.json, proof: true
+Downloading single file with root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Getting file locations for root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Found 4 locations for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149030213.json, proof: true
+Downloading single file with root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Getting file locations for root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Found 4 locations for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149031701.json, proof: true
+Downloading single file with root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Getting file locations for root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Found 4 locations for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149033195.json, proof: true
+Downloading single file with root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Getting file locations for root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Found 4 locations for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149034929.json, proof: true
+Downloading single file with root hash: 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Getting file locations for root hash: 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Found 4 locations for 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+[ReflectionEngine] Gathered 15 facts for compression
+[ReflectionEngine] Calling 0G Compute (qwen/qwen-2.5-7b-instruct)...
+[ReflectionEngine] 0G Compute response received (1430 chars)
+[ReflectionEngine] AI returned 5 insights
+Starting upload for file of size: 263 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 154n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794248,
+  logSyncBlock: '0xc5597af454b9de7c6d4e619a54c7b97546037c03fc882c3b2f3dcbed3d5f7b37',
+  nextTxSeq: 49543,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 263, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d size=263 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xa94b0c0aa27ab384393274369d9ade3cbfc093f61b2aebecfe9076d7fef6cfdf
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794257)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49543
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/insight_1" rootHash=0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+[MemoryMerge] Insight written: "insight_1" importance=9
+Starting upload for file of size: 279 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 155n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794273,
+  logSyncBlock: '0xc1bf21b4f6c02599805fdad8feef064e3a68df15153952a7201971459da7e3cc',
+  nextTxSeq: 49544,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 279, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6 size=279 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x200ac51cc9be4b9af44b2d504f25e91bf7f31b23e29b0a37bcb1a8c27dcaf504
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794281)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49544
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/insight_2" rootHash=0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+[MemoryMerge] Insight written: "insight_2" importance=8
+Starting upload for file of size: 289 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 156n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794298,
+  logSyncBlock: '0x68ac1e4e4797502767efbd6e43ac70801b38a81e5f4e2a2aa77b19b06a42187b',
+  nextTxSeq: 49545,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 289, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac size=289 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x794da1ec36407b9a90c8ad8983a9ce1683b49847ec9f8197e08f7142efbf4fbb
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794306)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49545
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/insight_3" rootHash=0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+[MemoryMerge] Insight written: "insight_3" importance=8
+Starting upload for file of size: 306 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 157n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794323,
+  logSyncBlock: '0x87758c469da8fbeb531e5eb3f46c0d0b0681759288f20dc2f051311591016d0b',
+  nextTxSeq: 49546,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 306, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855 size=306 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xe38b967d64a9a8020bb1b9599978f0e395c2125621635940d71999a39eccbf91
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794334)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49546
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/insight_4" rootHash=0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+[MemoryMerge] Insight written: "insight_4" importance=7
+Starting upload for file of size: 316 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 158n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794349,
+  logSyncBlock: '0x8c343007c28a8afde24c8259a98b30496d43fd0ddef7e8783dcca5d83b2250ec',
+  nextTxSeq: 49547,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 316, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6 size=316 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x5f487ce822eb868b2c2c80ea51e5903bc700ed0d8792f908832785f9b06c1d6a
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794358)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49547
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-inherit-001/insights/insight_5" rootHash=0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+[MemoryMerge] Insight written: "insight_5" importance=7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149098582.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149098588.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149098595.json, proof: true
+Downloading single file with root hash: 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Getting file locations for root hash: 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149098600.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Found 4 locations for 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149100913.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149101014.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149102638.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149102921.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149104357.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149104414.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149105868.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149105902.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149107328.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149107428.json, proof: true
+Downloading single file with root hash: 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+Getting file locations for root hash: 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149108828.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149109545.json, proof: true
+Downloading single file with root hash: 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+Getting file locations for root hash: 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+Found 4 locations for 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149110309.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149111070.json, proof: true
+Downloading single file with root hash: 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+Getting file locations for root hash: 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+Found 4 locations for 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149111769.json, proof: true
+Downloading single file with root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Getting file locations for root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Found 4 locations for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149112577.json, proof: true
+Downloading single file with root hash: 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+Getting file locations for root hash: 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+Found 4 locations for 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149113661.json, proof: true
+Downloading single file with root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Getting file locations for root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Found 4 locations for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149114024.json, proof: true
+Downloading single file with root hash: 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+Getting file locations for root hash: 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+Found 4 locations for 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149115144.json, proof: true
+Downloading single file with root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Getting file locations for root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Found 4 locations for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149116635.json, proof: true
+Downloading single file with root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Getting file locations for root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Found 4 locations for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149118085.json, proof: true
+Downloading single file with root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Getting file locations for root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Found 4 locations for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149119569.json, proof: true
+Downloading single file with root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Getting file locations for root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Found 4 locations for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149121021.json, proof: true
+Downloading single file with root hash: 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Getting file locations for root hash: 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Found 4 locations for 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Starting upload for file of size: 7949 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 159n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29794427,
+  logSyncBlock: '0xef008f99a98cc1d7097e0e038ae5e13abe07a7bbf9aea06c96815f2ff3689f01',
+  nextTxSeq: 49548,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 7949, numSegments: 1, numChunks: 32
+Data prepared to upload root=0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc size=7949 numSegments=1 numChunks=32
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 983476638784n
+Transaction submitted, hash: 0xccdca8044e3e314edacb0f45f2dcca1796f6241d9034d815259cc2690d7023ad
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29794436)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49548
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Archived snapshot label="epoch-1-1777149122513" rootHash=0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc
+[MemoryMerge] Snapshot archived: epoch-1-1777149122513 → 0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc
+[AnchorClient] Anchoring epoch 1 on 0G Chain...
+[AnchorClient] ✓ Anchored on 0G Chain
+  TX    : 0xc433bfe67cf2a937686e55aa31a42ae2fae9dc6b5672c51001a8502b79f4764e
+  Block : 29794452
+  View  : https://chainscan-galileo.0g.ai/tx/0xc433bfe67cf2a937686e55aa31a42ae2fae9dc6b5672c51001a8502b79f4764e
+[ReflectionEngine] ═══ EPOCH 1 COMPLETE ═══
+  Facts processed : 15
+  Insights created: 5
+  Snapshot hash   : 0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc
+  Chain TX    : https://chainscan-galileo.0g.ai/tx/0xc433bfe67cf2a937686e55aa31a42ae2fae9dc6b5672c51001a8502b79f4764e
+  Duration        : 134523ms
+  Verify at       : https://storagescan-galileo.0g.ai
+
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149147839.json, proof: true
+Downloading single file with root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Getting file locations for root hash: 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149147844.json, proof: true
+Downloading single file with root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Getting file locations for root hash: 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149147847.json, proof: true
+Downloading single file with root hash: 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Getting file locations for root hash: 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149147852.json, proof: true
+Downloading single file with root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Getting file locations for root hash: 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x91c5d87bff37ec866f9b2f206c426c3c344b9840385d5ec998de277c3f1e5ad7
+Found 4 locations for 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xb9dcccb1a81f2aa1b3ada8ccce0cd9511b5a50ce57329ca31b18c2e5d8c82e0d
+Found 4 locations for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x6974993bd63344e9d55a514c0dc3807e6e977af6798ba9ebe22e7422eddfd4ca
+Found 4 locations for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x7d5555846594f4ce655da2164bef4362730433ca5fe139439f6ac72527db8c51
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149150739.json, proof: true
+Downloading single file with root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Getting file locations for root hash: 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149150748.json, proof: true
+Downloading single file with root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Getting file locations for root hash: 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Found 4 locations for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xc98bb210efc228606d31f9f9cadf739e6ecc9c750599f2802f3833f4fe40cb0b
+Found 4 locations for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xaef78b0062a858934482ecc89e4d411c536fa784ef9da78b5283d5e3962db409
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149152446.json, proof: true
+Downloading single file with root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Getting file locations for root hash: 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149152464.json, proof: true
+Downloading single file with root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Getting file locations for root hash: 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Found 4 locations for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x2be7b187936615830de94f8cf801356d6173915563e99380553f0445745852b9
+Found 4 locations for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x3f2557f7445c4bd8fdc7ac38229960d83f9a1781fa91171b3d55a979fb56b780
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149153945.json, proof: true
+Downloading single file with root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Getting file locations for root hash: 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149154201.json, proof: true
+Downloading single file with root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Getting file locations for root hash: 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Found 4 locations for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x83aa80c733bcb4320629e3e4b2b2d3494a88a3d0d90f829cd9a8e9fd09d553a8
+Found 4 locations for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x53eae9de68d9bbd5cfc3ccc1dec1df4cdb074139ae3ba4682be77350d1c3be83
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149155429.json, proof: true
+Downloading single file with root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Getting file locations for root hash: 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149155683.json, proof: true
+Downloading single file with root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Getting file locations for root hash: 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Found 4 locations for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x53001f86dcdf9bc810e0d2e4a0baedba59193c2364337cf783bfc093f4c5184e
+Found 4 locations for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x7edff9426ba6dd1ac59672aa9398522756667a603c19c3e750c21dcaa570829d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149156908.json, proof: true
+Downloading single file with root hash: 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+Getting file locations for root hash: 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+Found 4 locations for 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x72dbd80cfeccbdbcb517b01e7a0893a37381051879b5d8c010e418feb8563e0d
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149157398.json, proof: true
+Downloading single file with root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Getting file locations for root hash: 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Found 4 locations for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbb3f65d0aa2421208d64d39ad44aedf09206458448ad64d588c4009da60641a7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149158414.json, proof: true
+Downloading single file with root hash: 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+Getting file locations for root hash: 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+Found 4 locations for 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbe626d55a85cc9205b00c7c510691a1c59c2e616d2efb5df255d2345a5050ba6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149158916.json, proof: true
+Downloading single file with root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Getting file locations for root hash: 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Found 4 locations for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xf3f9a0bc283f26db1cbb9b5b857c27c5fef244a1306082a52b5932d383fbf7c3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149159916.json, proof: true
+Downloading single file with root hash: 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+Getting file locations for root hash: 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+Found 4 locations for 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xfb4d956246655716da6ea2c64bd3a97b49219bcb888c67ca5f817bcf111874ac
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149160408.json, proof: true
+Downloading single file with root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Getting file locations for root hash: 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Found 4 locations for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x48d0453a87689da0c7b35096f86937ae14289b335518c58001ea9bc138ed07fc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149161403.json, proof: true
+Downloading single file with root hash: 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+Getting file locations for root hash: 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+Found 4 locations for 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x211c2c180e1d2403051e3927403b5c94e2ee9ce5fa50043f2d63d4ec5b729855
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149161904.json, proof: true
+Downloading single file with root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Getting file locations for root hash: 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Found 4 locations for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x9070ed589e2b0ed1176361b15d985ff26ebf6d3ca3a57a1dfceb9e7afac1b9d3
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149162895.json, proof: true
+Downloading single file with root hash: 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+Getting file locations for root hash: 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+Found 4 locations for 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x491149ab2239e46c81eb5ba71136f63f31bef4a7ba20e170d88b3fcee40811c6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149163393.json, proof: true
+Downloading single file with root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Getting file locations for root hash: 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Found 4 locations for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xd6c293d3a506d773a0e44e3441415fbba3efc7cec0ea6bc8a8377a6e9a6b47a6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149165137.json, proof: true
+Downloading single file with root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Getting file locations for root hash: 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Found 4 locations for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x0eb32cbf144b0c9f81e618d0abd3a33e83900b6db8ea74d33205e1b7f1e66dc5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149166631.json, proof: true
+Downloading single file with root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Getting file locations for root hash: 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Found 4 locations for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x4cd3416f145139188160487b740790a6d8d9052eb7d50cb1826efbb62ae78cff
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149168119.json, proof: true
+Downloading single file with root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Getting file locations for root hash: 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Found 4 locations for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x88c2137efbb1cb9066f88e5867b4f985c1d08063244f63b13cf043582f7ce148
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149169607.json, proof: true
+Downloading single file with root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Getting file locations for root hash: 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Found 4 locations for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x7e619a81446a7dba203c8bf552ceab0f525fb718d05dbc5bde183cc6a930ce22
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777149171349.json, proof: true
+Downloading single file with root hash: 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Getting file locations for root hash: 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+Found 4 locations for 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xe1b095b9dd6ffa8d7f7636ef3773f1b0dd94bb30eda2a960750aac1cc79be853
+
+╔════════════════════════════════════════════════╗
+║          MemoryMerge Swarm Complete            ║
+╚════════════════════════════════════════════════╝
+Goal              : How can decentralized AI storage be applied to healthcare data in 2026
+Total turns       : 3
+Tasks completed   : 1
+Facts written     : 15
+Insights generated: 10
+Reflection epochs : 1
+Duration          : 490.4s
+
+Snapshot hashes (verify on 0G StorageScan):
+  → 0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc
+    https://storagescan-galileo.0g.ai/tx/0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc
+─────────────────────────────────────────────────
+
+
+╔══════════════════════════════════════════════════════╗
+║         Cross-Swarm Inheritance Demo Complete        ║
+╚══════════════════════════════════════════════════════╝
+
+Source swarm  : memorymerge-demo-001
+Target swarm  : memorymerge-inherit-001
+Facts in new swarm : 15
+Insights generated : 10
+
+Proof of inheritance:
+  Source snapshot : https://storagescan-galileo.0g.ai/tx/0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467
+  New snapshot    : https://storagescan-galileo.0g.ai/tx/0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc
+
+The knowledge chain is cryptographically verifiable.
+Any agent can trace insights back to their source swarm.

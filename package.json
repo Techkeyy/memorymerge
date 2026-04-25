@@ -7,6 +7,7 @@
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/orchestrator/index.ts",
     "agent": "ts-node examples/interactiveAgent.ts",
+    "inherit": "ts-node examples/crossSwarmDemo.ts",
     "start": "ts-node src/orchestrator/index.ts",
     "continuous": "ts-node -e \"require('dotenv').config(); const { MemoryMergeOrchestrator } = require('./src/orchestrator/index'); new MemoryMergeOrchestrator().runContinuous(process.argv[2] ?? 'Research the current state of decentralized AI and 0G Labs in 2026');\"",
     "example": "ts-node examples/researchSwarm.ts",

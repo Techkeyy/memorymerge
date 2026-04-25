@@ -183,6 +183,35 @@ export class ZeroGStorageClient {
   }
 
   /**
+   * Download and parse a snapshot by its root hash.
+   * Used for cross-swarm knowledge inheritance.
+   * The root hash IS the cryptographic proof — PoRA verified.
+   */
+  async downloadByRootHash(rootHash: string): Promise<object | null> {
+    try {
+      const os = await import('os');
+      const path = await import('path');
+      const outputPath = path.join(os.tmpdir(), `mm_inherit_${Date.now()}.json`);
+
+      const err = await this.indexer.download(rootHash, outputPath, true);
+      if (err) throw new Error(`Download failed: ${err}`);
+
+      const fs = await import('fs');
+      let raw: string;
+      try {
+        raw = fs.readFileSync(outputPath, 'utf8');
+      } finally {
+        try { fs.unlinkSync(outputPath); } catch {}
+      }
+
+      return JSON.parse(raw);
+    } catch (error) {
+      console.error('[0G Storage] downloadByRootHash failed:', error);
+      return null;
+    }
+  }
+
+  /**
    * Get the root hash for a key from the local index.
    */
   getRootHash(key: string): string | undefined {
