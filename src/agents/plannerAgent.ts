@@ -2,6 +2,7 @@ import 'dotenv/config';
 import OpenAI from 'openai';
 import { MemoryManager, TaskPayload } from '../sdk/memoryManager';
 import { ReflectionEngine } from '../sdk/reflectionEngine';
+import { createAnchorClient } from '../sdk/anchorClient';
 
 export class PlannerAgent {
   private memory: MemoryManager;
@@ -32,6 +33,17 @@ export class PlannerAgent {
   async initializeSwarm(goal: string): Promise<void> {
     console.log(`\n[Planner] Initializing swarm with goal: "${goal}"`);
     await this.memory.setGoal(goal);
+
+    try {
+      const anchor = createAnchorClient();
+      await anchor.setSwarmGoal(
+        process.env.SWARM_ID ?? 'memorymerge-swarm-001',
+        goal
+      );
+      console.log('[Planner] Goal anchored on 0G Chain');
+    } catch (e) {
+      console.warn('[Planner] Goal anchor failed (non-fatal):', e);
+    }
 
     const context = await this.memory.getSwarmContext();
 

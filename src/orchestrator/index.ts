@@ -64,7 +64,7 @@ export class MemoryMergeOrchestrator {
     const criticMemory = createMemoryManager('critic', storage);
 
     console.log('[Orchestrator] Initializing Reflection Engine...');
-    const reflection = createReflectionEngine(plannerMemory, 6);
+    const reflection = createReflectionEngine(plannerMemory, 8);
 
     // ── Initialize Agents ─────────────────────────────────────────────────
     console.log('[Orchestrator] Initializing agents...');
@@ -155,6 +155,35 @@ export class MemoryMergeOrchestrator {
     console.log('─────────────────────────────────────────────────\n');
 
     return result;
+  }
+
+  /**
+   * Run the swarm continuously — always on, always learning.
+   * This mode never stops. It runs cycle after cycle.
+   * Use for demo mode and live dashboard display.
+   */
+  async runContinuous(goal: string, cyclesPerRound: number = 2): Promise<never> {
+    console.log('\n[Orchestrator] Starting CONTINUOUS mode...');
+    console.log('[Orchestrator] Press Ctrl+C to stop.\n');
+
+    let round = 0;
+
+    await this.run(goal, cyclesPerRound);
+
+    while (true) {
+      round++;
+      console.log(`\n[Orchestrator] ═══ CONTINUOUS ROUND ${round} ═══`);
+      console.log('[Orchestrator] Resuming from 0G Storage memory...\n');
+
+      await new Promise(r => setTimeout(r, 10000));
+
+      try {
+        await this.run(goal, cyclesPerRound);
+      } catch (error) {
+        console.error('[Orchestrator] Round failed, retrying in 30s:', error);
+        await new Promise(r => setTimeout(r, 30000));
+      }
+    }
   }
 }
 

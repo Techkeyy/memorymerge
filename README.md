@@ -81,7 +81,7 @@ Scores confidence on each fact (0.0 - 1.0)
 Updates fact confidence scores
 Updates task → status: complete
 ↓
-[Reflection Engine — fires every N turns]
+[Reflection Engine — fires every 8 turns]
 Pulls all facts from 0G Storage KV
 Sends to 0G Compute (qwen/qwen-2.5-7b-instruct, TeeML verified)
 Compresses + ranks → distills into top 5 insights

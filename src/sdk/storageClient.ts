@@ -100,13 +100,19 @@ export class ZeroGStorageClient {
         return null;
       }
 
-      const outputPath = `./tmp_${Date.now()}.json`;
+      const os = await import('os');
+      const path = await import('path');
+      const outputPath = path.join(os.tmpdir(), `mm_${Date.now()}.json`);
       const err = await this.indexer.download(rootHash, outputPath, true);
       if (err) throw new Error(`Download failed: ${err}`);
 
       const fs = await import('fs');
-      const raw = fs.readFileSync(outputPath, 'utf8');
-      fs.unlinkSync(outputPath);
+      let raw: string;
+      try {
+        raw = fs.readFileSync(outputPath, 'utf8');
+      } finally {
+        try { fs.unlinkSync(outputPath); } catch {}
+      }
 
       const parsed = JSON.parse(raw);
       return parsed.value;

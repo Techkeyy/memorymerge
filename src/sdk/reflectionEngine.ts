@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import OpenAI from 'openai';
 import { MemoryManager, InsightEntry, FactEntry } from './memoryManager';
+import { AnchorClient, createAnchorClient, AnchorResult } from './anchorClient';
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
@@ -11,6 +12,8 @@ export interface ReflectionResult {
   factsDeleted: string[];
   snapshotRootHash: string;
   snapshotLabel: string;
+  anchorTxHash: string;
+  anchorBlockNumber: number;
   durationMs: number;
   model: string;
 }
@@ -36,6 +39,7 @@ export class ReflectionEngine {
   private memory: MemoryManager;
   private client: OpenAI;
   private model: string;
+  private anchorClient: AnchorClient;
   private triggerEvery: number;
   private turnCount: number;
   private epochNumber: number;
@@ -67,6 +71,7 @@ export class ReflectionEngine {
     });
 
     this.model = 'qwen/qwen-2.5-7b-instruct';
+    this.anchorClient = createAnchorClient();
 
     console.log(`[ReflectionEngine] Initialized. Trigger every ${this.triggerEvery} turns.`);
     console.log(`[ReflectionEngine] Using 0G Compute model: ${this.model}`);
@@ -120,6 +125,8 @@ export class ReflectionEngine {
         factsDeleted: [],
         snapshotRootHash: '',
         snapshotLabel: '',
+        anchorTxHash: '',
+        anchorBlockNumber: 0,
         durationMs: Date.now() - startTime,
         model: this.model,
       };
@@ -150,6 +157,19 @@ export class ReflectionEngine {
     // Step 5: Archive snapshot to 0G Storage Log
     const snapshot = await this.memory.snapshot(this.epochNumber);
 
+    // Step 6: Anchor on 0G Chain
+    let anchorResult: AnchorResult | null = null;
+    try {
+      anchorResult = await this.anchorClient.anchorSnapshot(
+        this.memory.getSwarmId(),
+        snapshot.rootHash,
+        this.epochNumber,
+        snapshot.label
+      );
+    } catch (anchorError) {
+      console.warn('[ReflectionEngine] Chain anchor failed (non-fatal):', anchorError);
+    }
+
     this.lastReflectionAt = this.turnCount;
 
     const result: ReflectionResult = {
@@ -159,6 +179,8 @@ export class ReflectionEngine {
       factsDeleted: compressed.factsToDelete,
       snapshotRootHash: snapshot.rootHash,
       snapshotLabel: snapshot.label,
+      anchorTxHash: anchorResult?.txHash ?? '',
+      anchorBlockNumber: anchorResult?.blockNumber ?? 0,
       durationMs: Date.now() - startTime,
       model: this.model,
     };
@@ -167,6 +189,7 @@ export class ReflectionEngine {
     console.log(`  Facts processed : ${result.factsProcessed}`);
     console.log(`  Insights created: ${result.insightsGenerated}`);
     console.log(`  Snapshot hash   : ${result.snapshotRootHash}`);
+    console.log(`  Chain TX    : ${result.anchorTxHash ? 'https://chainscan-galileo.0g.ai/tx/' + result.anchorTxHash : 'pending/failed'}`);
     console.log(`  Duration        : ${result.durationMs}ms`);
     console.log(`  Verify at       : https://storagescan-galileo.0g.ai\n`);
 
