@@ -1,0 +1,1276 @@
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ         MemoryMerge ΓÇö Working Example              Γòæ
+Γòæ  Decentralized Memory OS for AI Agent Swarms       Γòæ
+Γòæ  Powered by 0G Storage + 0G Compute                Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+Research Goal: "What is 0G Labs and why does decentralized AI storage matter in 2026"
+
+What will happen:
+  1. Planner agent breaks goal into tasks ΓåÆ writes to 0G Storage
+  2. Researcher agent executes tasks ΓåÆ writes facts to 0G Storage
+  3. Critic agent reviews facts ΓåÆ updates confidence scores
+  4. Reflection engine compresses memory via 0G Compute inference
+  5. Final snapshot archived to 0G Storage Log permanently
+  6. Restart with same SWARM_ID ΓÇö swarm resumes from memory
+
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ          MemoryMerge Swarm Starting            Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Goal    : What is 0G Labs and why does decentralized AI storage matter in 2026
+SwarmID : memorymerge-swarm-001
+Cycles  : 2
+Network : 0G Galileo Testnet
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+[Orchestrator] Initializing 0G Storage client...
+[Orchestrator] Initializing Memory Manager...
+[Orchestrator] Initializing Reflection Engine...
+[ReflectionEngine] Initialized. Trigger every 6 turns.
+[ReflectionEngine] Using 0G Compute model: qwen/qwen-2.5-7b-instruct
+[Orchestrator] Initializing agents...
+[Orchestrator] All agents ready. Starting swarm.
+
+
+[Planner] Initializing swarm with goal: "What is 0G Labs and why does decentralized AI storage matter in 2026"
+Starting upload for file of size: 194 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 6n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739776,
+  logSyncBlock: '0x309a52c8afc7a40e0c52032e028538b60e076e2b0926de9b7acf90665d1886ca',
+  nextTxSeq: 49212,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 194, numSegments: 1, numChunks: 1
+Data prepared to upload root=0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f size=194 numSegments=1 numChunks=1
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 30733644962n
+Transaction submitted, hash: 0x9bb69c5c97ba7c056d8076aa21b9eaf489368477e217bbf719e65d0f01f06c74
+Wait for log entry on storage node
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49212
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/context/current_goal" rootHash=0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+[MemoryMerge] Goal set: "What is 0G Labs and why does decentralized AI storage matter in 2026"
+Starting download to: ./tmp_1777124937860.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting upload for file of size: 324 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 7n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739820,
+  logSyncBlock: '0x2abc7e2e0d7e30728aafcd6c84bbd9b2fb3305a027f902828fbb2da34f561021',
+  nextTxSeq: 49213,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 324, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643 size=324 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x195050cf5eadf9e9af813a816d76bd83ae66c22bdbd6668420e69c29054d5a2a
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29739830)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49213
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_001" rootHash=0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+[MemoryMerge] Task written: "task_001" ΓåÆ pending
+[Planner] Task created: task_001 ΓåÆ "Research the history and current status of 0G Labs, including its mission, projects, and team members."
+Starting upload for file of size: 338 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 8n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739851,
+  logSyncBlock: '0xbb605c608e7fe97e4e7aae58ca4b754c92a720bca97647bb4206e13ecdbf54c0',
+  nextTxSeq: 49214,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 338, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469 size=338 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xe3764871a6467ddda8f14a6565873484822d26cc0bdb24206da5023bd7fd8b5f
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29739861)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49214
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_002" rootHash=0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+[MemoryMerge] Task written: "task_002" ΓåÆ pending
+[Planner] Task created: task_002 ΓåÆ "Analyze the importance of decentralized AI storage in 2026, focusing on security, privacy, and scalability benefits."
+Starting upload for file of size: 340 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 9n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739880,
+  logSyncBlock: '0xdb6eb3a1687fb76c40ce6bb8d286e3b1498fae03a0674a2042e88692b53a4336',
+  nextTxSeq: 49215,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 340, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5 size=340 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x6c1cf04434e45606bc29d5223fe909638da5dc0fff47b7302c3102fa13386e23
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29739891)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49215
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_003" rootHash=0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+[MemoryMerge] Task written: "task_003" ΓåÆ pending
+[Planner] Task created: task_003 ΓåÆ "Explore potential applications and use cases for decentralized AI storage in 2026 within the context of 0G Labs' work."
+[Planner] Swarm initialized with 3 tasks
+[ReflectionEngine] Turn 1/6
+
+ΓòöΓòÉΓòÉΓòÉ CYCLE 1/2 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+
+[Orchestrator] Researcher phase...
+Starting download to: ./tmp_1777124985976.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777124985981.json, proof: true
+Downloading single file with root hash: 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+Getting file locations for root hash: 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Found 4 locations for 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+Starting download to: ./tmp_1777124989707.json, proof: true
+Downloading single file with root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Getting file locations for root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Found 4 locations for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Starting download to: ./tmp_1777124991934.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+
+[Researcher] Executing task: task_001
+[Researcher] Description: Research the history and current status of 0G Labs, including its mission, projects, and team members.
+Starting download to: ./tmp_1777124993889.json, proof: true
+Downloading single file with root hash: 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+Getting file locations for root hash: 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+Found 4 locations for 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x47da5c4a80adae670dc446e860015acd1bbe8973019ff30c9646f19ea62c4643
+Starting upload for file of size: 328 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 10n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739935,
+  logSyncBlock: '0xdeab42c364f6a602fff1a34f66951034a9bce1cc418b98b9863beb24a471bdf1',
+  nextTxSeq: 49216,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 328, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xba709ebcaf802940e4baeacc9a6b39b04c21774fcf1765c1c56e6bdba1f9d8d1 size=328 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xd6f0ebfd554b225b8708a0c79175bc2fb7dab7613e6576f27b44175dcfda340c
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29739946)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49216
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_001" rootHash=0xba709ebcaf802940e4baeacc9a6b39b04c21774fcf1765c1c56e6bdba1f9d8d1
+[MemoryMerge] Task status updated: "task_001" ΓåÆ in_progress
+[Researcher] executeNextTask failed: BadRequestError: 400 "Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>"
+    at APIError.generate (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\core\error.ts:73:14)
+    at OpenAI.makeStatusError (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:523:28)
+    at OpenAI.makeRequest (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:799:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async ResearcherAgent.executeNextTask (C:\Users\HomePC\Desktop\memorymerge\src\agents\researcherAgent.ts:89:24)
+Starting download to: ./tmp_1777125011834.json, proof: true
+Downloading single file with root hash: 0xba709ebcaf802940e4baeacc9a6b39b04c21774fcf1765c1c56e6bdba1f9d8d1
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:92:28)
+    at async runExample (C:\Users\HomePC\Desktop\memorymerge\examples\researchSwarm.ts:48:20) {
+  status: 400,
+  headers: Headers {
+    server: 'nginx/1.27.4',
+    date: 'Sat, 25 Apr 2026 13:50:12 GMT',
+    'content-type': 'application/json; charset=utf-8',
+Getting file locations for root hash: 0xba709ebcaf802940e4baeacc9a6b39b04c21774fcf1765c1c56e6bdba1f9d8d1
+    'content-length': '411',
+    connection: 'keep-alive',
+    'access-control-expose-headers': 'x-ratelimit-limit-requests, x-ratelimit-remaining-requests, x-ratelimit-reset-requests, x-ratelimit-limit-tokens, x-ratelimit-remaining-tokens, x-ratelimit-reset-tokens',
+    'x-ratelimit-limit-requests': '10',
+    'x-ratelimit-limit-tokens': '30000',
+    'x-ratelimit-remaining-requests': '2',
+    'x-ratelimit-remaining-tokens': '42000',
+    'x-ratelimit-reset-requests': '0s',
+    'x-ratelimit-reset-tokens': '0s'
+  },
+  requestID: null,
+  error: 'Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>',
+  code: undefined,
+  param: undefined,
+  type: undefined
+}
+Found 4 locations for 0xba709ebcaf802940e4baeacc9a6b39b04c21774fcf1765c1c56e6bdba1f9d8d1: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xba709ebcaf802940e4baeacc9a6b39b04c21774fcf1765c1c56e6bdba1f9d8d1
+Starting upload for file of size: 385 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 11n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739975,
+  logSyncBlock: '0xe5494d2e7f52f6dff5dc81b46c0afa8796aaee3a03918e7e88247d0567400bbf',
+  nextTxSeq: 49217,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 385, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c size=385 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xfdf394642e23adb50ca7045be61e86b029d9a3ed63e90d07902680d36c559c75
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29739988)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49217
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_001" rootHash=0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+[MemoryMerge] Task status updated: "task_001" ΓåÆ pending_review
+
+[Orchestrator] Critic phase...
+Starting download to: ./tmp_1777125027351.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125027357.json, proof: true
+Downloading single file with root hash: 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+Getting file locations for root hash: 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Found 4 locations for 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+Starting download to: ./tmp_1777125029989.json, proof: true
+Downloading single file with root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Getting file locations for root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Found 4 locations for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Starting download to: ./tmp_1777125032200.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+
+[Critic] Reviewing 1 task(s)...
+[Critic] Review failed for task task_001: BadRequestError: 400 "Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>"
+    at APIError.generate (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\core\error.ts:73:14)
+    at OpenAI.makeStatusError (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:523:28)
+    at OpenAI.makeRequest (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:799:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async CriticAgent.reviewPendingTasks (C:\Users\HomePC\Desktop\memorymerge\src\agents\criticAgent.ts:85:26)
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:101:24)
+    at async runExample (C:\Users\HomePC\Desktop\memorymerge\examples\researchSwarm.ts:48:20) {
+  status: 400,
+  headers: Headers {
+    server: 'nginx/1.27.4',
+    date: 'Sat, 25 Apr 2026 13:50:36 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '411',
+    connection: 'keep-alive',
+    'access-control-expose-headers': 'x-ratelimit-limit-requests, x-ratelimit-remaining-requests, x-ratelimit-reset-requests, x-ratelimit-limit-tokens, x-ratelimit-remaining-tokens, x-ratelimit-reset-tokens',
+    'x-ratelimit-limit-requests': '10',
+    'x-ratelimit-limit-tokens': '30000',
+    'x-ratelimit-remaining-requests': '2',
+    'x-ratelimit-remaining-tokens': '42000',
+    'x-ratelimit-reset-requests': '0s',
+    'x-ratelimit-reset-tokens': '0s'
+  },
+  requestID: null,
+  error: 'Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>',
+  code: undefined,
+  param: undefined,
+  type: undefined
+}
+Starting download to: ./tmp_1777125036355.json, proof: true
+Downloading single file with root hash: 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+Getting file locations for root hash: 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+Found 4 locations for 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xd56e32ba515020ac2fc7eab4aa0e347aaa80f136ae46291ef4bd12194840000c
+Starting upload for file of size: 379 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 12n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29740029,
+  logSyncBlock: '0x137a11ee59bcb7af673ecbb81b575bae9dd421227968ba5c2714b8e6de46e90d',
+  nextTxSeq: 49218,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 379, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9 size=379 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x2fa894aae3d8c20cc18769bfed813d083be12dbe16740b0cb3f70f12f198e450
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29740040)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49218
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_001" rootHash=0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+[MemoryMerge] Task status updated: "task_001" ΓåÆ complete
+[ReflectionEngine] Turn 2/6
+
+[Orchestrator] Planner review phase...
+
+[Planner] Reviewing swarm progress...
+Starting download to: ./tmp_1777125050632.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125050634.json, proof: true
+Downloading single file with root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Getting file locations for root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Found 4 locations for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Starting download to: ./tmp_1777125053416.json, proof: true
+Downloading single file with root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Getting file locations for root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Found 4 locations for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Starting download to: ./tmp_1777125055652.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+[Planner] reviewAndPlan failed: BadRequestError: 400 "Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>"
+    at APIError.generate (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\core\error.ts:73:14)
+    at OpenAI.makeStatusError (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:523:28)
+    at OpenAI.makeRequest (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:799:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async PlannerAgent.reviewAndPlan (C:\Users\HomePC\Desktop\memorymerge\src\agents\plannerAgent.ts:149:24)
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:106:26)
+    at async runExample (C:\Users\HomePC\Desktop\memorymerge\examples\researchSwarm.ts:48:20) {
+  status: 400,
+  headers: Headers {
+    server: 'nginx/1.27.4',
+    date: 'Sat, 25 Apr 2026 13:51:00 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '411',
+    connection: 'keep-alive',
+    'access-control-expose-headers': 'x-ratelimit-limit-requests, x-ratelimit-remaining-requests, x-ratelimit-reset-requests, x-ratelimit-limit-tokens, x-ratelimit-remaining-tokens, x-ratelimit-reset-tokens',
+    'x-ratelimit-limit-requests': '10',
+    'x-ratelimit-limit-tokens': '30000',
+    'x-ratelimit-remaining-requests': '2',
+    'x-ratelimit-remaining-tokens': '42000',
+    'x-ratelimit-reset-requests': '0s',
+    'x-ratelimit-reset-tokens': '0s'
+  },
+  requestID: null,
+  error: 'Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>',
+  code: undefined,
+  param: undefined,
+  type: undefined
+}
+
+[Orchestrator] Cycle 1 complete.
+  Total turns      : 1
+  Reflection epoch : 0
+  Turns to next Γå║  : 4
+
+ΓòöΓòÉΓòÉΓòÉ CYCLE 2/2 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+
+[Orchestrator] Researcher phase...
+Starting download to: ./tmp_1777125059779.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125059783.json, proof: true
+Downloading single file with root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Getting file locations for root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Found 4 locations for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Starting download to: ./tmp_1777125062196.json, proof: true
+Downloading single file with root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Getting file locations for root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Found 4 locations for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Starting download to: ./tmp_1777125064710.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+
+[Researcher] Executing task: task_002
+[Researcher] Description: Analyze the importance of decentralized AI storage in 2026, focusing on security, privacy, and scalability benefits.
+Starting download to: ./tmp_1777125066548.json, proof: true
+Downloading single file with root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Getting file locations for root hash: 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Found 4 locations for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xdb101ca9514d42680ce0cefb26738998e7f2130153ddb61d2b5496cda984a469
+Starting upload for file of size: 342 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 13n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29740098,
+  logSyncBlock: '0x2407db7c4fca30c79889b0510ee5e2a75408372c8429b2a32ce4f538e4774828',
+  nextTxSeq: 49219,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 342, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x41d5660a06dfbf40e71e80146ac9324db10be9f7f308750b2a1cd1cdade7d935 size=342 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0xbcafb9f8d8c44b99729e6b616066b268eece718def2677a396e84d63a41ad7fc
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29740110)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49219
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_002" rootHash=0x41d5660a06dfbf40e71e80146ac9324db10be9f7f308750b2a1cd1cdade7d935
+[MemoryMerge] Task status updated: "task_002" ΓåÆ in_progress
+[Researcher] executeNextTask failed: BadRequestError: 400 "Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>"
+    at APIError.generate (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\core\error.ts:73:14)
+    at OpenAI.makeStatusError (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:523:28)
+    at OpenAI.makeRequest (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:799:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async ResearcherAgent.executeNextTask (C:\Users\HomePC\Desktop\memorymerge\src\agents\researcherAgent.ts:89:24)
+Starting download to: ./tmp_1777125084447.json, proof: true
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:92:28)
+    at async runExample (C:\Users\HomePC\Desktop\memorymerge\examples\researchSwarm.ts:48:20) {
+  status: 400,
+  headers: Headers {
+    server: 'nginx/1.27.4',
+    date: 'Sat, 25 Apr 2026 13:51:24 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '411',
+    connection: 'keep-alive',
+    'access-control-expose-headers': 'x-ratelimit-limit-requests, x-ratelimit-remaining-requests, x-ratelimit-reset-requests, x-ratelimit-limit-tokens, x-ratelimit-remaining-tokens, x-ratelimit-reset-tokens',
+    'x-ratelimit-limit-requests': '10',
+    'x-ratelimit-limit-tokens': '30000',
+    'x-ratelimit-remaining-requests': '2',
+    'x-ratelimit-remaining-tokens': '42000',
+    'x-ratelimit-reset-requests': '0s',
+    'x-ratelimit-reset-tokens': '0s'
+  },
+  requestID: null,
+Downloading single file with root hash: 0x41d5660a06dfbf40e71e80146ac9324db10be9f7f308750b2a1cd1cdade7d935
+Getting file locations for root hash: 0x41d5660a06dfbf40e71e80146ac9324db10be9f7f308750b2a1cd1cdade7d935
+  error: 'Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>',
+  code: undefined,
+  param: undefined,
+  type: undefined
+}
+Found 4 locations for 0x41d5660a06dfbf40e71e80146ac9324db10be9f7f308750b2a1cd1cdade7d935: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x41d5660a06dfbf40e71e80146ac9324db10be9f7f308750b2a1cd1cdade7d935
+Starting upload for file of size: 399 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 14n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29740138,
+  logSyncBlock: '0x60971d50b280f50797271cb112f482764f12d1006dd4608ae23139af74cd5fd3',
+  nextTxSeq: 49220,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 399, numSegments: 1, numChunks: 2
+Data prepared to upload root=0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c size=399 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x4ef6257024849fca526f573b4ebdc7c817aa0279a68648fdd49270afe501b4df
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29740148)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49220
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_002" rootHash=0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+[MemoryMerge] Task status updated: "task_002" ΓåÆ pending_review
+
+[Orchestrator] Critic phase...
+Starting download to: ./tmp_1777125099091.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125099101.json, proof: true
+Downloading single file with root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Getting file locations for root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125101860.json, proof: true
+Downloading single file with root hash: 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+Getting file locations for root hash: 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+Found 4 locations for 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+Starting download to: ./tmp_1777125103653.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+
+[Critic] Reviewing 1 task(s)...
+[Critic] Review failed for task task_002: BadRequestError: 400 "Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>"
+    at APIError.generate (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\core\error.ts:73:14)
+    at OpenAI.makeStatusError (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:523:28)
+    at OpenAI.makeRequest (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:799:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async CriticAgent.reviewPendingTasks (C:\Users\HomePC\Desktop\memorymerge\src\agents\criticAgent.ts:85:26)
+Starting download to: ./tmp_1777125108102.json, proof: true
+Downloading single file with root hash: 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:101:24)
+    at async runExample (C:\Users\HomePC\Desktop\memorymerge\examples\researchSwarm.ts:48:20) {
+  status: 400,
+  headers: Headers {
+    server: 'nginx/1.27.4',
+    date: 'Sat, 25 Apr 2026 13:51:48 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '411',
+    connection: 'keep-alive',
+    'access-control-expose-headers': 'x-ratelimit-limit-requests, x-ratelimit-remaining-requests, x-ratelimit-reset-requests, x-ratelimit-limit-tokens, x-ratelimit-remaining-tokens, x-ratelimit-reset-tokens',
+    'x-ratelimit-limit-requests': '10',
+    'x-ratelimit-limit-tokens': '30000',
+    'x-ratelimit-remaining-requests': '2',
+    'x-ratelimit-remaining-tokens': '42000',
+    'x-ratelimit-reset-requests': '0s',
+    'x-ratelimit-reset-tokens': '0s'
+  },
+  requestID: null,
+Getting file locations for root hash: 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+  error: 'Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>',
+  code: undefined,
+  param: undefined,
+  type: undefined
+}
+Found 4 locations for 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x4076c3bd7a2dadd7a422f5bb703c547c699a22593f05ec4577bc0f7db12d7d1c
+Starting upload for file of size: 393 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 15n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29740192,
+  logSyncBlock: '0x3ee62a859ed682a5435506a155563d05145a6ea479e04d58d7eaec0f8e9731a3',
+  nextTxSeq: 49221,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 393, numSegments: 1, numChunks: 2
+Data prepared to upload root=0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46 size=393 numSegments=1 numChunks=2
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 61467289924n
+Transaction submitted, hash: 0x19958ef97111be4a4d061c389a4face744488553034adba94a2a6da5e8ffeff2
+Wait for log entry on storage node
+Waiting for storage node to sync (height=29740204)...
+Tasks created: [
+  [
+    {
+      clientIndex: 1,
+      taskSize: 1,
+      segIndex: 0,
+      numShard: 2,
+      txSeq: 49221
+    }
+  ]
+]
+Processing tasks in parallel with  1  tasks...
+All tasks processed
+Wait for log entry on storage node
+Single file upload completed - returning single result
+[0G Storage] Written key="swarm/memorymerge-swarm-001/tasks/task_002" rootHash=0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+[MemoryMerge] Task status updated: "task_002" ΓåÆ complete
+[ReflectionEngine] Turn 3/6
+
+[Orchestrator] Planner review phase...
+
+[Planner] Reviewing swarm progress...
+Starting download to: ./tmp_1777125123671.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125123684.json, proof: true
+Downloading single file with root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Getting file locations for root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125126541.json, proof: true
+Downloading single file with root hash: 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+Getting file locations for root hash: 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+Found 4 locations for 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+Starting download to: ./tmp_1777125128326.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+[Planner] reviewAndPlan failed: BadRequestError: 400 "Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>"
+    at APIError.generate (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\core\error.ts:73:14)
+    at OpenAI.makeStatusError (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:523:28)
+    at OpenAI.makeRequest (C:\Users\HomePC\Desktop\memorymerge\node_modules\openai\src\client.ts:799:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async PlannerAgent.reviewAndPlan (C:\Users\HomePC\Desktop\memorymerge\src\agents\plannerAgent.ts:149:24)
+
+[Orchestrator] Cycle 2 complete.
+  Total turns      : 2
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:106:26)
+    at async runExample (C:\Users\HomePC\Desktop\memorymerge\examples\researchSwarm.ts:48:20) {
+  status: 400,
+  headers: Headers {
+    server: 'nginx/1.27.4',
+    date: 'Sat, 25 Apr 2026 13:52:13 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '411',
+    connection: 'keep-alive',
+    'access-control-expose-headers': 'x-ratelimit-limit-requests, x-ratelimit-remaining-requests, x-ratelimit-reset-requests, x-ratelimit-limit-tokens, x-ratelimit-remaining-tokens, x-ratelimit-reset-tokens',
+    'x-ratelimit-limit-requests': '10',
+    'x-ratelimit-limit-tokens': '30000',
+    'x-ratelimit-remaining-requests': '2',
+    'x-ratelimit-remaining-tokens': '42000',
+    'x-ratelimit-reset-requests': '0s',
+    'x-ratelimit-reset-tokens': '0s'
+  },
+  requestID: null,
+  error: 'Provider proxy: handle proxied service, validate request: insufficient balance: your locked balance is 1.000000 0G, but the required minimum is 1.000028 0G (breakdown: minimum reserve 1.000000 0G + unsettled fees 0.000028 0G + current request fee 0.000000 0G). Please add more funds with: 0g-compute-cli transfer-fund --provider 0xa48f01287233509FD694a22Bf840225062E67836 --amount <amount>',
+  code: undefined,
+  param: undefined,
+  type: undefined
+}
+  Reflection epoch : 0
+  Turns to next Γå║  : 3
+
+[Orchestrator] Running final reflection and snapshot...
+[ReflectionEngine] Manual reflection triggered.
+
+[ReflectionEngine] ΓòÉΓòÉΓòÉ REFLECTION EPOCH 1 ΓòÉΓòÉΓòÉ
+[ReflectionEngine] Gathered 0 facts for compression
+[ReflectionEngine] No facts to reflect on. Skipping.
+Starting download to: ./tmp_1777125133195.json, proof: true
+Downloading single file with root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Getting file locations for root hash: 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Starting download to: ./tmp_1777125133197.json, proof: true
+Downloading single file with root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Getting file locations for root hash: 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Found 4 locations for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x9d826c495e43ecd8ef95a16b89236887b9c003917702b70ba0f9a049100a9c2f
+Found 4 locations for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x5f0980d9f6e5789f506123b65cf41913b7910b10048bf05ca93bbf5d676d0bb9
+Starting download to: ./tmp_1777125136397.json, proof: true
+Downloading single file with root hash: 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+Getting file locations for root hash: 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+Found 4 locations for 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xb58a262836bb1c75a5ddb2912f5d26dcca048651779f158e24c20220acdbad46
+Starting download to: ./tmp_1777125138125.json, proof: true
+Downloading single file with root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Getting file locations for root hash: 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+Found 4 locations for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x23938ef3ce6569f8d7d63c08aa8d6d12bd6d6e0fe363676e034538b6b3fe4bc5
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ          MemoryMerge Swarm Complete            Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Goal              : What is 0G Labs and why does decentralized AI storage matter in 2026
+Total turns       : 2
+Tasks completed   : 2
+Facts written     : 0
+Insights generated: 0
+Reflection epochs : 1
+Duration          : 214.7s
+
+Snapshot hashes (verify on 0G StorageScan):
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ              Example Run Complete                  Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+Facts written to 0G Storage    : 0
+Insights generated             : 0
+Tasks completed                : 2
+Reflection cycles run          : 1
+Total duration                 : 214.7s
+
+To resume this swarm in a new session:
+  Set SWARM_ID=memorymerge-swarm-001 in your .env
+  Run: npm run example
+  The swarm will load all memory from 0G Storage automatically.
+

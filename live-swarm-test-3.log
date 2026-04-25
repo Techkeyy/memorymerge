@@ -1,0 +1,159 @@
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ          MemoryMerge Swarm Starting            Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Goal    : What is 0G Labs and why does decentralized AI storage matter in 2026
+SwarmID : memorymerge-swarm-001
+Cycles  : 3
+Network : 0G Galileo Testnet
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+[Orchestrator] Initializing 0G Storage client...
+[Orchestrator] Initializing Memory Manager...
+[Orchestrator] Initializing Reflection Engine...
+[ReflectionEngine] Initialized. Trigger every 6 turns.
+[ReflectionEngine] Using 0G Compute model: qwen/qwen-2.5-7b-instruct
+[Orchestrator] Initializing agents...
+[Orchestrator] All agents ready. Starting swarm.
+
+
+[Planner] Initializing swarm with goal: "What is 0G Labs and why does decentralized AI storage matter in 2026"
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ         MemoryMerge ΓÇö Working Example              Γòæ
+Γòæ  Decentralized Memory OS for AI Agent Swarms       Γòæ
+Γòæ  Powered by 0G Storage + 0G Compute                Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+Research Goal: "What is 0G Labs and why does decentralized AI storage matter in 2026"
+
+What will happen:
+  1. Planner agent breaks goal into tasks ΓåÆ writes to 0G Storage
+  2. Researcher agent executes tasks ΓåÆ writes facts to 0G Storage
+  3. Critic agent reviews facts ΓåÆ updates confidence scores
+  4. Reflection engine compresses memory via 0G Compute inference
+  5. Final snapshot archived to 0G Storage Log permanently
+  6. Restart with same SWARM_ID ΓÇö swarm resumes from memory
+
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ          MemoryMerge Swarm Starting            Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Goal    : What is 0G Labs and why does decentralized AI storage matter in 2026
+SwarmID : memorymerge-swarm-001
+Cycles  : 2
+Network : 0G Galileo Testnet
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+[Orchestrator] Initializing 0G Storage client...
+[Orchestrator] Initializing Memory Manager...
+[Orchestrator] Initializing Reflection Engine...
+[ReflectionEngine] Initialized. Trigger every 6 turns.
+[ReflectionEngine] Using 0G Compute model: qwen/qwen-2.5-7b-instruct
+[Orchestrator] Initializing agents...
+[Orchestrator] All agents ready. Starting swarm.
+
+
+[Planner] Initializing swarm with goal: "What is 0G Labs and why does decentralized AI storage matter in 2026"
+Starting upload for file of size: 194 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 5n,
+  onProgress: undefined,
+  encryption: undefined
+}
+Starting upload for file of size: 194 bytes
+Upload options: {
+  tags: '0x',
+  submitter: '',
+  finalityRequired: true,
+  taskSize: 1,
+  expectedReplica: 1,
+  fragmentSize: 4294967296,
+  skipTx: false,
+  skipIfFinalized: true,
+  fee: 0n,
+  nonce: 5n,
+  onProgress: undefined,
+  encryption: undefined
+}
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739460,
+  logSyncBlock: '0x30f5784acf195bf3ee10ca601f19986aa88afaa89b7b4520d264f48e2ef0c1be',
+  nextTxSeq: 49211,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.83.53.209:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 194, numSegments: 1, numChunks: 1
+Data prepared to upload root=0x2ba1e885d51b64068f387142716a8d94b5c052aa3037589d72cb287a3cf46e74 size=194 numSegments=1 numChunks=1
+Attempting to find existing file info by root hash...
+First selected node status : {
+  connectedPeers: 2,
+  logSyncHeight: 29739460,
+  logSyncBlock: '0x30f5784acf195bf3ee10ca601f19986aa88afaa89b7b4520d264f48e2ef0c1be',
+  nextTxSeq: 49211,
+  networkIdentity: {
+    chainId: 16602,
+    flowAddress: '0x22e03a6a89b950f1c82ec5e74f8eca321a105296',
+    p2pProtocolVersion: { major: 0, minor: 4, build: 0 }
+  }
+}
+Selected nodes: [
+  StorageNode {
+    url: 'http://34.19.125.196:5678',
+    timeout: 30000,
+    retry: 3
+  },
+  StorageNode {
+    url: 'http://34.169.28.106:5678',
+    timeout: 30000,
+    retry: 3
+  }
+]
+Using splitable upload (handles both single and fragment cases)
+File details - size: 194, numSegments: 1, numChunks: 1
+Data prepared to upload root=0x006b25246a318f985c0d4e41367b3aa21cd39599b9d982688c385a7c4155b7b0 size=194 numSegments=1 numChunks=1
+Attempting to find existing file info by root hash...
+Submitting transaction with storage fee: 30733644962n
+Submitting transaction with storage fee: 30733644962n
+Transaction submitted, hash: 0x540a345bb4110d42eaa9318cdbac3e65475ebfccc06dc4e57148359c1c1d8dab
+Wait for log entry on storage node
+Upload failed with error: replacement fee too low (transaction="0xf901b10584ee6b28078304b0e39422e03a6a89b950f1c82ec5e74f8eca321a105296850727de34a2b90144bc8c11f800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000be12fc7aade0631c313383bdb1d686c77db0840000000000000000000000000000000000000000000000000000000000000000c20000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001006b25246a318f985c0d4e41367b3aa21cd39599b9d982688c385a7c4155b7b000000000000000000000000000000000000000000000000000000000000000008281d7a0e11327e12f30c25dbbac028ba4a6925333869038270dbf5c80038a896c27c812a026d22c10b1be3993f883ab6ee33990afa0ecd96bdfda594f45feb11008713a0a", info={ "error": { "code": -32000, "message": "replacement transaction underpriced" } }, code=REPLACEMENT_UNDERPRICED, version=6.14.0)
+Error stack: Error: replacement fee too low (transaction="0xf901b10584ee6b28078304b0e39422e03a6a89b950f1c82ec5e74f8eca321a105296850727de34a2b90144bc8c11f800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000be12fc7aade0631c313383bdb1d686c77db0840000000000000000000000000000000000000000000000000000000000000000c20000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001006b25246a318f985c0d4e41367b3aa21cd39599b9d982688c385a7c4155b7b000000000000000000000000000000000000000000000000000000000000000008281d7a0e11327e12f30c25dbbac028ba4a6925333869038270dbf5c80038a896c27c812a026d22c10b1be3993f883ab6ee33990afa0ecd96bdfda594f45feb11008713a0a", info={ "error": { "code": -32000, "message": "replacement transaction underpriced" } }, code=REPLACEMENT_UNDERPRICED, version=6.14.0)
+    at makeError (C:\Users\HomePC\Desktop\memorymerge\node_modules\ethers\src.ts\utils\errors.ts:694:21)
+    at JsonRpcProvider.getRpcError (C:\Users\HomePC\Desktop\memorymerge\node_modules\ethers\src.ts\providers\provider-jsonrpc.ts:1063:33)
+    at C:\Users\HomePC\Desktop\memorymerge\node_modules\ethers\src.ts\providers\provider-jsonrpc.ts:571:45
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[Orchestrator] Fatal error: Error: writeKV failed for key "swarm/memorymerge-swarm-001/context/current_goal": Error: Upload failed: Error: replacement fee too low (transaction="0xf901b10584ee6b28078304b0e39422e03a6a89b950f1c82ec5e74f8eca321a105296850727de34a2b90144bc8c11f800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000be12fc7aade0631c313383bdb1d686c77db0840000000000000000000000000000000000000000000000000000000000000000c20000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001006b25246a318f985c0d4e41367b3aa21cd39599b9d982688c385a7c4155b7b000000000000000000000000000000000000000000000000000000000000000008281d7a0e11327e12f30c25dbbac028ba4a6925333869038270dbf5c80038a896c27c812a026d22c10b1be3993f883ab6ee33990afa0ecd96bdfda594f45feb11008713a0a", info={ "error": { "code": -32000, "message": "replacement transaction underpriced" } }, code=REPLACEMENT_UNDERPRICED, version=6.14.0)
+    at ZeroGStorageClient.writeKV (C:\Users\HomePC\Desktop\memorymerge\src\sdk\storageClient.ts:87:13)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async MemoryManager.setGoal (C:\Users\HomePC\Desktop\memorymerge\src\sdk\memoryManager.ts:256:5)
+    at async PlannerAgent.initializeSwarm (C:\Users\HomePC\Desktop\memorymerge\src\agents\plannerAgent.ts:34:5)
+    at async MemoryMergeOrchestrator.run (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:78:5)
+    at async main (C:\Users\HomePC\Desktop\memorymerge\src\orchestrator\index.ts:169:20)

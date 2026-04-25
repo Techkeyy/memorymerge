@@ -18,8 +18,10 @@ export interface ArchiveResult {
 export class ZeroGStorageClient {
   private indexer: Indexer;
   private signer: ethers.Wallet;
+  private provider: ethers.JsonRpcProvider;
   private rpcUrl: string;
   private keyIndex: Map<string, string>;
+  private nonceCursor: bigint | null;
 
   constructor() {
     const rpcUrl = process.env.ZG_EVM_RPC;
@@ -34,9 +36,18 @@ export class ZeroGStorageClient {
 
     this.rpcUrl = rpcUrl;
     this.indexer = new Indexer(indexerRpc);
-    const provider = new ethers.JsonRpcProvider(rpcUrl);
+    const provider = new ethers.JsonRpcProvider(rpcUrl, undefined, {
+      staticNetwork: true,
+    });
+    (provider as any).getFeeData = async () => ({
+      gasPrice: ethers.parseUnits('50', 'gwei'),
+      maxFeePerGas: null,
+      maxPriorityFeePerGas: null,
+    });
+    this.provider = provider;
     this.signer = new ethers.Wallet(privateKey, provider);
     this.keyIndex = new Map();
+    this.nonceCursor = null;
   }
 
   /**
@@ -45,14 +56,19 @@ export class ZeroGStorageClient {
    */
   async writeKV(key: string, value: object): Promise<string> {
     try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       const payload = JSON.stringify({ key, value, timestamp: Date.now() });
       const encoded = new TextEncoder().encode(payload);
       const file = new MemData(encoded);
+      const nonce = await this.getNextNonce();
 
       const [uploadResult, err] = await this.indexer.upload(
         file,
         this.rpcUrl,
-        this.signer
+        this.signer,
+        {
+          nonce,
+        }
       );
 
       const rootHash = 'rootHash' in uploadResult
@@ -119,6 +135,7 @@ export class ZeroGStorageClient {
    */
   async archiveSnapshot(snapshot: object, label: string): Promise<ArchiveResult> {
     try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       const payload = JSON.stringify({
         label,
         snapshot,
@@ -128,11 +145,15 @@ export class ZeroGStorageClient {
 
       const encoded = new TextEncoder().encode(payload);
       const file = new MemData(encoded);
+      const nonce = await this.getNextNonce();
 
       const [uploadResult, err] = await this.indexer.upload(
         file,
         this.rpcUrl,
-        this.signer
+        this.signer,
+        {
+          nonce,
+        }
       );
 
       const rootHash = 'rootHash' in uploadResult
@@ -210,6 +231,19 @@ export class ZeroGStorageClient {
     } catch (e) {
       console.warn('[0G Storage] Could not load index:', e);
     }
+  }
+
+  /**
+   * Allocate a unique nonce for each storage upload so replacement txs do not collide.
+   */
+  private async getNextNonce(): Promise<bigint> {
+    if (this.nonceCursor === null) {
+      this.nonceCursor = BigInt(await this.provider.getTransactionCount(this.signer.address, 'pending'));
+    }
+
+    const nonce = this.nonceCursor;
+    this.nonceCursor += 1n;
+    return nonce;
   }
 }
 

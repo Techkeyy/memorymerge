@@ -204,6 +204,7 @@ npm run example -- "Research decentralized AI infrastructure in 2026"
 
 After the run completes, the output will print snapshot root hashes.
 Verify them at: **https://storagescan-galileo.0g.ai**
+Verified snapshot: https://storagescan-galileo.0g.ai/tx/0x7443af76ed540c16eef8a84e3d6579dff70986644fb47476bf4d85473217e3eb
 
 ### 6. Restart and resume
 
