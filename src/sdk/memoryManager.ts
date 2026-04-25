@@ -342,10 +342,17 @@ export class MemoryManager {
 
 // ─── Factory ──────────────────────────────────────────────────────────────────
 
+export function createMemoryManager(agentId: string, storage?: ZeroGStorageClient): MemoryManager;
+export function createMemoryManager(swarmId: string, agentId: string, storage?: ZeroGStorageClient): MemoryManager;
 export function createMemoryManager(
-  agentId: string,
-  storage?: ZeroGStorageClient
+  first: string,
+  second?: string | ZeroGStorageClient,
+  third?: ZeroGStorageClient
 ): MemoryManager {
+  if (typeof second === 'string') {
+    return new MemoryManager(first, second, third);
+  }
+
   const swarmId = process.env.SWARM_ID ?? 'memorymerge-swarm-001';
-  return new MemoryManager(swarmId, agentId, storage);
+  return new MemoryManager(swarmId, first, second as ZeroGStorageClient | undefined);
 }
