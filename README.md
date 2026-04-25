@@ -396,7 +396,7 @@ memorymerge/
 | Storage Explorer | https://storagescan-galileo.0g.ai |
 | Compute Provider | `0xa48f01287233509FD694a22Bf840225062E67836` |
 | Compute Model | `qwen/qwen-2.5-7b-instruct` (TeeML verified) |
-| Live UI | https://memorymerge.vercel.app |
+| Live UI | https://memory-merge.vercel.app |
 
 ---
 
