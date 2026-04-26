@@ -119,7 +119,7 @@ This is the same pattern that makes Git work — shared state, not direct commun
 
 ## Live Demo
 
-> **Demo:** https://memorymerge.vercel.app
+> **Demo:** https://memory-merge.vercel.app
 
 **What the live demo shows:**
 - A real research goal given to the swarm
