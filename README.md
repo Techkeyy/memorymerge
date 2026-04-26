@@ -4,7 +4,7 @@
 
 ### Decentralized Memory OS for AI Agent Swarms
 
-**Persistent · Shared · Self-Improving · Powered by 0G**
+**Verifiable Knowledge Provenance · Persistent · Self-Improving · Powered by 0G**
 
 [![0G Network](https://img.shields.io/badge/0G-Galileo%20Testnet-blue)](https://0g.ai)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -22,38 +22,47 @@
 
 Every AI agent you run today has amnesia.
 
-Restart it — memory gone.  
-Switch machines — memory gone.  
-Run three agents on the same task — they cannot share what they learned.  
+Restart it — memory gone. Switch machines — memory gone.
+Run three agents on the same task — they cannot share 
+what they learned.
 
-When you have a swarm of agents working together, each one is isolated, stateless, and blind to everything the others have discovered. You become the glue. You spend half your time copy-pasting context between sessions.
+But worse: even when agents do have memory, you cannot 
+prove where that knowledge came from. Any agent can claim 
+to know anything. There is no chain of custody for AI knowledge.
 
-**The swarm is blind. The knowledge dies with the session.**
+**MemoryMerge solves both problems at once.**
 
 ---
 
 ## What MemoryMerge Does
 
-MemoryMerge is a **Memory OS** for multi-agent AI swarms.
+MemoryMerge is a **Verifiable Knowledge Provenance Layer** 
+for multi-agent AI swarms.
 
-It gives a coordinated team of OpenClaw agents a single shared, persistent, self-improving memory — backed entirely by **0G Storage** and **0G Compute**. No centralized database. No server to host. No memory loss on restart.
+It gives agents persistent decentralized memory backed by 
+**0G Storage** — and critically, it makes that knowledge 
+**cryptographically provable**. Any swarm can inherit verified 
+insights from any previous swarm, with the root hash anchored 
+on **0G Chain** as immutable proof via 0G Storage PoRA consensus.
 
 ```typescript
+// Any OpenClaw agent gets persistent + provable memory
 import { createMemoryManager } from 'memorymerge';
 
 const memory = createMemoryManager('my-agent');
 
-// Write to decentralized memory — goes to 0G Storage KV
-await memory.writeFact('finding', 'Decentralized AI grew 340% in 2025', 0.9);
+// Write to 0G Storage KV
+await memory.writeFact('finding', 'value', confidence);
 
-// Archive permanently — goes to 0G Storage Log (immutable forever)
-await memory.snapshot(1);
+// Archive permanently to 0G Storage Log
+const snap = await memory.snapshot(epoch);
 
-// Any agent, any machine, any session — full context restored
-const context = await memory.getSwarmContext();
+// Inherit verified knowledge from another swarm
+await memory.inheritVerifiedInsights(
+  snap.rootHash,    // 0G Storage PoRA proof
+  'source-swarm-id' // cryptographically verified
+);
 ```
-
-Three lines. Any agent. Permanent decentralized memory.
 
 ---
 
@@ -127,6 +136,36 @@ This is the same pattern that makes Git work — shared state, not direct commun
 - Reflection cycle firing — watch 20 raw facts compress into 5 ranked insights live
 - Kill the swarm, restart it — full memory restored automatically from 0G Storage
 - Snapshot root hashes verifiable directly on 0G StorageScan
+
+## Cross-Swarm Knowledge Inheritance
+
+The feature that makes MemoryMerge a trust layer, 
+not just a storage layer.
+
+Any new swarm can inherit verified insights from a previous 
+swarm's anchored snapshot. The proof is the root hash itself — 
+0G Storage's PoRA consensus means if data downloads and resolves 
+to a hash anchored on 0G Chain, it is cryptographically verified.
+
+```typescript
+// Swarm B inherits from Swarm A's verified snapshot
+await memory.inheritVerifiedInsights(
+  '0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467',
+  'memorymerge-demo-001',
+  { minImportance: 7, maxInsights: 5, inheritFacts: true }
+);
+// Swarm B now starts with verified knowledge
+// No re-research needed. Cryptographically provable.
+```
+
+**Live proof — two connected swarms on 0G:**
+
+| Swarm | Root Hash | StorageScan |
+|-------|-----------|-------------|
+| memorymerge-demo-001 | 0x1781b155...ff467 | [Verify](https://storagescan-galileo.0g.ai/tx/0x1781b1553fbef4187767085f99064e9cdbee788b49f62fe63aa0e0dcab7ff467) |
+| memorymerge-inherit-001 | 0xd3248931...80fc | [Verify](https://storagescan-galileo.0g.ai/tx/0xd3248931055ff35a2104a114f8e4d50493587d4af94ab6a0986dd035adab80fc) |
+
+Run the demo: `npm run inherit`
 
 ---
 
@@ -215,6 +254,27 @@ The swarm loads all memory from 0G Storage and continues from where it stopped.
 npm run example
 # Swarm resumes — all facts, insights, and task history restored
 ```
+
+## Interactive Agent Demo
+
+The fastest way to see MemoryMerge working:
+
+```bash
+npm run agent -- --name "Alice" --goal "help me learn Solidity"
+```
+
+Have a conversation. Press Ctrl+C to exit.
+Restart with the same command. Watch it remember everything.
+
+**What happens under the hood:**
+- Every turn: facts extracted and written to 0G Storage KV
+- Every 8 turns: reflection engine fires via 0G Compute
+- Ctrl+C: final snapshot archived to 0G Storage Log
+- Restart: 0G Storage restores full context automatically
+
+**Verified session continuity:**
+Agent restored 11 facts and 5 insights across sessions —
+all retrieved from 0G Storage nodes, zero local state.
 
 ---
 
