@@ -1,0 +1,126 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style="background:#0A0F1E;font-family:Inter,system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D1428"/>
+      <stop offset="100%" stop-color="#060B16"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1D6FEB"/>
+      <stop offset="100%" stop-color="#3D8FFF"/>
+    </linearGradient>
+    <linearGradient id="accentGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4AA"/>
+      <stop offset="100%" stop-color="#2CE6C0"/>
+    </linearGradient>
+    <linearGradient id="accentGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#FFC766"/>
+    </linearGradient>
+    <linearGradient id="accentPurple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#CF9BFF"/>
+    </linearGradient>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1D6FEB"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00D4AA"/>
+    </marker>
+    <marker id="goldArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F5A623"/>
+    </marker>
+    <marker id="purpleArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A855F7"/>
+    </marker>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.1 0 1 0 0 0.45 0 0 1 0 0.9 0 0 0 0.35 0"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="620" fill="url(#bgGlow)"/>
+  <circle cx="120" cy="88" r="58" fill="#1D6FEB" opacity="0.10" filter="url(#softGlow)"/>
+  <circle cx="770" cy="120" r="72" fill="#A855F7" opacity="0.08" filter="url(#softGlow)"/>
+  <circle cx="460" cy="530" r="90" fill="#00D4AA" opacity="0.08" filter="url(#softGlow)"/>
+
+  <text x="450" y="40" text-anchor="middle" fill="#FFFFFF" font-size="18" font-weight="700" letter-spacing="-0.5">MemoryMerge Architecture</text>
+  <text x="450" y="60" text-anchor="middle" fill="#8A9BB5" font-size="12">Verifiable Knowledge Provenance · Powered by 0G Storage + Compute + Chain</text>
+
+  <text x="450" y="95" text-anchor="middle" fill="#8A9BB5" font-size="10" font-weight="600" letter-spacing="1.5">AGENT LAYER</text>
+
+  <rect x="60" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#1D6FEB" stroke-width="1.5"/>
+  <text x="140" y="132" text-anchor="middle" fill="#1D6FEB" font-size="13" font-weight="600">Planner</text>
+  <text x="140" y="150" text-anchor="middle" fill="#8A9BB5" font-size="10">Goals → Tasks</text>
+  <text x="140" y="164" text-anchor="middle" fill="#8A9BB5" font-size="10">Sets goal on-chain</text>
+
+  <rect x="370" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#00D4AA" stroke-width="1.5"/>
+  <text x="450" y="132" text-anchor="middle" fill="#00D4AA" font-size="13" font-weight="600">Researcher</text>
+  <text x="450" y="150" text-anchor="middle" fill="#8A9BB5" font-size="10">Tasks → Facts</text>
+  <text x="450" y="164" text-anchor="middle" fill="#8A9BB5" font-size="10">0G Compute inference</text>
+
+  <rect x="680" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#F5A623" stroke-width="1.5"/>
+  <text x="760" y="132" text-anchor="middle" fill="#F5A623" font-size="13" font-weight="600">Critic</text>
+  <text x="760" y="150" text-anchor="middle" fill="#8A9BB5" font-size="10">Facts → Scores</text>
+  <text x="760" y="164" text-anchor="middle" fill="#8A9BB5" font-size="10">Confidence scoring</text>
+
+  <line x1="140" y1="172" x2="140" y2="210" stroke="#1D6FEB" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#blueArrow)"/>
+  <line x1="450" y1="172" x2="450" y2="210" stroke="#00D4AA" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#greenArrow)"/>
+  <line x1="760" y1="172" x2="760" y2="210" stroke="#F5A623" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#goldArrow)"/>
+
+  <text x="450" y="200" text-anchor="middle" fill="#3D8FFF" font-size="10">All coordinate via shared 0G Storage state — no direct communication</text>
+
+  <text x="450" y="228" text-anchor="middle" fill="#8A9BB5" font-size="10" font-weight="600" letter-spacing="1.5">MEMORYMESH SDK</text>
+  <rect x="40" y="238" width="820" height="70" rx="12" fill="#0D1428" stroke="#1E2D4A" stroke-width="1"/>
+  <rect x="60" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" stroke-width="1"/>
+  <text x="145" y="270" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="600">StorageClient</text>
+  <text x="145" y="284" text-anchor="middle" fill="#8A9BB5" font-size="9">0g-ts-sdk wrapper</text>
+  <rect x="255" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" stroke-width="1"/>
+  <text x="340" y="270" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="600">MemoryManager</text>
+  <text x="340" y="284" text-anchor="middle" fill="#8A9BB5" font-size="9">Facts · Tasks · Insights</text>
+  <rect x="450" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" stroke-width="1"/>
+  <text x="535" y="270" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="600">ReflectionEngine</text>
+  <text x="535" y="284" text-anchor="middle" fill="#8A9BB5" font-size="9">Compresses every 8 turns</text>
+  <rect x="645" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" stroke-width="1"/>
+  <text x="730" y="270" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="600">AnchorClient</text>
+  <text x="730" y="284" text-anchor="middle" fill="#8A9BB5" font-size="9">MemoryAnchor contract</text>
+
+  <text x="450" y="342" text-anchor="middle" fill="#8A9BB5" font-size="10" font-weight="600" letter-spacing="1.5">0G STORAGE</text>
+  <rect x="40" y="352" width="820" height="132" rx="14" fill="#0D1428" stroke="#1E2D4A" stroke-width="1"/>
+  <rect x="60" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#1D6FEB" stroke-width="1.5"/>
+  <text x="149" y="394" text-anchor="middle" fill="#1D6FEB" font-size="13" font-weight="600">KV Memory</text>
+  <text x="149" y="413" text-anchor="middle" fill="#8A9BB5" font-size="10">Working memory</text>
+  <text x="149" y="428" text-anchor="middle" fill="#8A9BB5" font-size="10">Facts · Tasks · Goal</text>
+  <text x="149" y="443" text-anchor="middle" fill="#8A9BB5" font-size="10">Indexed by swarm</text>
+
+  <rect x="261" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#00D4AA" stroke-width="1.5"/>
+  <text x="350" y="394" text-anchor="middle" fill="#00D4AA" font-size="13" font-weight="600">Compute Distillation</text>
+  <text x="350" y="413" text-anchor="middle" fill="#8A9BB5" font-size="10">Rank facts</text>
+  <text x="350" y="428" text-anchor="middle" fill="#8A9BB5" font-size="10">Generate insights</text>
+  <text x="350" y="443" text-anchor="middle" fill="#8A9BB5" font-size="10">Detect contradictions</text>
+
+  <rect x="462" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="551" y="394" text-anchor="middle" fill="#A855F7" font-size="13" font-weight="600">Storage Log</text>
+  <text x="551" y="413" text-anchor="middle" fill="#8A9BB5" font-size="10">Snapshot archive</text>
+  <text x="551" y="428" text-anchor="middle" fill="#8A9BB5" font-size="10">Episodic proof</text>
+  <text x="551" y="443" text-anchor="middle" fill="#8A9BB5" font-size="10">Root-hash anchored</text>
+
+  <rect x="663" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#F5A623" stroke-width="1.5"/>
+  <text x="752" y="394" text-anchor="middle" fill="#F5A623" font-size="13" font-weight="600">Chain Anchor</text>
+  <text x="752" y="413" text-anchor="middle" fill="#8A9BB5" font-size="10">0G Galileo Testnet</text>
+  <text x="752" y="428" text-anchor="middle" fill="#8A9BB5" font-size="10">MemoryAnchor.sol</text>
+  <text x="752" y="443" text-anchor="middle" fill="#8A9BB5" font-size="10">Verifiable proof</text>
+
+  <line x1="149" y1="330" x2="149" y2="372" stroke="url(#accentBlue)" stroke-width="2" marker-end="url(#blueArrow)"/>
+  <line x1="350" y1="330" x2="350" y2="372" stroke="url(#accentGreen)" stroke-width="2" marker-end="url(#greenArrow)"/>
+  <line x1="551" y1="330" x2="551" y2="372" stroke="url(#accentPurple)" stroke-width="2" marker-end="url(#purpleArrow)"/>
+  <line x1="752" y1="330" x2="752" y2="372" stroke="url(#accentGold)" stroke-width="2" marker-end="url(#goldArrow)"/>
+
+  <path d="M238 417 C260 417 264 417 261 417" fill="none" stroke="#1D6FEB" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <path d="M439 417 C461 417 465 417 462 417" fill="none" stroke="#00D4AA" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <path d="M640 417 C662 417 666 417 663 417" fill="none" stroke="#A855F7" stroke-width="1.4" stroke-dasharray="5,4"/>
+
+  <text x="450" y="520" text-anchor="middle" fill="#8A9BB5" font-size="10" font-weight="600" letter-spacing="1.5">CROSS-SWARM INHERITANCE</text>
+  <rect x="180" y="532" width="540" height="48" rx="12" fill="#0D1428" stroke="#1E2D4A" stroke-width="1"/>
+  <text x="450" y="551" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="600">New swarm can inherit verified insights from an anchored snapshot</text>
+  <text x="450" y="568" text-anchor="middle" fill="#8A9BB5" font-size="10">Root hash resolves on-chain · PoRA verifies the content · provenance remains traceable</text>
+</svg>

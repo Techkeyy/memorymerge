@@ -227,6 +227,111 @@ function SectionCard({ title, children, action }: { title: string; children: Rea
   );
 }
 
+function ArchitectureDiagram() {
+  return (
+    <div style={{ overflowX: 'auto', borderRadius: 12, border: '1px solid #1E2D4A', backgroundColor: '#0A0F1E' }}>
+      <svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style={{ minWidth: 900, display: 'block', background: '#0A0F1E', fontFamily: 'Inter,system-ui,sans-serif' }}>
+        <defs>
+          <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#0D1428" />
+            <stop offset="100%" stopColor="#060B16" />
+          </linearGradient>
+          <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#1D6FEB" />
+          </marker>
+          <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#00D4AA" />
+          </marker>
+          <marker id="goldArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#F5A623" />
+          </marker>
+          <marker id="purpleArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#A855F7" />
+          </marker>
+        </defs>
+
+        <rect x="0" y="0" width="900" height="620" fill="url(#bgGlow)" />
+        <text x="450" y="40" textAnchor="middle" fill="#FFFFFF" fontSize="18" fontWeight="700" letterSpacing="-0.5">MemoryMerge Architecture</text>
+        <text x="450" y="60" textAnchor="middle" fill="#8A9BB5" fontSize="12">Verifiable Knowledge Provenance · Powered by 0G Storage + Compute + Chain</text>
+
+        <text x="450" y="95" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">AGENT LAYER</text>
+
+        <rect x="60" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#1D6FEB" strokeWidth="1.5" />
+        <text x="140" y="132" textAnchor="middle" fill="#1D6FEB" fontSize="13" fontWeight="600">Planner</text>
+        <text x="140" y="150" textAnchor="middle" fill="#8A9BB5" fontSize="10">Goals → Tasks</text>
+        <text x="140" y="164" textAnchor="middle" fill="#8A9BB5" fontSize="10">Sets goal on-chain</text>
+
+        <rect x="370" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#00D4AA" strokeWidth="1.5" />
+        <text x="450" y="132" textAnchor="middle" fill="#00D4AA" fontSize="13" fontWeight="600">Researcher</text>
+        <text x="450" y="150" textAnchor="middle" fill="#8A9BB5" fontSize="10">Tasks → Facts</text>
+        <text x="450" y="164" textAnchor="middle" fill="#8A9BB5" fontSize="10">0G Compute inference</text>
+
+        <rect x="680" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#F5A623" strokeWidth="1.5" />
+        <text x="760" y="132" textAnchor="middle" fill="#F5A623" fontSize="13" fontWeight="600">Critic</text>
+        <text x="760" y="150" textAnchor="middle" fill="#8A9BB5" fontSize="10">Facts → Scores</text>
+        <text x="760" y="164" textAnchor="middle" fill="#8A9BB5" fontSize="10">Confidence scoring</text>
+
+        <line x1="140" y1="172" x2="140" y2="210" stroke="#1D6FEB" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#blueArrow)" />
+        <line x1="450" y1="172" x2="450" y2="210" stroke="#00D4AA" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#greenArrow)" />
+        <line x1="760" y1="172" x2="760" y2="210" stroke="#F5A623" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#goldArrow)" />
+
+        <text x="450" y="200" textAnchor="middle" fill="#3D8FFF" fontSize="10">All coordinate via shared 0G Storage state — no direct communication</text>
+
+        <text x="450" y="228" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">MEMORYMESH SDK</text>
+        <rect x="40" y="238" width="820" height="70" rx="12" fill="#0D1428" stroke="#1E2D4A" strokeWidth="1" />
+        <rect x="60" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
+        <text x="145" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">StorageClient</text>
+        <text x="145" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">0g-ts-sdk wrapper</text>
+        <rect x="255" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
+        <text x="340" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">MemoryManager</text>
+        <text x="340" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">Facts · Tasks · Insights</text>
+        <rect x="450" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
+        <text x="535" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">ReflectionEngine</text>
+        <text x="535" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">Compresses every 8 turns</text>
+        <rect x="645" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
+        <text x="730" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">AnchorClient</text>
+        <text x="730" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">MemoryAnchor contract</text>
+
+        <text x="450" y="342" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">0G STORAGE</text>
+        <rect x="40" y="352" width="820" height="132" rx="14" fill="#0D1428" stroke="#1E2D4A" strokeWidth="1" />
+        <rect x="60" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#1D6FEB" strokeWidth="1.5" />
+        <text x="149" y="394" textAnchor="middle" fill="#1D6FEB" fontSize="13" fontWeight="600">KV Memory</text>
+        <text x="149" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">Working memory</text>
+        <text x="149" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">Facts · Tasks · Goal</text>
+        <text x="149" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Indexed by swarm</text>
+
+        <rect x="261" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#00D4AA" strokeWidth="1.5" />
+        <text x="350" y="394" textAnchor="middle" fill="#00D4AA" fontSize="13" fontWeight="600">Compute Distillation</text>
+        <text x="350" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">Rank facts</text>
+        <text x="350" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">Generate insights</text>
+        <text x="350" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Detect contradictions</text>
+
+        <rect x="462" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#A855F7" strokeWidth="1.5" />
+        <text x="551" y="394" textAnchor="middle" fill="#A855F7" fontSize="13" fontWeight="600">Storage Log</text>
+        <text x="551" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">Snapshot archive</text>
+        <text x="551" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">Episodic proof</text>
+        <text x="551" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Root-hash anchored</text>
+
+        <rect x="663" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#F5A623" strokeWidth="1.5" />
+        <text x="752" y="394" textAnchor="middle" fill="#F5A623" fontSize="13" fontWeight="600">Chain Anchor</text>
+        <text x="752" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">0G Galileo Testnet</text>
+        <text x="752" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">MemoryAnchor.sol</text>
+        <text x="752" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Verifiable proof</text>
+
+        <line x1="149" y1="330" x2="149" y2="372" stroke="#1D6FEB" strokeWidth="2" markerEnd="url(#blueArrow)" />
+        <line x1="350" y1="330" x2="350" y2="372" stroke="#00D4AA" strokeWidth="2" markerEnd="url(#greenArrow)" />
+        <line x1="551" y1="330" x2="551" y2="372" stroke="#A855F7" strokeWidth="2" markerEnd="url(#purpleArrow)" />
+        <line x1="752" y1="330" x2="752" y2="372" stroke="#F5A623" strokeWidth="2" markerEnd="url(#goldArrow)" />
+
+        <text x="450" y="520" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">CROSS-SWARM INHERITANCE</text>
+        <rect x="180" y="532" width="540" height="48" rx="12" fill="#0D1428" stroke="#1E2D4A" strokeWidth="1" />
+        <text x="450" y="551" textAnchor="middle" fill="#FFFFFF" fontSize="12" fontWeight="600">New swarm can inherit verified insights from an anchored snapshot</text>
+        <text x="450" y="568" textAnchor="middle" fill="#8A9BB5" fontSize="10">Root hash resolves on-chain · PoRA verifies the content · provenance remains traceable</text>
+      </svg>
+    </div>
+  );
+}
+
 function Shell({ children, active, setActive }: { children: ReactNode; active: string; setActive: (value: string) => void }) {
   const nav = ['Overview', 'Explorer', 'Coordination', 'Snapshots', 'Docs'];
 
@@ -460,6 +565,10 @@ function Overview({ swarm, snapshot, onRefresh }: { swarm: SwarmData | null; sna
     <>
       <Hero swarm={swarm} snapshot={snapshot} onRefresh={onRefresh} />
       <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px 24px' }}>
+        <SectionCard title="Architecture">
+          <ArchitectureDiagram />
+        </SectionCard>
+
         <div style={{ ...cardStyle, padding: 18, borderLeft: '3px solid #00D4AA' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
             <div>
