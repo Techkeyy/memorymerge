@@ -4,3 +4,4 @@ export * from './reflectionEngine';
 export { AnchorClient, createAnchorClient, type AnchorResult } from './anchorClient';
 export * from './adapters';
 export * from './zeroGAdapters';
+export * from './verifiableSnapshot';

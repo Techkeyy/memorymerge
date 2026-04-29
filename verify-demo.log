@@ -1,0 +1,661 @@
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ   MemoryMerge ΓÇö Merkle Fact Verification Demo        Γòæ
+Γòæ   Cryptographic proof of agent knowledge             Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+This demo proves that specific facts existed in a swarm
+at a specific epoch ΓÇö cryptographically, with zero trust.
+
+STEP 1 ΓÇö Loading swarm memory from 0G Storage...
+[0G Storage] Loaded 87 keys from index
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459836097.json, proof: true
+Downloading single file with root hash: 0x2e208be7df94ce21fc63e7771e7e7b3242f3f27a8c7220cd3b235289e35c94bb
+Getting file locations for root hash: 0x2e208be7df94ce21fc63e7771e7e7b3242f3f27a8c7220cd3b235289e35c94bb
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459836382.json, proof: true
+Downloading single file with root hash: 0xf0c4b21bd5fa53364af857842d825203d5943288f88ef5e310fff5c9bd56cda1
+Getting file locations for root hash: 0xf0c4b21bd5fa53364af857842d825203d5943288f88ef5e310fff5c9bd56cda1
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459836392.json, proof: true
+Downloading single file with root hash: 0x7de66b3b54b2d6d64116e3b49b0f872d431adf5ce595cce09589919f6beaaaf8
+Getting file locations for root hash: 0x7de66b3b54b2d6d64116e3b49b0f872d431adf5ce595cce09589919f6beaaaf8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459836399.json, proof: true
+Downloading single file with root hash: 0xf9328e22b79c2ca5f01b542b69ab1f23535831a70eb8eef88d02a747d0983408
+Getting file locations for root hash: 0xf9328e22b79c2ca5f01b542b69ab1f23535831a70eb8eef88d02a747d0983408
+Found 4 locations for 0x7de66b3b54b2d6d64116e3b49b0f872d431adf5ce595cce09589919f6beaaaf8: [
+  'http://34.83.53.209:5678',
+  'http://34.102.76.235:5678',
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678'
+]
+Selected 2 of 4 nodes for 0x7de66b3b54b2d6d64116e3b49b0f872d431adf5ce595cce09589919f6beaaaf8
+Found 4 locations for 0x2e208be7df94ce21fc63e7771e7e7b3242f3f27a8c7220cd3b235289e35c94bb: [
+  'http://34.19.125.196:5678',
+  'http://34.102.76.235:5678',
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678'
+]
+Selected 2 of 4 nodes for 0x2e208be7df94ce21fc63e7771e7e7b3242f3f27a8c7220cd3b235289e35c94bb
+Found 4 locations for 0xf0c4b21bd5fa53364af857842d825203d5943288f88ef5e310fff5c9bd56cda1: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xf0c4b21bd5fa53364af857842d825203d5943288f88ef5e310fff5c9bd56cda1
+Found 4 locations for 0xf9328e22b79c2ca5f01b542b69ab1f23535831a70eb8eef88d02a747d0983408: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.102.76.235:5678',
+  'http://34.133.200.179:5678'
+]
+Selected 2 of 4 nodes for 0xf9328e22b79c2ca5f01b542b69ab1f23535831a70eb8eef88d02a747d0983408
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459838767.json, proof: true
+Downloading single file with root hash: 0xb96bc83bd2d8853bad724c4670436f5779faefcebd42278cc39f2e4dd97eacf2
+Getting file locations for root hash: 0xb96bc83bd2d8853bad724c4670436f5779faefcebd42278cc39f2e4dd97eacf2
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459839021.json, proof: true
+Downloading single file with root hash: 0x322070f730a674360965c3ddfa70bda80359b74866d8680da385b689be10cf55
+Getting file locations for root hash: 0x322070f730a674360965c3ddfa70bda80359b74866d8680da385b689be10cf55
+Found 4 locations for 0xb96bc83bd2d8853bad724c4670436f5779faefcebd42278cc39f2e4dd97eacf2: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xb96bc83bd2d8853bad724c4670436f5779faefcebd42278cc39f2e4dd97eacf2
+Found 4 locations for 0x322070f730a674360965c3ddfa70bda80359b74866d8680da385b689be10cf55: [
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678',
+  'http://34.19.125.196:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0x322070f730a674360965c3ddfa70bda80359b74866d8680da385b689be10cf55
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459840631.json, proof: true
+Downloading single file with root hash: 0xe670e23233ff2d21444bc453f275ff10fdd5d3c274804758685676878d88bfa8
+Getting file locations for root hash: 0xe670e23233ff2d21444bc453f275ff10fdd5d3c274804758685676878d88bfa8
+Found 4 locations for 0xe670e23233ff2d21444bc453f275ff10fdd5d3c274804758685676878d88bfa8: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xe670e23233ff2d21444bc453f275ff10fdd5d3c274804758685676878d88bfa8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459841021.json, proof: true
+Downloading single file with root hash: 0x58aa0e2f176340ae5c253770b9d74c4471bad004c9d45d3050a3957111e7ff10
+Getting file locations for root hash: 0x58aa0e2f176340ae5c253770b9d74c4471bad004c9d45d3050a3957111e7ff10
+Found 4 locations for 0x58aa0e2f176340ae5c253770b9d74c4471bad004c9d45d3050a3957111e7ff10: [
+  'http://34.102.76.235:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.133.200.179:5678'
+]
+Selected 2 of 4 nodes for 0x58aa0e2f176340ae5c253770b9d74c4471bad004c9d45d3050a3957111e7ff10
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459842115.json, proof: true
+Downloading single file with root hash: 0xbc71d3e68e640c409339be4839282f8f3ea4c19c4e21164e72cbdf51acf4666a
+Getting file locations for root hash: 0xbc71d3e68e640c409339be4839282f8f3ea4c19c4e21164e72cbdf51acf4666a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459842508.json, proof: true
+Downloading single file with root hash: 0xf27f99ae0e3d576141b0ff82b9673d84092d9a4c6f73000a2d4150cebf88136c
+Getting file locations for root hash: 0xf27f99ae0e3d576141b0ff82b9673d84092d9a4c6f73000a2d4150cebf88136c
+Found 4 locations for 0xf27f99ae0e3d576141b0ff82b9673d84092d9a4c6f73000a2d4150cebf88136c: [
+  'http://34.102.76.235:5678',
+  'http://34.133.200.179:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xf27f99ae0e3d576141b0ff82b9673d84092d9a4c6f73000a2d4150cebf88136c
+Found 4 locations for 0xbc71d3e68e640c409339be4839282f8f3ea4c19c4e21164e72cbdf51acf4666a: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0xbc71d3e68e640c409339be4839282f8f3ea4c19c4e21164e72cbdf51acf4666a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459843929.json, proof: true
+Downloading single file with root hash: 0xfa19e3dfc4efc4b5c19079b24bf4e7f4efbb914750f0881f3a60b3c04eef70cd
+Getting file locations for root hash: 0xfa19e3dfc4efc4b5c19079b24bf4e7f4efbb914750f0881f3a60b3c04eef70cd
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459843998.json, proof: true
+Downloading single file with root hash: 0xc362bf82ba5e3497a6bb037d885294bc47913aa052b537889a8e41efdc01c9a9
+Getting file locations for root hash: 0xc362bf82ba5e3497a6bb037d885294bc47913aa052b537889a8e41efdc01c9a9
+Found 4 locations for 0xfa19e3dfc4efc4b5c19079b24bf4e7f4efbb914750f0881f3a60b3c04eef70cd: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xfa19e3dfc4efc4b5c19079b24bf4e7f4efbb914750f0881f3a60b3c04eef70cd
+Found 4 locations for 0xc362bf82ba5e3497a6bb037d885294bc47913aa052b537889a8e41efdc01c9a9: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xc362bf82ba5e3497a6bb037d885294bc47913aa052b537889a8e41efdc01c9a9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459845749.json, proof: true
+Downloading single file with root hash: 0x729519003410b84596c0776be1d469fa64f15525d974669ee400591b4b7003e1
+Getting file locations for root hash: 0x729519003410b84596c0776be1d469fa64f15525d974669ee400591b4b7003e1
+Found 4 locations for 0x729519003410b84596c0776be1d469fa64f15525d974669ee400591b4b7003e1: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x729519003410b84596c0776be1d469fa64f15525d974669ee400591b4b7003e1
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459847217.json, proof: true
+Downloading single file with root hash: 0x020f5adada5e470da48058a85a05d8e1da23ff6c7515ed1b03de96fcc8642587
+Getting file locations for root hash: 0x020f5adada5e470da48058a85a05d8e1da23ff6c7515ed1b03de96fcc8642587
+Found 4 locations for 0x020f5adada5e470da48058a85a05d8e1da23ff6c7515ed1b03de96fcc8642587: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x020f5adada5e470da48058a85a05d8e1da23ff6c7515ed1b03de96fcc8642587
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459849289.json, proof: true
+Downloading single file with root hash: 0x09c4a854007fec0d31d9e441768d1f877e8d4eded910678345a88421ee1a45ce
+Getting file locations for root hash: 0x09c4a854007fec0d31d9e441768d1f877e8d4eded910678345a88421ee1a45ce
+Found 4 locations for 0x09c4a854007fec0d31d9e441768d1f877e8d4eded910678345a88421ee1a45ce: [
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x09c4a854007fec0d31d9e441768d1f877e8d4eded910678345a88421ee1a45ce
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459850753.json, proof: true
+Downloading single file with root hash: 0xc64b07d9d08f644f1f6ae152a3badf033f82b85d16e741f48b8059673dce9a06
+Getting file locations for root hash: 0xc64b07d9d08f644f1f6ae152a3badf033f82b85d16e741f48b8059673dce9a06
+Found 4 locations for 0xc64b07d9d08f644f1f6ae152a3badf033f82b85d16e741f48b8059673dce9a06: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xc64b07d9d08f644f1f6ae152a3badf033f82b85d16e741f48b8059673dce9a06
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459852475.json, proof: true
+Downloading single file with root hash: 0x98cb65f816abced7cc3d40db52a6f36f48e57f2b55662e4b9e286455f7770342
+Getting file locations for root hash: 0x98cb65f816abced7cc3d40db52a6f36f48e57f2b55662e4b9e286455f7770342
+Found 4 locations for 0x98cb65f816abced7cc3d40db52a6f36f48e57f2b55662e4b9e286455f7770342: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x98cb65f816abced7cc3d40db52a6f36f48e57f2b55662e4b9e286455f7770342
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459854280.json, proof: true
+Downloading single file with root hash: 0xfc5c3e9e1b7c0e398a02db86781e0a5d66ce17f3bef3d5ca63ec4b626dfa4f49
+Getting file locations for root hash: 0xfc5c3e9e1b7c0e398a02db86781e0a5d66ce17f3bef3d5ca63ec4b626dfa4f49
+Found 4 locations for 0xfc5c3e9e1b7c0e398a02db86781e0a5d66ce17f3bef3d5ca63ec4b626dfa4f49: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xfc5c3e9e1b7c0e398a02db86781e0a5d66ce17f3bef3d5ca63ec4b626dfa4f49
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459855756.json, proof: true
+Downloading single file with root hash: 0x65cd8b09bf9d0d8f99a14873e207e5aa9ed12ab5b1e91e62de957fff935d6cc9
+Getting file locations for root hash: 0x65cd8b09bf9d0d8f99a14873e207e5aa9ed12ab5b1e91e62de957fff935d6cc9
+Found 4 locations for 0x65cd8b09bf9d0d8f99a14873e207e5aa9ed12ab5b1e91e62de957fff935d6cc9: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x65cd8b09bf9d0d8f99a14873e207e5aa9ed12ab5b1e91e62de957fff935d6cc9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459857249.json, proof: true
+Downloading single file with root hash: 0x2b685fd2b8d5d123699e19579fe6944f6eab6cef75b48d3b3e18cbcf0aa0cc26
+Getting file locations for root hash: 0x2b685fd2b8d5d123699e19579fe6944f6eab6cef75b48d3b3e18cbcf0aa0cc26
+Found 4 locations for 0x2b685fd2b8d5d123699e19579fe6944f6eab6cef75b48d3b3e18cbcf0aa0cc26: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x2b685fd2b8d5d123699e19579fe6944f6eab6cef75b48d3b3e18cbcf0aa0cc26
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459858933.json, proof: true
+Downloading single file with root hash: 0xa90c53f89091be0c79cbc7022c65b12eb58f75c9b936dbb4b8735aced93c7d07
+Getting file locations for root hash: 0xa90c53f89091be0c79cbc7022c65b12eb58f75c9b936dbb4b8735aced93c7d07
+Found 4 locations for 0xa90c53f89091be0c79cbc7022c65b12eb58f75c9b936dbb4b8735aced93c7d07: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xa90c53f89091be0c79cbc7022c65b12eb58f75c9b936dbb4b8735aced93c7d07
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459860474.json, proof: true
+Downloading single file with root hash: 0xb9849f54e79dcebf155565688cbc9e23fa802179ae4ad8a4240c16e2890dae91
+Getting file locations for root hash: 0xb9849f54e79dcebf155565688cbc9e23fa802179ae4ad8a4240c16e2890dae91
+Found 4 locations for 0xb9849f54e79dcebf155565688cbc9e23fa802179ae4ad8a4240c16e2890dae91: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xb9849f54e79dcebf155565688cbc9e23fa802179ae4ad8a4240c16e2890dae91
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459862204.json, proof: true
+Downloading single file with root hash: 0x8ae60979700cd8bef3e06ce3277b6f8b246f26394a76396b618a29379b517310
+Getting file locations for root hash: 0x8ae60979700cd8bef3e06ce3277b6f8b246f26394a76396b618a29379b517310
+Found 4 locations for 0x8ae60979700cd8bef3e06ce3277b6f8b246f26394a76396b618a29379b517310: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x8ae60979700cd8bef3e06ce3277b6f8b246f26394a76396b618a29379b517310
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459863687.json, proof: true
+Downloading single file with root hash: 0xe04c9c14a2b59b9888c7e7016b22dadc453f82ccb20b2557a0eb6c3aaf7a9104
+Getting file locations for root hash: 0xe04c9c14a2b59b9888c7e7016b22dadc453f82ccb20b2557a0eb6c3aaf7a9104
+Found 4 locations for 0xe04c9c14a2b59b9888c7e7016b22dadc453f82ccb20b2557a0eb6c3aaf7a9104: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0xe04c9c14a2b59b9888c7e7016b22dadc453f82ccb20b2557a0eb6c3aaf7a9104
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459865757.json, proof: true
+Downloading single file with root hash: 0xbca919c433c6477e3e44a2f00b0fbd6c9ec53b903029e33b15aba364416d179a
+Getting file locations for root hash: 0xbca919c433c6477e3e44a2f00b0fbd6c9ec53b903029e33b15aba364416d179a
+Found 4 locations for 0xbca919c433c6477e3e44a2f00b0fbd6c9ec53b903029e33b15aba364416d179a: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0xbca919c433c6477e3e44a2f00b0fbd6c9ec53b903029e33b15aba364416d179a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459867189.json, proof: true
+Downloading single file with root hash: 0x421f15d5f98fbf6810076ebd9a16aa21191dea0fbd8a5d8f55c3d9098783b083
+Getting file locations for root hash: 0x421f15d5f98fbf6810076ebd9a16aa21191dea0fbd8a5d8f55c3d9098783b083
+Found 4 locations for 0x421f15d5f98fbf6810076ebd9a16aa21191dea0fbd8a5d8f55c3d9098783b083: [
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x421f15d5f98fbf6810076ebd9a16aa21191dea0fbd8a5d8f55c3d9098783b083
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459868633.json, proof: true
+Downloading single file with root hash: 0x7e6368e19e6d55669c89d20aebd0184274172f7c2c4b70d8c34168611070ff7a
+Getting file locations for root hash: 0x7e6368e19e6d55669c89d20aebd0184274172f7c2c4b70d8c34168611070ff7a
+Found 4 locations for 0x7e6368e19e6d55669c89d20aebd0184274172f7c2c4b70d8c34168611070ff7a: [
+  'http://34.83.53.209:5678',
+  'http://34.102.76.235:5678',
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678'
+]
+Selected 2 of 4 nodes for 0x7e6368e19e6d55669c89d20aebd0184274172f7c2c4b70d8c34168611070ff7a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459870188.json, proof: true
+Downloading single file with root hash: 0x245c3c0124de6311dcfbcf0e7c08c35434cf9ce90f4da9d4dab983d225a48243
+Getting file locations for root hash: 0x245c3c0124de6311dcfbcf0e7c08c35434cf9ce90f4da9d4dab983d225a48243
+Found 4 locations for 0x245c3c0124de6311dcfbcf0e7c08c35434cf9ce90f4da9d4dab983d225a48243: [
+  'http://34.102.76.235:5678',
+  'http://34.133.200.179:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x245c3c0124de6311dcfbcf0e7c08c35434cf9ce90f4da9d4dab983d225a48243
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459871690.json, proof: true
+Downloading single file with root hash: 0x7495383c7e7b05e1d25b19eeb20dfc6fd136f2b869ce337de50c5148d28f6249
+Getting file locations for root hash: 0x7495383c7e7b05e1d25b19eeb20dfc6fd136f2b869ce337de50c5148d28f6249
+Found 4 locations for 0x7495383c7e7b05e1d25b19eeb20dfc6fd136f2b869ce337de50c5148d28f6249: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x7495383c7e7b05e1d25b19eeb20dfc6fd136f2b869ce337de50c5148d28f6249
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459873638.json, proof: true
+Downloading single file with root hash: 0x8849ada0f83a8561129ab1b777cf8028cd02d3aca55e89f7d1a1c06ca781bf64
+Getting file locations for root hash: 0x8849ada0f83a8561129ab1b777cf8028cd02d3aca55e89f7d1a1c06ca781bf64
+Found 4 locations for 0x8849ada0f83a8561129ab1b777cf8028cd02d3aca55e89f7d1a1c06ca781bf64: [
+  'http://34.169.28.106:5678',
+  'http://34.102.76.235:5678',
+  'http://34.133.200.179:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x8849ada0f83a8561129ab1b777cf8028cd02d3aca55e89f7d1a1c06ca781bf64
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459875058.json, proof: true
+Downloading single file with root hash: 0xc4ae86bd102cfe27079aab23a871df12b365bfca786143d9992ff4c6525462ec
+Getting file locations for root hash: 0xc4ae86bd102cfe27079aab23a871df12b365bfca786143d9992ff4c6525462ec
+Found 4 locations for 0xc4ae86bd102cfe27079aab23a871df12b365bfca786143d9992ff4c6525462ec: [
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678',
+  'http://34.19.125.196:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0xc4ae86bd102cfe27079aab23a871df12b365bfca786143d9992ff4c6525462ec
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459876528.json, proof: true
+Downloading single file with root hash: 0x740e2b3b1a6b5cc7363f2015012893d9ee0007ed049ba451a04056b5a128fbaa
+Getting file locations for root hash: 0x740e2b3b1a6b5cc7363f2015012893d9ee0007ed049ba451a04056b5a128fbaa
+Found 4 locations for 0x740e2b3b1a6b5cc7363f2015012893d9ee0007ed049ba451a04056b5a128fbaa: [
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x740e2b3b1a6b5cc7363f2015012893d9ee0007ed049ba451a04056b5a128fbaa
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459877952.json, proof: true
+Downloading single file with root hash: 0x3fa29990f9c2c23a09e0dd313159f2c8e59bb06e31a95d3f2425f595eacb693a
+Getting file locations for root hash: 0x3fa29990f9c2c23a09e0dd313159f2c8e59bb06e31a95d3f2425f595eacb693a
+Found 4 locations for 0x3fa29990f9c2c23a09e0dd313159f2c8e59bb06e31a95d3f2425f595eacb693a: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x3fa29990f9c2c23a09e0dd313159f2c8e59bb06e31a95d3f2425f595eacb693a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459879806.json, proof: true
+Downloading single file with root hash: 0x2d236794d1bd8097006da334f2f429a96827a907de35af5683528a6de3f96a05
+Getting file locations for root hash: 0x2d236794d1bd8097006da334f2f429a96827a907de35af5683528a6de3f96a05
+Found 4 locations for 0x2d236794d1bd8097006da334f2f429a96827a907de35af5683528a6de3f96a05: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x2d236794d1bd8097006da334f2f429a96827a907de35af5683528a6de3f96a05
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459881272.json, proof: true
+Downloading single file with root hash: 0x699686270ba280b74bf149d5d6b4a594c5216af72472a78274c01aec176d645b
+Getting file locations for root hash: 0x699686270ba280b74bf149d5d6b4a594c5216af72472a78274c01aec176d645b
+Found 4 locations for 0x699686270ba280b74bf149d5d6b4a594c5216af72472a78274c01aec176d645b: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x699686270ba280b74bf149d5d6b4a594c5216af72472a78274c01aec176d645b
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459882725.json, proof: true
+Downloading single file with root hash: 0x69848033fd479c03703c42381b61655501cb7c2ce4f7926bcd490cad8a6ae240
+Getting file locations for root hash: 0x69848033fd479c03703c42381b61655501cb7c2ce4f7926bcd490cad8a6ae240
+Found 4 locations for 0x69848033fd479c03703c42381b61655501cb7c2ce4f7926bcd490cad8a6ae240: [
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x69848033fd479c03703c42381b61655501cb7c2ce4f7926bcd490cad8a6ae240
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459884623.json, proof: true
+Downloading single file with root hash: 0xfa7810f91eaf82dd51ff7c025cc254d2763f31dc298faae95a14e07e9781f428
+Getting file locations for root hash: 0xfa7810f91eaf82dd51ff7c025cc254d2763f31dc298faae95a14e07e9781f428
+Found 4 locations for 0xfa7810f91eaf82dd51ff7c025cc254d2763f31dc298faae95a14e07e9781f428: [
+  'http://34.19.125.196:5678',
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xfa7810f91eaf82dd51ff7c025cc254d2763f31dc298faae95a14e07e9781f428
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459886083.json, proof: true
+Downloading single file with root hash: 0x709d94813798aae0648b4632a05434c533a03048da0caa6547e005f7c6942e0a
+Getting file locations for root hash: 0x709d94813798aae0648b4632a05434c533a03048da0caa6547e005f7c6942e0a
+Found 4 locations for 0x709d94813798aae0648b4632a05434c533a03048da0caa6547e005f7c6942e0a: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.102.76.235:5678',
+  'http://34.133.200.179:5678'
+]
+Selected 2 of 4 nodes for 0x709d94813798aae0648b4632a05434c533a03048da0caa6547e005f7c6942e0a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459887681.json, proof: true
+Downloading single file with root hash: 0x4306ba7d459a2c5f23d55bf27fad06d4843e98bbcf460a7292197b582f0a8368
+Getting file locations for root hash: 0x4306ba7d459a2c5f23d55bf27fad06d4843e98bbcf460a7292197b582f0a8368
+Found 4 locations for 0x4306ba7d459a2c5f23d55bf27fad06d4843e98bbcf460a7292197b582f0a8368: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x4306ba7d459a2c5f23d55bf27fad06d4843e98bbcf460a7292197b582f0a8368
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459889183.json, proof: true
+Downloading single file with root hash: 0x5c36aae1f42fa877b8f4803dc28d1a50ea85c875e883f03307507d69edf73b6f
+Getting file locations for root hash: 0x5c36aae1f42fa877b8f4803dc28d1a50ea85c875e883f03307507d69edf73b6f
+Found 4 locations for 0x5c36aae1f42fa877b8f4803dc28d1a50ea85c875e883f03307507d69edf73b6f: [
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x5c36aae1f42fa877b8f4803dc28d1a50ea85c875e883f03307507d69edf73b6f
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459890639.json, proof: true
+Downloading single file with root hash: 0x8f1419b4980ecfdbf27db1c9e4fbf91f8d183fc504a5bd41f3b8caf8c25b4155
+Getting file locations for root hash: 0x8f1419b4980ecfdbf27db1c9e4fbf91f8d183fc504a5bd41f3b8caf8c25b4155
+Found 4 locations for 0x8f1419b4980ecfdbf27db1c9e4fbf91f8d183fc504a5bd41f3b8caf8c25b4155: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x8f1419b4980ecfdbf27db1c9e4fbf91f8d183fc504a5bd41f3b8caf8c25b4155
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459892255.json, proof: true
+Downloading single file with root hash: 0xb31510b3cf6c6e9ba1948a325d53859845b60ddc71c303b55c8c1fac5fc69e9f
+Getting file locations for root hash: 0xb31510b3cf6c6e9ba1948a325d53859845b60ddc71c303b55c8c1fac5fc69e9f
+Found 4 locations for 0xb31510b3cf6c6e9ba1948a325d53859845b60ddc71c303b55c8c1fac5fc69e9f: [
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xb31510b3cf6c6e9ba1948a325d53859845b60ddc71c303b55c8c1fac5fc69e9f
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459893708.json, proof: true
+Downloading single file with root hash: 0x5552f714e3ecc6dae0344eaab5067b78a2ca12af8296e2e8f9faf2d2099b76a9
+Getting file locations for root hash: 0x5552f714e3ecc6dae0344eaab5067b78a2ca12af8296e2e8f9faf2d2099b76a9
+Found 4 locations for 0x5552f714e3ecc6dae0344eaab5067b78a2ca12af8296e2e8f9faf2d2099b76a9: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0x5552f714e3ecc6dae0344eaab5067b78a2ca12af8296e2e8f9faf2d2099b76a9
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459895166.json, proof: true
+Downloading single file with root hash: 0x963a3a40d844affb7cb87465c44d8771b34fe007e45f63a4b060a4c3743f1176
+Getting file locations for root hash: 0x963a3a40d844affb7cb87465c44d8771b34fe007e45f63a4b060a4c3743f1176
+Found 4 locations for 0x963a3a40d844affb7cb87465c44d8771b34fe007e45f63a4b060a4c3743f1176: [
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x963a3a40d844affb7cb87465c44d8771b34fe007e45f63a4b060a4c3743f1176
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459896664.json, proof: true
+Downloading single file with root hash: 0x96fedd22bb2c9155fddffe76d58f06797f8bc6b2a27ac742ab680129de2c8ca7
+Getting file locations for root hash: 0x96fedd22bb2c9155fddffe76d58f06797f8bc6b2a27ac742ab680129de2c8ca7
+Found 4 locations for 0x96fedd22bb2c9155fddffe76d58f06797f8bc6b2a27ac742ab680129de2c8ca7: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x96fedd22bb2c9155fddffe76d58f06797f8bc6b2a27ac742ab680129de2c8ca7
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459898237.json, proof: true
+Downloading single file with root hash: 0x5ea25ea5116a2dbc33c217b1029b1fd132978fa2ca8fa6c43b3007dd388227ac
+Getting file locations for root hash: 0x5ea25ea5116a2dbc33c217b1029b1fd132978fa2ca8fa6c43b3007dd388227ac
+Found 4 locations for 0x5ea25ea5116a2dbc33c217b1029b1fd132978fa2ca8fa6c43b3007dd388227ac: [
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x5ea25ea5116a2dbc33c217b1029b1fd132978fa2ca8fa6c43b3007dd388227ac
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459899833.json, proof: true
+Downloading single file with root hash: 0xc0a60b7fe68749beb6c5a24774b3a441084534283d8aef56073a50ffc4e974dc
+Getting file locations for root hash: 0xc0a60b7fe68749beb6c5a24774b3a441084534283d8aef56073a50ffc4e974dc
+Found 4 locations for 0xc0a60b7fe68749beb6c5a24774b3a441084534283d8aef56073a50ffc4e974dc: [
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0xc0a60b7fe68749beb6c5a24774b3a441084534283d8aef56073a50ffc4e974dc
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459901720.json, proof: true
+Downloading single file with root hash: 0x3ae5b46b1063232b7c031c137892561a7a20833cc2fdacd9b4e63e75d0c3f0ac
+Getting file locations for root hash: 0x3ae5b46b1063232b7c031c137892561a7a20833cc2fdacd9b4e63e75d0c3f0ac
+Found 4 locations for 0x3ae5b46b1063232b7c031c137892561a7a20833cc2fdacd9b4e63e75d0c3f0ac: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://35.236.80.213:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0x3ae5b46b1063232b7c031c137892561a7a20833cc2fdacd9b4e63e75d0c3f0ac
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459903453.json, proof: true
+Downloading single file with root hash: 0xcb0911793256012f055a5d4315143081c9fbe767a5901869b733719de32765dd
+Getting file locations for root hash: 0xcb0911793256012f055a5d4315143081c9fbe767a5901869b733719de32765dd
+Found 4 locations for 0xcb0911793256012f055a5d4315143081c9fbe767a5901869b733719de32765dd: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xcb0911793256012f055a5d4315143081c9fbe767a5901869b733719de32765dd
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459904919.json, proof: true
+Downloading single file with root hash: 0x97d7f3292e7cdf22f2c11f1e5cdb30706289d950713e2b7f16a710c426d2bcf6
+Getting file locations for root hash: 0x97d7f3292e7cdf22f2c11f1e5cdb30706289d950713e2b7f16a710c426d2bcf6
+Found 4 locations for 0x97d7f3292e7cdf22f2c11f1e5cdb30706289d950713e2b7f16a710c426d2bcf6: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://35.236.80.213:5678'
+]
+Selected 2 of 4 nodes for 0x97d7f3292e7cdf22f2c11f1e5cdb30706289d950713e2b7f16a710c426d2bcf6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459906476.json, proof: true
+Downloading single file with root hash: 0xb3db3fce68e5c469112c0f10076f013dadf39e16baab9356599fcc5c66a815f6
+Getting file locations for root hash: 0xb3db3fce68e5c469112c0f10076f013dadf39e16baab9356599fcc5c66a815f6
+Found 4 locations for 0xb3db3fce68e5c469112c0f10076f013dadf39e16baab9356599fcc5c66a815f6: [
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xb3db3fce68e5c469112c0f10076f013dadf39e16baab9356599fcc5c66a815f6
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459908271.json, proof: true
+Downloading single file with root hash: 0xe10712bdf54e98b03dcac5c3715d082323c83de59b6fbf0edfd60f89125e1194
+Getting file locations for root hash: 0xe10712bdf54e98b03dcac5c3715d082323c83de59b6fbf0edfd60f89125e1194
+Found 4 locations for 0xe10712bdf54e98b03dcac5c3715d082323c83de59b6fbf0edfd60f89125e1194: [
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xe10712bdf54e98b03dcac5c3715d082323c83de59b6fbf0edfd60f89125e1194
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459909734.json, proof: true
+Downloading single file with root hash: 0x931301ad6976d6e4340e6391827365dfc6ed53f99112a047114e0d828b530dc5
+Getting file locations for root hash: 0x931301ad6976d6e4340e6391827365dfc6ed53f99112a047114e0d828b530dc5
+Found 4 locations for 0x931301ad6976d6e4340e6391827365dfc6ed53f99112a047114e0d828b530dc5: [
+  'http://34.19.125.196:5678',
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x931301ad6976d6e4340e6391827365dfc6ed53f99112a047114e0d828b530dc5
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459911180.json, proof: true
+Downloading single file with root hash: 0xf050e9317a4389d7737d80f766a1ac610f629ef5e6bc8aada8c62cfc1fbf1ca8
+Getting file locations for root hash: 0xf050e9317a4389d7737d80f766a1ac610f629ef5e6bc8aada8c62cfc1fbf1ca8
+Found 4 locations for 0xf050e9317a4389d7737d80f766a1ac610f629ef5e6bc8aada8c62cfc1fbf1ca8: [
+  'http://34.83.53.209:5678',
+  'http://35.236.80.213:5678',
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678'
+]
+Selected 2 of 4 nodes for 0xf050e9317a4389d7737d80f766a1ac610f629ef5e6bc8aada8c62cfc1fbf1ca8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459912889.json, proof: true
+Downloading single file with root hash: 0xf914386181e58288f3d9b501f284ffc5cc6576d147b12ffdb5b64245ca0f6683
+Getting file locations for root hash: 0xf914386181e58288f3d9b501f284ffc5cc6576d147b12ffdb5b64245ca0f6683
+Found 4 locations for 0xf914386181e58288f3d9b501f284ffc5cc6576d147b12ffdb5b64245ca0f6683: [
+  'http://34.102.76.235:5678',
+  'http://34.133.200.179:5678',
+  'http://34.169.28.106:5678',
+  'http://34.83.53.209:5678'
+]
+Selected 2 of 4 nodes for 0xf914386181e58288f3d9b501f284ffc5cc6576d147b12ffdb5b64245ca0f6683
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459914457.json, proof: true
+Downloading single file with root hash: 0x840d1aa4898fff43ba6948361bab9d097a1b0ef7e8246a4bd4a1fff239af854a
+Getting file locations for root hash: 0x840d1aa4898fff43ba6948361bab9d097a1b0ef7e8246a4bd4a1fff239af854a
+Found 4 locations for 0x840d1aa4898fff43ba6948361bab9d097a1b0ef7e8246a4bd4a1fff239af854a: [
+  'http://34.102.76.235:5678',
+  'http://34.83.53.209:5678',
+  'http://34.133.200.179:5678',
+  'http://34.169.28.106:5678'
+]
+Selected 2 of 4 nodes for 0x840d1aa4898fff43ba6948361bab9d097a1b0ef7e8246a4bd4a1fff239af854a
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459915995.json, proof: true
+Downloading single file with root hash: 0xc503a0ba8caefecb750c5c83f0a3597675611c2f0345c645ccc13716e9e136c8
+Getting file locations for root hash: 0xc503a0ba8caefecb750c5c83f0a3597675611c2f0345c645ccc13716e9e136c8
+Found 4 locations for 0xc503a0ba8caefecb750c5c83f0a3597675611c2f0345c645ccc13716e9e136c8: [
+  'http://34.133.200.179:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0xc503a0ba8caefecb750c5c83f0a3597675611c2f0345c645ccc13716e9e136c8
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459917591.json, proof: true
+Downloading single file with root hash: 0xf7e79a84c844702ea154addc1f50cb0a44d8c3cc8e88194fb6573a857db9fcb2
+Getting file locations for root hash: 0xf7e79a84c844702ea154addc1f50cb0a44d8c3cc8e88194fb6573a857db9fcb2
+Found 4 locations for 0xf7e79a84c844702ea154addc1f50cb0a44d8c3cc8e88194fb6573a857db9fcb2: [
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0xf7e79a84c844702ea154addc1f50cb0a44d8c3cc8e88194fb6573a857db9fcb2
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459919042.json, proof: true
+Downloading single file with root hash: 0xc56e986bea0f7a634cf56b9808c9b3fe94ac1004d790626816c889eb08a26639
+Getting file locations for root hash: 0xc56e986bea0f7a634cf56b9808c9b3fe94ac1004d790626816c889eb08a26639
+Found 4 locations for 0xc56e986bea0f7a634cf56b9808c9b3fe94ac1004d790626816c889eb08a26639: [
+  'http://34.133.200.179:5678',
+  'http://34.83.53.209:5678',
+  'http://34.169.28.106:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0xc56e986bea0f7a634cf56b9808c9b3fe94ac1004d790626816c889eb08a26639
+Starting download to: C:\Users\HomePC\AppData\Local\Temp\mm_1777459920699.json, proof: true
+Downloading single file with root hash: 0x5a6698036643de1613025a3bf3f2e480d392c0427f21e16a0dbab8bd8766c1a3
+Getting file locations for root hash: 0x5a6698036643de1613025a3bf3f2e480d392c0427f21e16a0dbab8bd8766c1a3
+Found 4 locations for 0x5a6698036643de1613025a3bf3f2e480d392c0427f21e16a0dbab8bd8766c1a3: [
+  'http://34.169.28.106:5678',
+  'http://34.19.125.196:5678',
+  'http://34.133.200.179:5678',
+  'http://34.102.76.235:5678'
+]
+Selected 2 of 4 nodes for 0x5a6698036643de1613025a3bf3f2e480d392c0427f21e16a0dbab8bd8766c1a3
+Loaded 53 facts from 0G Storage
+
+STEP 2 ΓÇö Building deterministic Merkle snapshot...
+[VerifiableSnapshot] Built Merkle tree:
+  Facts     : 53
+  Root hash : 0x509a83ada122b9bd3ace4128bbb30cf7dc718c013e4f844bc857616111630859
+  Epoch     : 1
+Merkle root hash: 0x509a83ada122b9bd3ace4128bbb30cf7dc718c013e4f844bc857616111630859
+Facts included  : 53
+
+This root hash can be anchored on 0G Chain.
+Anyone with this hash can verify any fact.
+
+STEP 3 ΓÇö Generating Merkle proof for fact:
+  Key   : task_001_0g_labs_platform
+  Value : 0G Labs uses blockchain technology to ensure the security and integrity of store...
+  Conf  : 90%
+
+Proof path (6 nodes):
+  [0] 0x09e9c054e56f95fc3b1e3af4dfb97a7a0a3506721ccfe6d60e964f0040c2b394
+  [1] 0x247e37fc1e9f4a8b6e6f4ba8509f4a3fa85214b1c92f13faf9400449b6b35edd
+  [2] 0x3520a5aa499fac1aaacb748c70ec1b033d6255c34a1260f04295f53f4a4266b6
+  [3] 0xe995adae000305aebc0321fb25fa18695a3c70d1538cb5d1c0fb9dbf16f0b1e6
+  [4] 0x1dac144c2e393233e3faf4b2f26dd7892789de18cfdbe95f62ec77e1cc809698
+  [5] 0x41927b51dab8706b69e51c0d509e916b7559963e99378d381ac2081866e3f43b
+
+STEP 4 ΓÇö Verifying proof independently...
+(Simulating third-party verification ΓÇö no snapshot needed)
+
+Γ£ô Fact cryptographically proven in snapshot 0x509a83ada122b9bd3a...
+
+Verified: true
+
+STEP 5 ΓÇö Attempting to verify a FAKE fact...
+Γ£ù Fact NOT found in snapshot 0x509a83ada122b9bd3a...
+Verified: false
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ                 VERIFICATION COMPLETE               Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+Real fact verified : true
+Fake fact rejected : true
+
+Merkle root        : 0x509a83ada122b9bd3ace4128bbb30cf7dc718c013e4f844bc857616111630859
+
+This is the only agent memory framework that provides
+cryptographic proof of what an AI agent knew.
+
+Anchor this root on 0G Chain ΓåÆ anyone can verify forever.

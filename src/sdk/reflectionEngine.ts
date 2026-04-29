@@ -2,6 +2,7 @@ import 'dotenv/config';
 import OpenAI from 'openai';
 import { MemoryManager, InsightEntry, FactEntry } from './memoryManager';
 import { AnchorClient, createAnchorClient, AnchorResult } from './anchorClient';
+import { VerifiableSnapshot, VerifiableSnapshotData } from './verifiableSnapshot';
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
@@ -10,6 +11,8 @@ export interface ReflectionResult {
   factsProcessed: number;
   insightsGenerated: number;
   factsDeleted: string[];
+  merkleRootHash: string;
+  merkleFactCount: number;
   snapshotRootHash: string;
   snapshotLabel: string;
   anchorTxHash: string;
@@ -123,6 +126,8 @@ export class ReflectionEngine {
         factsProcessed: 0,
         insightsGenerated: 0,
         factsDeleted: [],
+        merkleRootHash: '',
+        merkleFactCount: 0,
         snapshotRootHash: '',
         snapshotLabel: '',
         anchorTxHash: '',
@@ -146,7 +151,16 @@ export class ReflectionEngine {
       );
     }
 
-    // Step 4: Log contradictions if any
+    // Step 4a: Build deterministic Merkle snapshot
+    const merkleSnapshot = VerifiableSnapshot.build(
+      facts,
+      this.epochNumber,
+      this.memory.getSwarmId()
+    );
+    console.log(`[ReflectionEngine] Merkle root: ${merkleSnapshot.rootHash}`);
+    console.log(`[ReflectionEngine] This root proves ${merkleSnapshot.factCount} facts`);
+
+    // Step 4b: Log contradictions if any
     if (compressed.contradictions.length > 0) {
       console.warn(`[ReflectionEngine] Found ${compressed.contradictions.length} contradictions:`);
       for (const c of compressed.contradictions) {
@@ -177,6 +191,8 @@ export class ReflectionEngine {
       factsProcessed: facts.length,
       insightsGenerated: compressed.insights.length,
       factsDeleted: compressed.factsToDelete,
+      merkleRootHash: merkleSnapshot.rootHash,
+      merkleFactCount: merkleSnapshot.factCount,
       snapshotRootHash: snapshot.rootHash,
       snapshotLabel: snapshot.label,
       anchorTxHash: anchorResult?.txHash ?? '',
@@ -188,6 +204,8 @@ export class ReflectionEngine {
     console.log(`[ReflectionEngine] ═══ EPOCH ${this.epochNumber} COMPLETE ═══`);
     console.log(`  Facts processed : ${result.factsProcessed}`);
     console.log(`  Insights created: ${result.insightsGenerated}`);
+    console.log(`  Merkle root : ${result.merkleRootHash}`);
+    console.log(`  Prove facts : https://github.com/Techkeyy/memorymerge#merkle-verification`);
     console.log(`  Snapshot hash   : ${result.snapshotRootHash}`);
     console.log(`  Chain TX    : ${result.anchorTxHash ? 'https://chainscan-galileo.0g.ai/tx/' + result.anchorTxHash : 'pending/failed'}`);
     console.log(`  Duration        : ${result.durationMs}ms`);

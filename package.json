@@ -12,6 +12,7 @@
     "agent": "ts-node examples/interactiveAgent.ts",
     "inherit": "ts-node examples/crossSwarmDemo.ts",
     "openclaw": "ts-node examples/openClawAgent.ts",
+    "verify": "ts-node examples/verifyFact.ts",
     "start": "ts-node src/orchestrator/index.ts",
     "continuous": "ts-node --transpile-only -e \"require('dotenv').config(); const { MemoryMergeOrchestrator } = require('./src/orchestrator/index'); new MemoryMergeOrchestrator().runContinuous(process.argv[2] ?? 'Research the current state of decentralized AI and 0G Labs in 2026');\"",
     "example": "ts-node examples/researchSwarm.ts",
@@ -25,6 +26,7 @@
     "@0gfoundation/0g-ts-sdk": "^1.2.6",
     "@0glabs/0g-serving-broker": "^0.7.5",
     "dotenv": "^17.4.2",
+    "merkletreejs": "^0.6.0",
     "openai": "^6.34.0"
   },
   "devDependencies": {
