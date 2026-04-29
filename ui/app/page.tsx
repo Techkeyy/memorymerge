@@ -1,38 +1,40 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
+import { useState, useEffect, useCallback, type CSSProperties } from 'react';
 import {
-  Activity,
-  AlertCircle,
-  ArrowRight,
   Brain,
-  Check,
-  CheckCircle,
-  ChevronRight,
-  Clock,
-  Copy,
-  Cpu,
   Database,
-  ExternalLink,
-  Loader2,
-  Network,
-  RefreshCw,
-  Shield,
-  Wifi,
-  WifiOff,
   Zap,
+  Activity,
+  RefreshCw,
+  ExternalLink,
+  ChevronRight,
+  CheckCircle,
+  Clock,
+  AlertCircle,
+  Loader2,
+  Copy,
+  Check,
+  ArrowRight,
+  Shield,
+  Cpu,
+  Network,
+  Sparkles,
+  Layers,
+  ScrollText,
+  Terminal,
 } from 'lucide-react';
 
-type FactEntry = {
+interface FactEntry {
   key: string;
   value: string;
   confidence: number;
   authorAgent: string;
   timestamp: number;
   reviewed: boolean;
-};
+}
 
-type TaskPayload = {
+interface TaskPayload {
   taskId: string;
   status: 'pending' | 'in_progress' | 'pending_review' | 'complete';
   assignedTo: string;
@@ -40,18 +42,17 @@ type TaskPayload = {
   result?: string;
   createdAt: number;
   updatedAt: number;
-};
+}
 
-type InsightEntry = {
+interface InsightEntry {
   key: string;
   insight: string;
   importance: number;
   generatedAt: number;
   epochNumber: number;
-};
+}
 
-type SwarmData = {
-  live: boolean;
+interface SwarmData {
   swarmId: string;
   goal: string;
   facts: FactEntry[];
@@ -63,610 +64,803 @@ type SwarmData = {
     rootHash: string;
     label: string;
     archivedAt: number;
-    storagescanUrl?: string;
   } | null;
   message?: string;
   error?: string;
-};
+}
 
-type SnapshotEntry = {
+interface SnapshotEntry {
   rootHash: string;
   timestamp: number;
   label: string;
   factCount: number;
   taskCount: number;
   insightCount: number;
-  verified: boolean;
-  storagescanUrl: string;
-};
-
-type SnapshotResponse = { snapshots: SnapshotEntry[] };
-
-const CONTRACT_ADDRESS = '0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079';
-const CHAIN_EXPLORER = 'https://chainscan-galileo.0g.ai';
-const STORAGE_EXPLORER = 'https://storagescan-galileo.0g.ai';
-
-const toneByAgent: Record<string, string> = {
-  planner: '#1D6FEB',
-  researcher: '#00D4AA',
-  critic: '#F5A623',
-  reflection: '#A855F7',
-};
-
-const timeAgo = (timestamp: number) => {
-  const delta = Math.max(0, Date.now() - timestamp);
-  const seconds = Math.floor(delta / 1000);
-  if (seconds < 60) return `${seconds}s ago`;
-  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-  return `${Math.floor(seconds / 86400)}d ago`;
-};
-
-const confidenceColor = (confidence: number) => {
-  if (confidence >= 0.8) return '#00D4AA';
-  if (confidence >= 0.5) return '#F5A623';
-  return '#FF4D6A';
-};
-
-const statusColor = (status: TaskPayload['status']) => {
-  switch (status) {
-    case 'complete':
-      return '#00D4AA';
-    case 'in_progress':
-      return '#1D6FEB';
-    case 'pending_review':
-      return '#F5A623';
-    default:
-      return '#8A9BB5';
-  }
-};
-
-const statusLabel = (status: TaskPayload['status']) => {
-  switch (status) {
-    case 'complete':
-      return 'Complete';
-    case 'in_progress':
-      return 'In Progress';
-    case 'pending_review':
-      return 'In Review';
-    default:
-      return 'Pending';
-  }
-};
-
-const statusIcon = (status: TaskPayload['status']) => {
-  switch (status) {
-    case 'complete':
-      return <CheckCircle size={13} color="#00D4AA" />;
-    case 'in_progress':
-      return <Loader2 size={13} color="#1D6FEB" style={{ animation: 'spin 1s linear infinite' }} />;
-    case 'pending_review':
-      return <AlertCircle size={13} color="#F5A623" />;
-    default:
-      return <Clock size={13} color="#8A9BB5" />;
-  }
-};
-
-const cardStyle: CSSProperties = {
-  backgroundColor: '#0D1428',
-  border: '1px solid #1E2D4A',
-  borderRadius: 16,
-};
-
-function SectionLabel({ children }: { children: ReactNode }) {
-  return (
-    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8A9BB5' }}>
-      {children}
-    </div>
-  );
 }
+
+const MOCK: SwarmData = {
+  swarmId: 'memorymerge-swarm-001',
+  goal: 'Research the current state of decentralized AI infrastructure in 2026',
+  facts: [
+    {
+      key: 'task_001_market_growth',
+      value: 'Decentralized AI market grew 340% YoY in 2025, reaching $2.3B valuation',
+      confidence: 0.92,
+      authorAgent: 'researcher',
+      timestamp: Date.now() - 120000,
+      reviewed: true,
+    },
+    {
+      key: 'task_001_key_players',
+      value: '0G Labs leads the storage layer with 99.9% uptime on Galileo testnet',
+      confidence: 0.88,
+      authorAgent: 'researcher',
+      timestamp: Date.now() - 100000,
+      reviewed: true,
+    },
+    {
+      key: 'task_002_compute_costs',
+      value: 'Decentralized compute is 60-90% cheaper than cloud for AI inference workloads',
+      confidence: 0.85,
+      authorAgent: 'researcher',
+      timestamp: Date.now() - 80000,
+      reviewed: false,
+    },
+    {
+      key: 'critic_review_001',
+      value: 'Research quality high. Market data cross-referenced with multiple sources.',
+      confidence: 0.95,
+      authorAgent: 'critic',
+      timestamp: Date.now() - 60000,
+      reviewed: true,
+    },
+    {
+      key: 'planner_assessment_1',
+      value: 'Goal 60% complete. Storage and compute covered. Missing: governance layer.',
+      confidence: 0.9,
+      authorAgent: 'planner',
+      timestamp: Date.now() - 40000,
+      reviewed: true,
+    },
+  ],
+  tasks: [
+    {
+      taskId: 'task_001',
+      status: 'complete',
+      assignedTo: 'researcher',
+      description: 'Research market size and key players in decentralized AI infrastructure',
+      result: 'Market at $2.3B, 0G Labs leading storage layer',
+      createdAt: Date.now() - 180000,
+      updatedAt: Date.now() - 60000,
+    },
+    {
+      taskId: 'task_002',
+      status: 'pending_review',
+      assignedTo: 'researcher',
+      description: 'Analyze cost comparison between decentralized and centralized compute',
+      result: '60-90% cheaper for AI inference workloads',
+      createdAt: Date.now() - 150000,
+      updatedAt: Date.now() - 80000,
+    },
+    {
+      taskId: 'task_003',
+      status: 'pending',
+      assignedTo: 'researcher',
+      description: 'Research governance models and token economics of leading protocols',
+      createdAt: Date.now() - 120000,
+      updatedAt: Date.now() - 120000,
+    },
+  ],
+  insights: [
+    {
+      key: 'insight_1',
+      insight: 'Decentralized AI infrastructure is entering mainstream adoption with 340% YoY growth',
+      importance: 9,
+      generatedAt: Date.now() - 30000,
+      epochNumber: 1,
+    },
+    {
+      key: 'insight_2',
+      insight: '0G Labs provides the most complete stack: Storage + Compute + DA + Chain',
+      importance: 8,
+      generatedAt: Date.now() - 30000,
+      epochNumber: 1,
+    },
+    {
+      key: 'insight_3',
+      insight: 'Cost advantage of 60-90% makes decentralized compute commercially viable',
+      importance: 7,
+      generatedAt: Date.now() - 30000,
+      epochNumber: 1,
+    },
+  ],
+  lastUpdated: Date.now() - 10000,
+  indexKeyCount: 12,
+  snapshot: null,
+};
+
+const MOCK_SNAPSHOTS: SnapshotEntry[] = [
+  {
+    rootHash: '0x7f3a9b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a',
+    timestamp: Date.now() - 30000,
+    label: 'epoch-1-' + (Date.now() - 30000),
+    factCount: 5,
+    taskCount: 3,
+    insightCount: 3,
+  },
+];
+
+const timeAgo = (t: number) => {
+  const s = Math.floor((Date.now() - t) / 1000);
+  if (s < 60) return `${s}s ago`;
+  if (s < 3600) return `${Math.floor(s / 60)}m ago`;
+  return `${Math.floor(s / 3600)}h ago`;
+};
+
+const confColor = (c: number) => (c >= 0.8 ? '#00D4AA' : c >= 0.5 ? '#F5A623' : '#FF4D6A');
+
+const agentColor = (a: string) =>
+  ({
+    planner: '#1D6FEB',
+    researcher: '#00D4AA',
+    critic: '#F5A623',
+    reflection: '#A855F7',
+  }[a] ?? '#8A9BB5');
+
+const statusIcon = (s: TaskPayload['status']) =>
+  ({
+    complete: <CheckCircle size={13} color="#00D4AA" />,
+    in_progress: <Loader2 size={13} color="#1D6FEB" className="animate-spin" />,
+    pending_review: <AlertCircle size={13} color="#F5A623" />,
+    pending: <Clock size={13} color="#8A9BB5" />,
+  }[s]);
+
+const statusLabel = (s: TaskPayload['status']) =>
+  ({ complete: 'Complete', in_progress: 'In Progress', pending_review: 'In Review', pending: 'Pending' }[s] ?? s);
+
+const S = {
+  card: { backgroundColor: '#0D1428', border: '1px solid #1E2D4A', borderRadius: '12px' } as CSSProperties,
+  label: {
+    fontSize: '11px',
+    fontWeight: 600,
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.07em',
+    color: '#8A9BB5',
+  } as CSSProperties,
+};
 
 function CodeBlock({ code, lang = 'typescript' }: { code: string; lang?: string }) {
   const [copied, setCopied] = useState(false);
-
-  const copy = async () => {
-    await navigator.clipboard.writeText(code);
+  const copy = () => {
+    navigator.clipboard.writeText(code);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    window.setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <div style={{ ...cardStyle, overflow: 'hidden' }}>
+    <div style={{ position: 'relative', backgroundColor: '#060B16', border: '1px solid #1E2D4A', borderRadius: '10px', overflow: 'hidden' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', borderBottom: '1px solid #1E2D4A' }}>
-        <SectionLabel>{lang}</SectionLabel>
-        <button onClick={copy} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, border: 'none', background: 'transparent', color: copied ? '#00D4AA' : '#8A9BB5', cursor: 'pointer', fontSize: 12 }}>
+        <span style={{ ...S.label, fontSize: '10px' }}>{lang}</span>
+        <button
+          onClick={copy}
+          style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'none', border: 'none', cursor: 'pointer', color: copied ? '#00D4AA' : '#8A9BB5', fontSize: '11px' }}
+        >
           {copied ? <Check size={12} /> : <Copy size={12} />}
           {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
-      <pre style={{ margin: 0, padding: 16, overflow: 'auto', fontSize: 12, lineHeight: 1.7, color: '#C9D8FF', fontFamily: "'JetBrains Mono','Fira Code',monospace" }}>{code}</pre>
+      <pre style={{ margin: 0, padding: '14px', overflow: 'auto', fontSize: '12px', lineHeight: '1.7', color: '#C9D8FF', fontFamily: "'JetBrains Mono','Fira Code',monospace" }}>{code}</pre>
     </div>
   );
 }
 
-function LivePill({ live }: { live: boolean }) {
-  return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 10px', borderRadius: 999, backgroundColor: live ? '#00D4AA15' : '#FF4D6A15', border: `1px solid ${live ? '#00D4AA40' : '#FF4D6A40'}` }}>
-      {live ? <Wifi size={12} color="#00D4AA" /> : <WifiOff size={12} color="#FF4D6A" />}
-      <span style={{ fontSize: 11, fontWeight: 700, color: live ? '#00D4AA' : '#FF4D6A' }}>{live ? 'Live Data' : 'Cached / Empty'}</span>
-    </div>
-  );
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function EmptyState({ title, body }: { title: string; body: string }) {
-  return (
-    <div style={{ padding: 18, borderRadius: 12, border: '1px dashed #1E2D4A', backgroundColor: '#060B16' }}>
-      <div style={{ fontWeight: 700, color: '#FFFFFF', marginBottom: 6 }}>{title}</div>
-      <div style={{ fontSize: 13, color: '#8A9BB5', lineHeight: 1.7 }}>{body}</div>
-    </div>
-  );
-}
-
-function StatCard({ label, value, sub, icon, tone }: { label: string; value: string | number; sub: string; icon: ReactNode; tone: string }) {
-  return (
-    <div style={{ ...cardStyle, padding: 18 }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-        <SectionLabel>{label}</SectionLabel>
-        <div style={{ width: 28, height: 28, borderRadius: 9, backgroundColor: `${tone}15`, display: 'grid', placeItems: 'center' }}>{icon}</div>
-      </div>
-      <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: '-0.04em', color: tone }}>{value}</div>
-      <div style={{ fontSize: 12, color: '#8A9BB5', marginTop: 4 }}>{sub}</div>
-    </div>
-  );
-}
-
-function SectionCard({ title, children, action }: { title: string; children: ReactNode; action?: ReactNode }) {
-  return (
-    <div style={{ ...cardStyle, overflow: 'hidden' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center', padding: '16px 18px', borderBottom: '1px solid #1E2D4A' }}>
-        <SectionLabel>{title}</SectionLabel>
-        {action}
-      </div>
-      <div style={{ padding: 18 }}>{children}</div>
-    </div>
-  );
-}
-
-function ArchitectureDiagram() {
-  return (
-    <div style={{ overflowX: 'auto', borderRadius: 12, border: '1px solid #1E2D4A', backgroundColor: '#0A0F1E' }}>
-      <svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style={{ minWidth: 900, display: 'block', background: '#0A0F1E', fontFamily: 'Inter,system-ui,sans-serif' }}>
-        <defs>
-          <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#0D1428" />
-            <stop offset="100%" stopColor="#060B16" />
-          </linearGradient>
-          <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#1D6FEB" />
-          </marker>
-          <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#00D4AA" />
-          </marker>
-          <marker id="goldArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#F5A623" />
-          </marker>
-          <marker id="purpleArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#A855F7" />
-          </marker>
-        </defs>
-
-        <rect x="0" y="0" width="900" height="620" fill="url(#bgGlow)" />
-        <text x="450" y="40" textAnchor="middle" fill="#FFFFFF" fontSize="18" fontWeight="700" letterSpacing="-0.5">MemoryMerge Architecture</text>
-        <text x="450" y="60" textAnchor="middle" fill="#8A9BB5" fontSize="12">Verifiable Knowledge Provenance · Powered by 0G Storage + Compute + Chain</text>
-
-        <text x="450" y="95" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">AGENT LAYER</text>
-
-        <rect x="60" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#1D6FEB" strokeWidth="1.5" />
-        <text x="140" y="132" textAnchor="middle" fill="#1D6FEB" fontSize="13" fontWeight="600">Planner</text>
-        <text x="140" y="150" textAnchor="middle" fill="#8A9BB5" fontSize="10">Goals → Tasks</text>
-        <text x="140" y="164" textAnchor="middle" fill="#8A9BB5" fontSize="10">Sets goal on-chain</text>
-
-        <rect x="370" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#00D4AA" strokeWidth="1.5" />
-        <text x="450" y="132" textAnchor="middle" fill="#00D4AA" fontSize="13" fontWeight="600">Researcher</text>
-        <text x="450" y="150" textAnchor="middle" fill="#8A9BB5" fontSize="10">Tasks → Facts</text>
-        <text x="450" y="164" textAnchor="middle" fill="#8A9BB5" fontSize="10">0G Compute inference</text>
-
-        <rect x="680" y="108" width="160" height="64" rx="10" fill="#0D1428" stroke="#F5A623" strokeWidth="1.5" />
-        <text x="760" y="132" textAnchor="middle" fill="#F5A623" fontSize="13" fontWeight="600">Critic</text>
-        <text x="760" y="150" textAnchor="middle" fill="#8A9BB5" fontSize="10">Facts → Scores</text>
-        <text x="760" y="164" textAnchor="middle" fill="#8A9BB5" fontSize="10">Confidence scoring</text>
-
-        <line x1="140" y1="172" x2="140" y2="210" stroke="#1D6FEB" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#blueArrow)" />
-        <line x1="450" y1="172" x2="450" y2="210" stroke="#00D4AA" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#greenArrow)" />
-        <line x1="760" y1="172" x2="760" y2="210" stroke="#F5A623" strokeWidth="1.5" strokeDasharray="4,3" markerEnd="url(#goldArrow)" />
-
-        <text x="450" y="200" textAnchor="middle" fill="#3D8FFF" fontSize="10">All coordinate via shared 0G Storage state — no direct communication</text>
-
-        <text x="450" y="228" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">MEMORYMESH SDK</text>
-        <rect x="40" y="238" width="820" height="70" rx="12" fill="#0D1428" stroke="#1E2D4A" strokeWidth="1" />
-        <rect x="60" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
-        <text x="145" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">StorageClient</text>
-        <text x="145" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">0g-ts-sdk wrapper</text>
-        <rect x="255" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
-        <text x="340" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">MemoryManager</text>
-        <text x="340" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">Facts · Tasks · Insights</text>
-        <rect x="450" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
-        <text x="535" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">ReflectionEngine</text>
-        <text x="535" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">Compresses every 8 turns</text>
-        <rect x="645" y="252" width="170" height="42" rx="8" fill="#060B16" stroke="#1E2D4A" strokeWidth="1" />
-        <text x="730" y="270" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="600">AnchorClient</text>
-        <text x="730" y="284" textAnchor="middle" fill="#8A9BB5" fontSize="9">MemoryAnchor contract</text>
-
-        <text x="450" y="342" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">0G STORAGE</text>
-        <rect x="40" y="352" width="820" height="132" rx="14" fill="#0D1428" stroke="#1E2D4A" strokeWidth="1" />
-        <rect x="60" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#1D6FEB" strokeWidth="1.5" />
-        <text x="149" y="394" textAnchor="middle" fill="#1D6FEB" fontSize="13" fontWeight="600">KV Memory</text>
-        <text x="149" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">Working memory</text>
-        <text x="149" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">Facts · Tasks · Goal</text>
-        <text x="149" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Indexed by swarm</text>
-
-        <rect x="261" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#00D4AA" strokeWidth="1.5" />
-        <text x="350" y="394" textAnchor="middle" fill="#00D4AA" fontSize="13" fontWeight="600">Compute Distillation</text>
-        <text x="350" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">Rank facts</text>
-        <text x="350" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">Generate insights</text>
-        <text x="350" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Detect contradictions</text>
-
-        <rect x="462" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#A855F7" strokeWidth="1.5" />
-        <text x="551" y="394" textAnchor="middle" fill="#A855F7" fontSize="13" fontWeight="600">Storage Log</text>
-        <text x="551" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">Snapshot archive</text>
-        <text x="551" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">Episodic proof</text>
-        <text x="551" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Root-hash anchored</text>
-
-        <rect x="663" y="372" width="178" height="90" rx="10" fill="#060B16" stroke="#F5A623" strokeWidth="1.5" />
-        <text x="752" y="394" textAnchor="middle" fill="#F5A623" fontSize="13" fontWeight="600">Chain Anchor</text>
-        <text x="752" y="413" textAnchor="middle" fill="#8A9BB5" fontSize="10">0G Galileo Testnet</text>
-        <text x="752" y="428" textAnchor="middle" fill="#8A9BB5" fontSize="10">MemoryAnchor.sol</text>
-        <text x="752" y="443" textAnchor="middle" fill="#8A9BB5" fontSize="10">Verifiable proof</text>
-
-        <line x1="149" y1="330" x2="149" y2="372" stroke="#1D6FEB" strokeWidth="2" markerEnd="url(#blueArrow)" />
-        <line x1="350" y1="330" x2="350" y2="372" stroke="#00D4AA" strokeWidth="2" markerEnd="url(#greenArrow)" />
-        <line x1="551" y1="330" x2="551" y2="372" stroke="#A855F7" strokeWidth="2" markerEnd="url(#purpleArrow)" />
-        <line x1="752" y1="330" x2="752" y2="372" stroke="#F5A623" strokeWidth="2" markerEnd="url(#goldArrow)" />
-
-        <text x="450" y="520" textAnchor="middle" fill="#8A9BB5" fontSize="10" fontWeight="600" letterSpacing="1.5">CROSS-SWARM INHERITANCE</text>
-        <rect x="180" y="532" width="540" height="48" rx="12" fill="#0D1428" stroke="#1E2D4A" strokeWidth="1" />
-        <text x="450" y="551" textAnchor="middle" fill="#FFFFFF" fontSize="12" fontWeight="600">New swarm can inherit verified insights from an anchored snapshot</text>
-        <text x="450" y="568" textAnchor="middle" fill="#8A9BB5" fontSize="10">Root hash resolves on-chain · PoRA verifies the content · provenance remains traceable</text>
-      </svg>
-    </div>
-  );
-}
-
-function Shell({ children, active, setActive }: { children: ReactNode; active: string; setActive: (value: string) => void }) {
-  const nav = ['Overview', 'Explorer', 'Coordination', 'Snapshots', 'Docs'];
+function Nav({ onNavigate }: { onNavigate: (id: string) => void }) {
+  const links = [
+    ['Overview', 'overview'],
+    ['Features', 'features'],
+    ['How It Works', 'how-it-works'],
+    ['Explorer', 'explorer'],
+    ['Docs', 'docs'],
+  ] as const;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0A0F1E', color: '#FFFFFF' }}>
-      <header style={{ position: 'sticky', top: 0, zIndex: 30, backdropFilter: 'blur(12px)', backgroundColor: '#0A0F1EF0', borderBottom: '1px solid #1E2D4A' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 9, background: 'linear-gradient(135deg,#1D6FEB,#3D8FFF)', display: 'grid', placeItems: 'center' }}>
-              <Brain size={16} color="#fff" />
-            </div>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: 15, letterSpacing: '-0.02em' }}>MemoryMerge</div>
-              <div style={{ fontSize: 11, color: '#8A9BB5' }}>0G-backed live memory explorer</div>
-            </div>
+    <header style={{ position: 'sticky', top: 0, zIndex: 200, backgroundColor: '#0A0F1EF0', backdropFilter: 'blur(12px)', borderBottom: '1px solid #1E2D4A' }}>
+      <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 24px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ width: '30px', height: '30px', background: 'linear-gradient(135deg,#1D6FEB,#3D8FFF)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Brain size={16} color="white" />
           </div>
-
-          <nav style={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
-            {nav.map((item) => (
-              <button
-                key={item}
-                onClick={() => setActive(item)}
-                style={{
-                  border: 'none',
-                  borderRadius: 8,
-                  padding: '7px 12px',
-                  cursor: 'pointer',
-                  backgroundColor: active === item ? '#1E2D4A' : 'transparent',
-                  color: active === item ? '#FFFFFF' : '#8A9BB5',
-                  fontSize: 13,
-                  fontWeight: active === item ? 700 : 500,
-                }}
-              >
-                {item}
-              </button>
-            ))}
-          </nav>
-
-          <div style={{ display: 'flex', gap: 10 }}>
-            <a href="https://github.com/Techkeyy/memorymerge" target="_blank" rel="noreferrer" style={{ padding: '7px 13px', borderRadius: 8, border: '1px solid #1E2D4A', color: '#8A9BB5', textDecoration: 'none', fontSize: 12, fontWeight: 600 }}>
-              GitHub
-            </a>
-            <a href={`${CHAIN_EXPLORER}/address/${CONTRACT_ADDRESS}`} target="_blank" rel="noreferrer" style={{ padding: '7px 13px', borderRadius: 8, backgroundColor: '#1D6FEB', color: '#fff', textDecoration: 'none', fontSize: 12, fontWeight: 700 }}>
-              Contract ↗
-            </a>
-          </div>
+          <span style={{ fontWeight: 700, fontSize: '15px', letterSpacing: '-0.3px' }}>MemoryMerge</span>
+          <span style={{ fontSize: '10px', padding: '2px 7px', borderRadius: '10px', backgroundColor: '#1D6FEB20', color: '#1D6FEB', fontWeight: 600 }}>BETA</span>
         </div>
-      </header>
-      {children}
-      <footer style={{ borderTop: '1px solid #1E2D4A', marginTop: 48, padding: '24px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
-          <div style={{ fontSize: 12, color: '#8A9BB5' }}>MemoryMerge · 0G / Open Agents Hackathon · ETHGlobal 2026</div>
-          <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap' }}>
-            <a href={STORAGE_EXPLORER} target="_blank" rel="noreferrer" style={{ fontSize: 12, color: '#1D6FEB', textDecoration: 'none' }}>StorageScan</a>
-            <a href={`${CHAIN_EXPLORER}/address/${CONTRACT_ADDRESS}`} target="_blank" rel="noreferrer" style={{ fontSize: 12, color: '#1D6FEB', textDecoration: 'none' }}>Chain Explorer</a>
-          </div>
+
+        <nav style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {links.map(([label, id]) => (
+            <button
+              key={id}
+              onClick={() => onNavigate(id)}
+              style={{ padding: '7px 12px', borderRadius: '7px', border: 'none', cursor: 'pointer', fontSize: '13px', fontWeight: 500, backgroundColor: 'transparent', color: '#8A9BB5', transition: 'all 0.15s' }}
+            >
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <a href="https://github.com/Techkeyy/memorymerge" target="_blank" rel="noopener noreferrer" style={{ padding: '7px 14px', borderRadius: '7px', border: '1px solid #1E2D4A', fontSize: '12px', color: '#8A9BB5', textDecoration: 'none', fontWeight: 500 }}>
+            GitHub
+          </a>
+          <a href="https://chainscan-galileo.0g.ai/address/0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079" target="_blank" rel="noopener noreferrer" style={{ padding: '7px 14px', borderRadius: '7px', border: 'none', backgroundColor: '#1D6FEB', fontSize: '12px', color: 'white', textDecoration: 'none', fontWeight: 600 }}>
+            Contract ↗
+          </a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </header>
   );
 }
 
-function Hero({ swarm, snapshot, onRefresh }: { swarm: SwarmData | null; snapshot: SnapshotEntry | null; onRefresh: () => void }) {
+function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
   return (
-    <section style={{ maxWidth: 1200, margin: '0 auto', padding: '72px 24px 24px', textAlign: 'center' }}>
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 22, padding: '6px 14px', borderRadius: 999, border: '1px solid #1D6FEB30', backgroundColor: '#1D6FEB15' }}>
-        <div style={{ width: 7, height: 7, borderRadius: 999, backgroundColor: '#00D4AA' }} />
-        <span style={{ fontSize: 12, color: '#8A9BB5' }}>Verified live swarm · 0G Storage + 0G Compute + 0G Chain</span>
+    <section id="overview" style={{ maxWidth: '1160px', margin: '0 auto', padding: '86px 24px 54px', textAlign: 'center' }}>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', backgroundColor: '#1D6FEB15', border: '1px solid #1D6FEB30', marginBottom: '26px' }}>
+        <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#00D4AA' }} />
+        <span style={{ fontSize: '12px', color: '#8A9BB5' }}>Built for 0G / Open Agents Hackathon · ETHGlobal 2026</span>
       </div>
 
-      <h1 style={{ fontSize: 'clamp(42px, 7vw, 72px)', lineHeight: 0.98, letterSpacing: '-0.06em', margin: '0 auto 18px', maxWidth: 980, background: 'linear-gradient(135deg, #FFFFFF 0%, #8A9BB5 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-        Persistent memory for AI agent swarms
+      <h1 style={{ fontSize: '56px', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-1.7px', marginBottom: '18px', background: 'linear-gradient(135deg, #FFFFFF 0%, #B7C4E6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        Persistent memory for<br />AI agent swarms
       </h1>
 
-      <p style={{ maxWidth: 760, margin: '0 auto 28px', fontSize: 18, lineHeight: 1.7, color: '#8A9BB5' }}>
-        MemoryMerge gives Planner, Researcher, and Critic agents a single shared state layer. This dashboard reads real swarm memory from the backend, not mock fixtures.
+      <p style={{ fontSize: '18px', color: '#8A9BB5', maxWidth: '640px', margin: '0 auto 32px', lineHeight: 1.7 }}>
+        MemoryMerge is a decentralized Memory OS that gives Planner, Researcher, and Critic agents a single shared, resumable state layer backed by 0G Storage, 0G Compute, and 0G Chain.
       </p>
 
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
-        <button onClick={onRefresh} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, border: 'none', borderRadius: 10, padding: '12px 18px', backgroundColor: '#1D6FEB', color: '#fff', fontWeight: 700, cursor: 'pointer' }}>
-          <RefreshCw size={16} /> Refresh live data
+      <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <button onClick={() => onNavigate('explorer')} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '9px', border: 'none', backgroundColor: '#1D6FEB', color: 'white', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}>
+          Live Explorer <ArrowRight size={16} />
         </button>
-        <a href={snapshot?.storagescanUrl ?? STORAGE_EXPLORER} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, borderRadius: 10, padding: '12px 18px', border: '1px solid #1E2D4A', color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
-          <ExternalLink size={16} /> Verify snapshot
-        </a>
+        <button onClick={() => onNavigate('docs')} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '9px', border: '1px solid #1E2D4A', backgroundColor: 'transparent', color: '#FFFFFF', fontSize: '14px', fontWeight: 500, cursor: 'pointer' }}>
+          Quick Start <ChevronRight size={16} />
+        </button>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <LivePill live={swarm?.live ?? false} />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginTop: '40px' }}>
+        {[
+          { label: 'Network', value: '0G Galileo', sub: 'Testnet' },
+          { label: 'Contract', value: '0x4dbF...4079', sub: 'Anchors snapshots' },
+          { label: 'Model', value: 'Qwen 2.5 7B', sub: 'TeeML verified' },
+          { label: 'Tracks', value: 'Track 1 + 2', sub: 'Dual submission' },
+        ].map((s, i) => (
+          <div key={i} style={{ ...S.card, padding: '18px 20px', textAlign: 'left' }}>
+            <div style={S.label}>{s.label}</div>
+            <div style={{ fontSize: '18px', fontWeight: 700, color: '#FFFFFF', marginTop: '6px', letterSpacing: '-0.3px' }}>{s.value}</div>
+            <div style={{ fontSize: '11px', color: '#8A9BB5', marginTop: '2px' }}>{s.sub}</div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-function AppSection({ swarm, snapshots }: { swarm: SwarmData | null; snapshots: SnapshotEntry[] }) {
-  const [tab, setTab] = useState<'facts' | 'tasks' | 'insights' | 'coordination' | 'snapshots'>('facts');
-  const facts = swarm?.facts ?? [];
-  const tasks = swarm?.tasks ?? [];
-  const insights = swarm?.insights ?? [];
-  const verifiedSnapshot = snapshots[0] ?? swarm?.snapshot ?? null;
-
-  const counts = useMemo(() => ({
-    planner: tasks.length,
-    researcher: facts.filter((fact) => fact.authorAgent === 'researcher').length,
-    critic: facts.filter((fact) => fact.authorAgent === 'critic').length,
-    reflection: insights.length,
-  }), [facts, insights, tasks]);
-
-  const completedTasks = tasks.filter((task) => task.status === 'complete').length;
+function Features() {
+  const features = [
+    { icon: <Database size={22} color="#1D6FEB" />, title: 'Decentralized Memory', body: '0G Storage KV for working memory and 0G Storage Log for permanent archives. The swarm never forgets.', color: '#1D6FEB' },
+    { icon: <Cpu size={22} color="#A855F7" />, title: 'Autonomous Reflection', body: 'Every N turns, the reflection engine compresses facts into ranked insights using 0G Compute with TeeML verification.', color: '#A855F7' },
+    { icon: <Network size={22} color="#00D4AA" />, title: 'Swarm Coordination', body: 'Planner, Researcher, and Critic coordinate exclusively through shared memory state — no direct messaging required.', color: '#00D4AA' },
+    { icon: <Shield size={22} color="#F5A623" />, title: 'On-Chain Proof', body: 'Each snapshot root hash is anchored to the MemoryAnchor contract on 0G Chain for durable, auditable proof.', color: '#F5A623' },
+    { icon: <Zap size={22} color="#3D8FFF" />, title: 'Drop-In SDK', body: 'Three lines of code. Import the MemoryMerge SDK and give any agent persistent decentralized memory.', color: '#3D8FFF' },
+    { icon: <Activity size={22} color="#FF4D6A" />, title: 'Session Continuity', body: 'Restart on a different machine with the same SWARM_ID and the swarm restores all memory automatically.', color: '#FF4D6A' },
+  ];
 
   return (
-    <section style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 24px 0', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 340px', gap: 16 }}>
-      <div style={{ display: 'grid', gap: 16 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 12 }}>
-          <StatCard label="Facts" value={facts.length} sub={`${facts.filter((fact) => fact.reviewed).length} reviewed`} icon={<Database size={14} color="#1D6FEB" />} tone="#1D6FEB" />
-          <StatCard label="Tasks" value={`${completedTasks}/${tasks.length}`} sub={`${tasks.filter((task) => task.status !== 'complete').length} open`} icon={<CheckCircle size={14} color="#00D4AA" />} tone="#00D4AA" />
-          <StatCard label="Insights" value={insights.length} sub="compressed by 0G Compute" icon={<Zap size={14} color="#A855F7" />} tone="#A855F7" />
-          <StatCard label="Index Keys" value={swarm?.indexKeyCount ?? 0} sub="keys indexed in 0G Storage" icon={<Activity size={14} color="#F5A623" />} tone="#F5A623" />
+    <section id="features" style={{ borderTop: '1px solid #1E2D4A', borderBottom: '1px solid #1E2D4A', backgroundColor: '#0D1428' }}>
+      <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '72px 24px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '46px' }}>
+          <div style={S.label}>What it does</div>
+          <h2 style={{ fontSize: '32px', fontWeight: 700, letterSpacing: '-0.8px', marginTop: '10px', color: '#FFFFFF' }}>Built different. Built to last.</h2>
+          <p style={{ fontSize: '15px', color: '#8A9BB5', marginTop: '10px', maxWidth: '540px', margin: '10px auto 0', lineHeight: 1.7 }}>
+            MemoryMerge turns state into infrastructure. Agents write facts, tasks, and insights to 0G Storage; reflection compresses that memory; 0G Chain proves it forever.
+          </p>
         </div>
 
-        <SectionCard title="Live Memory" action={<div style={{ display: 'flex', gap: 4, overflowX: 'auto' }}>{(['facts', 'tasks', 'insights', 'coordination', 'snapshots'] as const).map((item) => (<button key={item} onClick={() => setTab(item)} style={{ border: 'none', borderRadius: 8, padding: '8px 12px', backgroundColor: tab === item ? '#1E2D4A' : 'transparent', color: tab === item ? '#FFFFFF' : '#8A9BB5', fontSize: 12, fontWeight: tab === item ? 700 : 500, textTransform: 'capitalize', cursor: 'pointer', whiteSpace: 'nowrap' }}>{item}<span style={{ marginLeft: 8, padding: '1px 6px', borderRadius: 999, backgroundColor: '#1E2D4A', color: '#8A9BB5', fontSize: 10 }}>{item === 'facts' ? facts.length : item === 'tasks' ? tasks.length : item === 'snapshots' ? snapshots.length : item === 'insights' ? insights.length : 4}</span></button>))}</div>}>
-          <div style={{ display: 'grid', gap: 10, maxHeight: 520, overflowY: 'auto', paddingRight: 6 }}>
-            {tab === 'facts' && (facts.length > 0 ? facts.map((fact) => (<div key={fact.key} style={{ padding: 14, borderRadius: 12, backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderLeft: `3px solid ${toneByAgent[fact.authorAgent] ?? '#8A9BB5'}` }}><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}><div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}><span style={{ fontSize: 11, padding: '3px 8px', borderRadius: 999, backgroundColor: `${toneByAgent[fact.authorAgent] ?? '#8A9BB5'}15`, color: toneByAgent[fact.authorAgent] ?? '#8A9BB5', fontFamily: 'monospace' }}>{fact.authorAgent}</span><span style={{ fontSize: 11, color: '#8A9BB5' }}>{fact.reviewed ? 'reviewed' : 'unreviewed'}</span></div><div style={{ fontWeight: 800, color: confidenceColor(fact.confidence), fontSize: 13 }}>{Math.round(fact.confidence * 100)}%</div></div><div style={{ fontSize: 14, lineHeight: 1.6, color: '#E0E8FF' }}>{fact.value}</div><div style={{ marginTop: 8, fontSize: 11, color: '#8A9BB5', fontFamily: 'monospace' }}>{fact.key} · {timeAgo(fact.timestamp)}</div></div>)) : <EmptyState title="No facts indexed yet" body="Run the swarm again to repopulate 0G Storage KV." />)}
-
-            {tab === 'tasks' && (tasks.length > 0 ? tasks.map((task) => (<div key={task.taskId} style={{ padding: 14, borderRadius: 12, backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A' }}><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}><span style={{ fontSize: 11, color: '#3D8FFF', fontFamily: 'monospace' }}>{task.taskId}</span><span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, color: statusColor(task.status) }}>{statusIcon(task.status)} {statusLabel(task.status)}</span></div><div style={{ fontSize: 14, lineHeight: 1.6, color: '#E0E8FF', marginBottom: 8 }}>{task.description}</div>{task.result ? <div style={{ padding: 10, borderRadius: 10, backgroundColor: '#1E2D4A', borderLeft: '2px solid #00D4AA', fontSize: 12, color: '#B8C7F0' }}>{task.result}</div> : null}<div style={{ marginTop: 8, fontSize: 11, color: '#8A9BB5' }}>→ {task.assignedTo} · {timeAgo(task.updatedAt)}</div></div>)) : <EmptyState title="No tasks indexed yet" body="Planner writes tasks into 0G Storage before Researcher starts work." />)}
-
-            {tab === 'insights' && (insights.length > 0 ? [...insights].sort((a, b) => b.importance - a.importance).map((insight) => (<div key={insight.key} style={{ padding: 14, borderRadius: 12, backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderLeft: '3px solid #A855F7' }}><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}><span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#A855F7' }}><Zap size={12} />Epoch {insight.epochNumber}</span><span style={{ fontWeight: 800, fontSize: 13, color: insight.importance >= 8 ? '#A855F7' : '#F5A623' }}>{insight.importance}/10</span></div><div style={{ fontSize: 14, lineHeight: 1.6, color: '#E0E8FF' }}>{insight.insight}</div><div style={{ marginTop: 8, fontSize: 11, color: '#8A9BB5', fontFamily: 'monospace' }}>{insight.key} · {timeAgo(insight.generatedAt)}</div></div>)) : <EmptyState title="No insights indexed yet" body="Reflection engine will populate these after the next compression cycle." />)}
-
-            {tab === 'coordination' && (<div style={{ display: 'grid', gap: 12 }}><div style={{ padding: 16, borderRadius: 12, backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderLeft: '3px solid #1D6FEB' }}><div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}><Network size={14} color="#1D6FEB" /><div style={{ fontWeight: 700, color: '#FFFFFF' }}>Agent coordination proof</div></div><div style={{ fontSize: 13, lineHeight: 1.7, color: '#8A9BB5', marginBottom: 14 }}>Planner, Researcher, and Critic do not talk directly. They coordinate through shared 0G Storage keys. The proof below is rendered from the live swarm state returned by the backend.</div><div style={{ display: 'grid', gap: 10 }}>{[{ label: 'Planner', color: '#1D6FEB', value: `${counts.planner} tasks written`, detail: 'Sets the goal and serializes task state.' }, { label: 'Researcher', color: '#00D4AA', value: `${counts.researcher} facts written`, detail: 'Reads tasks and writes evidence back to KV.' }, { label: 'Critic', color: '#F5A623', value: `${counts.critic} review facts`, detail: 'Scores quality and marks tasks complete.' }, { label: 'Reflection', color: '#A855F7', value: `${counts.reflection} insights`, detail: 'Compresses memory and anchors snapshots.' }].map((step, index) => (<div key={step.label} style={{ display: 'grid', gridTemplateColumns: '40px 1fr auto', gap: 12, alignItems: 'center', padding: '10px 12px', borderRadius: 10, backgroundColor: '#060B16', border: '1px solid #1E2D4A' }}><div style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: `${step.color}18`, display: 'grid', placeItems: 'center', color: step.color, fontWeight: 800 }}>{index + 1}</div><div><div style={{ fontWeight: 700, color: '#FFFFFF' }}>{step.label}</div><div style={{ fontSize: 12, color: '#8A9BB5' }}>{step.detail}</div></div><div style={{ color: step.color, fontSize: 12, fontWeight: 800, whiteSpace: 'nowrap' }}>{step.value}</div></div>))}</div></div><div style={{ padding: 16, borderRadius: 12, backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A' }}><div style={{ fontSize: 13, fontWeight: 700, color: '#FFFFFF', marginBottom: 8 }}>Evidence chain</div><div style={{ fontFamily: 'monospace', fontSize: 11, lineHeight: 1.9, color: '#8A9BB5' }}><div><span style={{ color: '#1D6FEB' }}>Planner</span> → <span style={{ color: '#3D8FFF' }}>swarm/{swarm?.swarmId ?? 'memorymerge-swarm-001'}/tasks</span></div><div><span style={{ color: '#00D4AA' }}>Researcher</span> → <span style={{ color: '#3D8FFF' }}>swarm/{swarm?.swarmId ?? 'memorymerge-swarm-001'}/facts</span></div><div><span style={{ color: '#F5A623' }}>Critic</span> → <span style={{ color: '#3D8FFF' }}>confidence scores + task completion</span></div><div><span style={{ color: '#A855F7' }}>Reflection</span> → <span style={{ color: '#3D8FFF' }}>insights + snapshot archive</span></div></div></div></div>)}
-
-            {tab === 'snapshots' && (snapshots.length > 0 ? snapshots.map((snapshot) => (<div key={snapshot.rootHash} style={{ padding: 14, borderRadius: 12, backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderLeft: '3px solid #00D4AA' }}><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 10, flexWrap: 'wrap' }}><div><div style={{ fontWeight: 700, color: '#FFFFFF' }}>{snapshot.label}</div><div style={{ fontSize: 11, color: '#8A9BB5' }}>{timeAgo(snapshot.timestamp)} · {snapshot.verified ? 'verified' : 'unverified'}</div></div><a href={snapshot.storagescanUrl} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#00D4AA', textDecoration: 'none', fontSize: 12, fontWeight: 700 }}><ExternalLink size={12} /> StorageScan</a></div><div style={{ fontFamily: 'monospace', fontSize: 11, color: '#3D8FFF', wordBreak: 'break-all', marginBottom: 10 }}>{snapshot.rootHash}</div><div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: 12, color: '#8A9BB5' }}><span>{snapshot.factCount} facts</span><span>{snapshot.taskCount} tasks</span><span>{snapshot.insightCount} insights</span></div></div>)) : <EmptyState title="No snapshots indexed yet" body="Run the swarm to archive the first snapshot and make it available here." />)}
-          </div>
-        </SectionCard>
-      </div>
-
-      <div style={{ display: 'grid', gap: 16, alignContent: 'start' }}>
-        <SectionCard title="Current Goal">
-          <div style={{ color: '#FFFFFF', fontSize: 16, lineHeight: 1.7, fontWeight: 600 }}>{swarm?.goal || 'No goal loaded yet'}</div>
-          <div style={{ marginTop: 10, fontSize: 11, color: '#8A9BB5', fontFamily: 'monospace' }}>SWARM_ID: {swarm?.swarmId ?? 'memorymerge-swarm-001'}</div>
-        </SectionCard>
-
-        <SectionCard title="Verified Snapshot">
-          {verifiedSnapshot ? (<><div style={{ fontSize: 12, color: '#8A9BB5', marginBottom: 8 }}>Real proof from the backend snapshot feed</div><div style={{ fontFamily: 'monospace', fontSize: 12, color: '#3D8FFF', wordBreak: 'break-all', marginBottom: 10 }}>{verifiedSnapshot.rootHash}</div><div style={{ fontSize: 12, color: '#8A9BB5', marginBottom: 10 }}>{verifiedSnapshot.label}</div><div style={{ display: 'grid', gap: 8, fontSize: 12, color: '#8A9BB5', marginBottom: 12 }}><div>{verifiedSnapshot.factCount} facts · {verifiedSnapshot.taskCount} tasks · {verifiedSnapshot.insightCount} insights</div><div>{timeAgo(verifiedSnapshot.timestamp)}</div></div><a href={verifiedSnapshot.storagescanUrl} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '10px 14px', borderRadius: 10, backgroundColor: '#00D4AA15', border: '1px solid #00D4AA40', color: '#00D4AA', textDecoration: 'none', fontWeight: 700, fontSize: 12 }}><ExternalLink size={12} /> Verify on StorageScan</a></>) : (<EmptyState title="No snapshot proof yet" body="The snapshots API will surface the verified storage proof once the backend archive is available." />)}
-        </SectionCard>
-
-        <SectionCard title="On-Chain Anchor">
-          <div style={{ fontSize: 12, color: '#8A9BB5', marginBottom: 8 }}>MemoryAnchor contract</div>
-          <div style={{ fontFamily: 'monospace', fontSize: 12, color: '#3D8FFF', wordBreak: 'break-all', marginBottom: 10 }}>{CONTRACT_ADDRESS}</div>
-          <div style={{ fontSize: 12, color: '#8A9BB5', marginBottom: 12 }}>0G Galileo · Chain ID 16602</div>
-          <a href={`${CHAIN_EXPLORER}/address/${CONTRACT_ADDRESS}`} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 14px', borderRadius: 10, border: '1px solid #1D6FEB30', backgroundColor: '#1D6FEB15', color: '#1D6FEB', textDecoration: 'none', fontWeight: 700, fontSize: 12 }}>
-            <ExternalLink size={12} /> View on Chain Explorer
-          </a>
-        </SectionCard>
-
-        <SectionCard title="Agent Proof">
-          <div style={{ display: 'grid', gap: 10 }}>
-            {[
-              { label: 'Planner', tone: '#1D6FEB', value: `${tasks.length} tasks`, detail: 'writes tasks into 0G Storage KV' },
-              { label: 'Researcher', tone: '#00D4AA', value: `${facts.length} facts`, detail: 'reads tasks and writes evidence' },
-              { label: 'Critic', tone: '#F5A623', value: `${facts.filter((fact) => fact.reviewed).length} reviewed`, detail: 'scores and approves facts' },
-              { label: 'Reflection', tone: '#A855F7', value: `${insights.length} insights`, detail: 'compresses and anchors memory' },
-            ].map((item) => (<div key={item.label} style={{ padding: 12, borderRadius: 12, backgroundColor: '#060B16', border: '1px solid #1E2D4A', borderLeft: `3px solid ${item.tone}` }}><div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center' }}><div style={{ fontWeight: 700, color: item.tone }}>{item.label}</div><div style={{ fontSize: 12, fontWeight: 800, color: item.tone }}>{item.value}</div></div><div style={{ marginTop: 6, fontSize: 12, color: '#8A9BB5' }}>{item.detail}</div></div>))}
-          </div>
-        </SectionCard>
-      </div>
-    </section>
-  );
-}
-
-function Docs({ snapshot }: { snapshot: SnapshotEntry | null }) {
-  return (
-    <section style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 24px 0' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-        <SectionCard title="API Overview">
-          <div style={{ display: 'grid', gap: 12 }}>
-            <div>
-              <div style={{ fontSize: 13, color: '#FFFFFF', fontWeight: 700, marginBottom: 8 }}>Backend routes</div>
-              <CodeBlock lang="bash" code={`GET /api/swarm
-GET /api/snapshots`} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          {features.map((f, i) => (
+            <div key={i} style={{ ...S.card, padding: '24px' }}>
+              <div style={{ width: '42px', height: '42px', borderRadius: '10px', backgroundColor: f.color + '15', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>{f.icon}</div>
+              <div style={{ fontWeight: 600, fontSize: '15px', marginBottom: '8px', color: '#FFFFFF' }}>{f.title}</div>
+              <div style={{ fontSize: '13px', color: '#8A9BB5', lineHeight: 1.65 }}>{f.body}</div>
             </div>
-            <div>
-              <div style={{ fontSize: 13, color: '#FFFFFF', fontWeight: 700, marginBottom: 8 }}>Fetched data sources</div>
-              <div style={{ display: 'grid', gap: 8, fontSize: 13, color: '#8A9BB5', lineHeight: 1.7 }}>
-                <div>• <strong style={{ color: '#FFFFFF' }}>/api/swarm</strong> reads live 0G Storage memory from the root project.</div>
-                <div>• <strong style={{ color: '#FFFFFF' }}>/api/snapshots</strong> exposes the verified storage proof feed.</div>
-                <div>• The explorer surfaces planner, researcher, critic, and reflection data directly from those responses.</div>
-              </div>
-            </div>
-          </div>
-        </SectionCard>
-
-        <SectionCard title="Live Snapshot Summary">
-          {snapshot ? (
-            <div style={{ display: 'grid', gap: 10 }}>
-              <div style={{ fontFamily: 'monospace', fontSize: 12, color: '#3D8FFF', wordBreak: 'break-all' }}>{snapshot.rootHash}</div>
-              <div style={{ color: '#FFFFFF', fontWeight: 700 }}>{snapshot.label}</div>
-              <div style={{ color: '#8A9BB5', fontSize: 13, lineHeight: 1.7 }}>
-                Verified snapshot data fetched from the backend. The page never falls back to sample hashes or fake records.
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 8, fontSize: 12, color: '#8A9BB5' }}>
-                <div>{snapshot.factCount} facts</div>
-                <div>{snapshot.taskCount} tasks</div>
-                <div>{snapshot.insightCount} insights</div>
-                <div>{timeAgo(snapshot.timestamp)}</div>
-              </div>
-            </div>
-          ) : (
-            <EmptyState title="Snapshot feed unavailable" body="The UI will show a verified snapshot here once the backend route is present." />
-          )}
-        </SectionCard>
-      </div>
-
-      <div style={{ marginTop: 16 }}>
-        <SectionCard title="SDK Reference">
-          <CodeBlock lang="typescript" code={`import { createMemoryManager, createReflectionEngine } from 'memorymerge';
-
-const memory = createMemoryManager('my-agent');
-await memory.writeFact('key', 'value', 0.9);
-await memory.getSwarmContext();
-
-const reflection = createReflectionEngine(memory, 8);
-await reflection.tick();`} />
-        </SectionCard>
-      </div>
-    </section>
-  );
-}
-
-function Overview({ swarm, snapshot, onRefresh }: { swarm: SwarmData | null; snapshot: SnapshotEntry | null; onRefresh: () => void }) {
-  return (
-    <>
-      <Hero swarm={swarm} snapshot={snapshot} onRefresh={onRefresh} />
-      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px 24px' }}>
-        <SectionCard title="Architecture">
-          <ArchitectureDiagram />
-        </SectionCard>
-
-        <div style={{ ...cardStyle, padding: 18, borderLeft: '3px solid #00D4AA' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
-            <div>
-              <SectionLabel>Active goal</SectionLabel>
-              <div style={{ marginTop: 8, fontSize: 16, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.7 }}>{swarm?.goal || 'No active goal loaded'}</div>
-            </div>
-            <div style={{ textAlign: 'right' }}>
-              <SectionLabel>Last updated</SectionLabel>
-              <div style={{ marginTop: 8, fontSize: 13, color: '#8A9BB5', fontFamily: 'monospace' }}>{swarm ? new Date(swarm.lastUpdated).toISOString() : '—'}</div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
-export default function Page() {
-  const [active, setActive] = useState('Overview');
-  const [swarm, setSwarm] = useState<SwarmData | null>(null);
-  const [snapshots, setSnapshots] = useState<SnapshotEntry[]>([]);
+function HowItWorks() {
+  const steps = [
+    { n: '01', title: 'Planner reads goal, creates tasks', desc: 'Planner agent loads the swarm context from 0G Storage KV, reads the current goal, and writes 3 concrete subtasks back to 0G Storage.', agent: 'Planner', color: '#1D6FEB' },
+    { n: '02', title: 'Researcher executes tasks', desc: 'Researcher reads pending tasks, performs research using 0G Compute inference, writes discovered facts, and marks tasks pending_review.', agent: 'Researcher', color: '#00D4AA' },
+    { n: '03', title: 'Critic scores the findings', desc: 'Critic evaluates each research result, assigns confidence scores, checks contradictions, and marks tasks complete.', agent: 'Critic', color: '#F5A623' },
+    { n: '04', title: 'Reflection engine fires', desc: 'Every N turns, the reflection engine pulls all facts from 0G Storage KV, compresses them through 0G Compute, writes insights, and archives a snapshot to 0G Storage Log.', agent: 'Reflection', color: '#A855F7' },
+    { n: '05', title: 'Snapshot anchored on-chain', desc: 'The Merkle root of each snapshot is anchored to the MemoryAnchor contract on 0G Chain, providing a permanent proof of memory integrity.', agent: '0G Chain', color: '#FF4D6A' },
+    { n: '06', title: 'Swarm resumes from anywhere', desc: 'Stop the process and restart with the same SWARM_ID. All memory is restored from 0G Storage automatically.', agent: 'Any Agent', color: '#3D8FFF' },
+  ];
+
+  return (
+    <section id="how-it-works" style={{ maxWidth: '1160px', margin: '0 auto', padding: '72px 24px' }}>
+      <div style={{ marginBottom: '40px' }}>
+        <div style={S.label}>How It Works</div>
+        <h2 style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.7px', marginTop: '8px' }}>The full execution flow</h2>
+        <p style={{ fontSize: '14px', color: '#8A9BB5', marginTop: '6px', lineHeight: 1.7 }}>From goal input to permanent archival, every step is transparent, auditable, and fully resumable.</p>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {steps.map((s, i) => (
+          <div key={i} style={{ display: 'flex', gap: '24px', paddingBottom: i < steps.length - 1 ? '32px' : 0, position: 'relative' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '12px', backgroundColor: s.color + '20', border: `1px solid ${s.color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '13px', color: s.color, fontFamily: 'monospace' }}>{s.n}</div>
+              {i < steps.length - 1 && <div style={{ width: '1px', flex: 1, backgroundColor: '#1E2D4A', marginTop: '8px' }} />}
+            </div>
+            <div style={{ ...S.card, padding: '20px 24px', flex: 1 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px', gap: '16px' }}>
+                <h3 style={{ fontWeight: 600, fontSize: '16px', color: '#FFFFFF' }}>{s.title}</h3>
+                <span style={{ fontSize: '10px', padding: '3px 8px', borderRadius: '6px', backgroundColor: s.color + '20', color: s.color, fontWeight: 600, flexShrink: 0 }}>{s.agent}</span>
+              </div>
+              <p style={{ fontSize: '13px', color: '#8A9BB5', lineHeight: 1.75, margin: 0 }}>{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Explorer() {
+  const [data, setData] = useState<SwarmData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastFetch, setLastFetch] = useState(Date.now());
+  const [snapshots] = useState<SnapshotEntry[]>(MOCK_SNAPSHOTS);
+  const [tab, setTab] = useState<'facts' | 'tasks' | 'insights'>('facts');
+  const contractAddress = '0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079';
+  const chainExplorer = 'https://chainscan-galileo.0g.ai';
+  const storageExplorer = 'https://storagescan-galileo.0g.ai';
 
-  const load = useCallback(async () => {
+  const fetchData = useCallback(async () => {
     try {
       setError(null);
-      const [swarmRes, snapshotRes] = await Promise.all([
-        fetch('/api/swarm', { cache: 'no-store' }),
-        fetch('/api/snapshots', { cache: 'no-store' }),
-      ]);
-
-      if (!swarmRes.ok) throw new Error(`Failed to load /api/swarm (${swarmRes.status})`);
-      if (!snapshotRes.ok) throw new Error(`Failed to load /api/snapshots (${snapshotRes.status})`);
-
-      const swarmJson: SwarmData = await swarmRes.json();
-      const snapshotJson: SnapshotResponse = await snapshotRes.json();
-
-      setSwarm(swarmJson);
-      setSnapshots(snapshotJson.snapshots ?? []);
-    } catch (err) {
-      setError(String(err));
+      const res = await fetch('/api/swarm', { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      setData(json);
+      setLastFetch(Date.now());
+    } catch (e) {
+      setError(String(e));
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    load();
-    const timer = setInterval(load, 30000);
-    return () => clearInterval(timer);
-  }, [load]);
+    fetchData();
+  }, [fetchData]);
 
-  const verifiedSnapshot = snapshots[0] ?? swarm?.snapshot ?? null;
+  const facts = data?.facts ?? [];
+  const tasks = data?.tasks ?? [];
+  const insights = data?.insights ?? [];
+  const completed = tasks.filter((t) => t.status === 'complete').length;
+  const avgConf = facts.length > 0 ? facts.reduce((sum, fact) => sum + fact.confidence, 0) / facts.length : 0;
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#0A0F1E', color: '#FFFFFF', display: 'grid', placeItems: 'center' }}>
-        <div style={{ textAlign: 'center' }}>
-          <Loader2 size={32} color="#1D6FEB" style={{ animation: 'spin 1s linear infinite' }} />
-          <div style={{ marginTop: 16, color: '#8A9BB5', fontSize: 14 }}>Loading live swarm data from backend routes...</div>
-        </div>
-        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      <div style={{ padding: '80px 24px', textAlign: 'center', color: '#8A9BB5' }}>
+        Loading swarm data from 0G Storage...
       </div>
     );
   }
 
   if (error) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#0A0F1E', color: '#FFFFFF', display: 'grid', placeItems: 'center', padding: 24 }}>
-        <div style={{ ...cardStyle, padding: 28, maxWidth: 560, width: '100%', borderLeft: '3px solid #FF4D6A' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: '#FF4D6A20', display: 'grid', placeItems: 'center' }}>
-              <AlertCircle size={20} color="#FF4D6A" />
-            </div>
-            <div>
-              <div style={{ fontSize: 12, color: '#8A9BB5', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Render error</div>
-              <h1 style={{ fontSize: 22, marginTop: 2 }}>MemoryMerge UI failed to load</h1>
-            </div>
+      <section id="explorer" style={{ borderTop: '1px solid #1E2D4A', backgroundColor: '#0D1428' }}>
+        <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '72px 24px' }}>
+          <div style={{ ...S.card, padding: '18px' }}>
+            <div style={{ fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Failed to load live swarm data</div>
+            <div style={{ fontSize: '13px', color: '#8A9BB5', lineHeight: 1.7, marginBottom: '14px' }}>{error}</div>
+            <button onClick={fetchData} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '8px 12px', borderRadius: '8px', border: '1px solid #1E2D4A', backgroundColor: 'transparent', color: '#FFFFFF', cursor: 'pointer' }}>
+              <RefreshCw size={12} /> Retry
+            </button>
           </div>
-          <p style={{ color: '#8A9BB5', lineHeight: 1.7, marginBottom: 18 }}>The page could not fetch live backend data. Use the retry button or inspect the error boundary.</p>
-          <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', backgroundColor: '#060B16', border: '1px solid #1E2D4A', borderRadius: 12, padding: 14, color: '#FFB7C4', fontSize: 12, marginBottom: 18 }}>{error}</pre>
-          <button onClick={load} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '10px 16px', border: 'none', borderRadius: 10, backgroundColor: '#1D6FEB', color: '#fff', cursor: 'pointer', fontWeight: 700 }}>
-            <RefreshCw size={14} /> Retry
-          </button>
         </div>
-      </div>
+      </section>
     );
   }
 
   return (
-    <Shell active={active} setActive={setActive}>
-      {active === 'Overview' && <Overview swarm={swarm} snapshot={verifiedSnapshot} onRefresh={load} />}
-      {active === 'Explorer' && <AppSection swarm={swarm} snapshots={verifiedSnapshot ? [verifiedSnapshot] : []} />}
-      {active === 'Coordination' && <AppSection swarm={swarm} snapshots={verifiedSnapshot ? [verifiedSnapshot] : []} />}
-      {active === 'Snapshots' && <Docs snapshot={verifiedSnapshot} />}
-      {active === 'Docs' && <Docs snapshot={verifiedSnapshot} />}
-      <style>{`* { box-sizing: border-box; margin: 0; padding: 0; } body { background: #0A0F1E; }`}</style>
-    </Shell>
+    <section id="explorer" style={{ borderTop: '1px solid #1E2D4A', backgroundColor: '#0D1428' }}>
+      <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '72px 24px' }}>
+        <div style={{ marginBottom: '26px' }}>
+          <div style={S.label}>Live Explorer</div>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.7px', marginTop: '8px' }}>Swarm memory state in real time</h2>
+          <p style={{ fontSize: '14px', color: '#8A9BB5', marginTop: '6px', lineHeight: 1.7 }}>This dashboard mirrors the state stored in 0G Storage: facts, tasks, insights, snapshots, and on-chain anchors.</p>
+          <div style={{ marginTop: '10px', fontSize: '11px', color: '#8A9BB5' }}>Last synced {timeAgo(lastFetch)}</div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '18px' }}>
+          {[
+            { label: 'Facts', value: facts.length, sub: `${facts.filter((f) => f.reviewed).length} reviewed`, color: '#1D6FEB', icon: <Database size={15} color="#1D6FEB" /> },
+            { label: 'Tasks', value: `${completed}/${tasks.length}`, sub: `${tasks.length - completed} remaining`, color: '#00D4AA', icon: <CheckCircle size={15} color="#00D4AA" /> },
+            { label: 'Insights', value: insights.length, sub: 'from reflection', color: '#A855F7', icon: <Zap size={15} color="#A855F7" /> },
+            { label: 'Avg Confidence', value: `${(avgConf * 100).toFixed(0)}%`, sub: 'across all facts', color: '#F5A623', icon: <Activity size={15} color="#F5A623" /> },
+          ].map((s, i) => (
+            <div key={i} style={{ ...S.card, padding: '16px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <span style={S.label}>{s.label}</span>{s.icon}
+              </div>
+              <div style={{ fontSize: '22px', fontWeight: 700, color: s.color }}>{s.value}</div>
+              <div style={{ fontSize: '11px', color: '#8A9BB5', marginTop: '3px' }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '16px' }}>
+          <div style={S.card}>
+            <div style={{ display: 'flex', borderBottom: '1px solid #1E2D4A', padding: '0 16px' }}>
+              {(['facts', 'tasks', 'insights'] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setTab(t)}
+                  style={{ padding: '11px 16px', border: 'none', background: 'transparent', cursor: 'pointer', fontSize: '13px', fontWeight: tab === t ? 600 : 400, color: tab === t ? '#FFFFFF' : '#8A9BB5', borderBottom: tab === t ? '2px solid #1D6FEB' : '2px solid transparent', marginBottom: '-1px', textTransform: 'capitalize' }}
+                >
+                  {t}
+                  <span style={{ marginLeft: '5px', padding: '1px 6px', borderRadius: '9px', fontSize: '10px', backgroundColor: tab === t ? '#1D6FEB20' : '#1E2D4A', color: tab === t ? '#1D6FEB' : '#8A9BB5' }}>
+                    {t === 'facts' ? facts.length : t === 'tasks' ? tasks.length : insights.length}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <div style={{ padding: '14px', maxHeight: '460px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {tab === 'facts' && facts.map((f, i) => (
+                <div key={i} style={{ padding: '12px 14px', backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderRadius: '8px', borderLeft: `3px solid ${agentColor(f.authorAgent)}` }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', gap: '12px' }}>
+                    <span style={{ fontSize: '10px', padding: '2px 6px', borderRadius: '4px', backgroundColor: agentColor(f.authorAgent) + '15', color: agentColor(f.authorAgent), fontFamily: 'monospace' }}>{f.authorAgent}</span>
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                      {f.reviewed && <span style={{ fontSize: '10px', color: '#00D4AA' }}>✓ reviewed</span>}
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: confColor(f.confidence) }}>{(f.confidence * 100).toFixed(0)}%</span>
+                    </div>
+                  </div>
+                  <div style={{ fontSize: '13px', color: '#E0E8FF', lineHeight: 1.5 }}>{f.value}</div>
+                  <div style={{ fontSize: '10px', color: '#8A9BB5', marginTop: '6px', fontFamily: 'monospace' }}>{f.key} · {timeAgo(f.timestamp)}</div>
+                </div>
+              ))}
+
+              {tab === 'tasks' && tasks.map((t, i) => (
+                <div key={i} style={{ padding: '12px 14px', backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', gap: '12px' }}>
+                    <span style={{ fontSize: '11px', fontFamily: 'monospace', color: '#3D8FFF' }}>{t.taskId}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>{statusIcon(t.status)}<span style={{ fontSize: '11px', color: '#8A9BB5' }}>{statusLabel(t.status)}</span></div>
+                  </div>
+                  <div style={{ fontSize: '13px', color: '#E0E8FF', lineHeight: 1.5, marginBottom: '6px' }}>{t.description}</div>
+                  {t.result && <div style={{ fontSize: '12px', color: '#8A9BB5', padding: '8px', backgroundColor: '#1E2D4A', borderRadius: '6px', borderLeft: '2px solid #00D4AA' }}>{t.result}</div>}
+                  <div style={{ fontSize: '10px', color: '#8A9BB5', marginTop: '6px' }}>assigned to {t.assignedTo} · updated {timeAgo(t.updatedAt)}</div>
+                </div>
+              ))}
+
+              {tab === 'insights' && [...insights].sort((a, b) => b.importance - a.importance).map((ins, i) => (
+                <div key={i} style={{ padding: '12px 14px', backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderRadius: '8px', borderLeft: '3px solid #A855F7' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', gap: '12px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><Zap size={12} color="#A855F7" /><span style={{ fontSize: '11px', color: '#A855F7' }}>Epoch {ins.epochNumber}</span></div>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: ins.importance >= 8 ? '#A855F7' : '#F5A623' }}>{ins.importance}/10</span>
+                  </div>
+                  <div style={{ fontSize: '13px', color: '#E0E8FF', lineHeight: 1.5 }}>{ins.insight}</div>
+                  <div style={{ fontSize: '10px', color: '#8A9BB5', marginTop: '6px', fontFamily: 'monospace' }}>{ins.key} · {timeAgo(ins.generatedAt)}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={S.card}>
+              <div style={{ padding: '12px 14px', borderBottom: '1px solid #1E2D4A', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Database size={13} color="#1D6FEB" /><span style={S.label}>0G Storage Snapshot</span>
+              </div>
+              <div style={{ padding: '12px' }}>
+                {snapshots.map((snap, i) => (
+                  <div key={i} style={{ padding: '10px 12px', backgroundColor: '#0A0F1E', border: '1px solid #1E2D4A', borderRadius: '8px', marginBottom: '8px' }}>
+                    <div style={{ fontSize: '10px', fontFamily: 'monospace', color: '#3D8FFF', marginBottom: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{snap.rootHash.slice(0, 20)}...</div>
+                    <div style={{ fontSize: '11px', color: '#8A9BB5', display: 'flex', justifyContent: 'space-between', gap: '12px' }}>
+                      <span>{snap.factCount}f · {snap.taskCount}t · {snap.insightCount}i</span>
+                      <span>{timeAgo(snap.timestamp)}</span>
+                    </div>
+                    <a href={`${storageExplorer}/tx/${snap.rootHash}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '8px', fontSize: '11px', color: '#1D6FEB', textDecoration: 'none' }}>
+                      <ExternalLink size={10} />
+                      View on StorageScan
+                    </a>
+                  </div>
+                ))}
+                <a href={storageExplorer} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', padding: '8px', borderRadius: '6px', border: '1px dashed #1E2D4A', fontSize: '11px', color: '#8A9BB5', textDecoration: 'none', marginTop: '4px' }}>
+                  View all on 0G StorageScan
+                  <ChevronRight size={12} />
+                </a>
+              </div>
+            </div>
+
+            <div style={S.card}>
+              <div style={{ padding: '12px 14px', borderBottom: '1px solid #1E2D4A', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Zap size={13} color="#F5A623" /><span style={S.label}>On-Chain Anchor</span>
+              </div>
+              <div style={{ padding: '12px' }}>
+                <div style={{ fontSize: '11px', color: '#8A9BB5', marginBottom: '6px' }}>MemoryAnchor Contract</div>
+                <div style={{ fontSize: '10px', fontFamily: 'monospace', color: '#3D8FFF', padding: '8px', backgroundColor: '#0A0F1E', borderRadius: '6px', wordBreak: 'break-all', marginBottom: '8px' }}>{contractAddress}</div>
+                <a href={`${chainExplorer}/address/${contractAddress}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', padding: '8px 12px', borderRadius: '6px', backgroundColor: '#1D6FEB15', border: '1px solid #1D6FEB30', fontSize: '12px', color: '#1D6FEB', textDecoration: 'none', fontWeight: 500 }}>
+                  <ExternalLink size={11} />
+                  View on Chain Explorer
+                </a>
+              </div>
+            </div>
+
+            <div style={{ ...S.card, padding: '14px' }}>
+              <div style={{ ...S.label, marginBottom: '12px' }}>Agent Memory Flow</div>
+              {[
+                { name: 'Planner', desc: 'Goals → Tasks', color: '#1D6FEB' },
+                { name: 'Researcher', desc: 'Tasks → Facts', color: '#00D4AA' },
+                { name: 'Critic', desc: 'Facts → Scores', color: '#F5A623' },
+                { name: 'Reflection', desc: 'Facts → Insights', color: '#A855F7' },
+              ].map((a, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <div style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: a.color, flexShrink: 0 }} />
+                  <span style={{ fontSize: '12px', fontWeight: 600, color: a.color, minWidth: '72px' }}>{a.name}</span>
+                  <span style={{ fontSize: '11px', color: '#8A9BB5' }}>{a.desc}</span>
+                </div>
+              ))}
+              <div style={{ marginTop: '10px', padding: '8px', backgroundColor: '#0A0F1E', borderRadius: '6px', fontSize: '11px', color: '#8A9BB5', borderLeft: '2px solid #1D6FEB' }}>
+                Coordination via 0G Storage state only
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Docs() {
+  return (
+    <section id="docs" style={{ maxWidth: '1160px', margin: '0 auto', padding: '72px 24px' }}>
+      <div style={{ marginBottom: '40px' }}>
+        <div style={S.label}>Documentation</div>
+        <h2 style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.7px', marginTop: '8px' }}>Quick Start & SDK Reference</h2>
+        <p style={{ fontSize: '14px', color: '#8A9BB5', marginTop: '6px', lineHeight: 1.7 }}>Get a MemoryMerge swarm running in under 10 minutes.</p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: '32px', alignItems: 'start' }}>
+        <div style={{ ...S.card, padding: '12px', position: 'sticky', top: '82px' }}>
+          {['Installation', 'Environment Setup', '0G Compute Setup', 'Run Example', 'SDK Reference', 'Contract'].map((item, i) => (
+            <div key={i} style={{ padding: '8px 10px', borderRadius: '7px', fontSize: '13px', color: i === 0 ? '#FFFFFF' : '#8A9BB5', fontWeight: i === 0 ? 600 : 400, cursor: 'pointer', marginBottom: '2px', backgroundColor: i === 0 ? '#1E2D4A' : 'transparent' }}>
+              {item}
+            </div>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '16px', color: '#FFFFFF' }}>Installation</h3>
+            <CodeBlock lang="bash" code={`git clone https://github.com/Techkeyy/memorymerge.git
+cd memorymerge
+npm install`} />
+          </section>
+
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '8px', color: '#FFFFFF' }}>Environment Setup</h3>
+            <p style={{ fontSize: '13px', color: '#8A9BB5', marginBottom: '14px', lineHeight: 1.7 }}>Copy the example env file and fill in your values. All 0G credentials come from the Galileo testnet.</p>
+            <CodeBlock lang="bash" code={`cp .env.example .env`} />
+            <div style={{ marginTop: '12px' }}>
+              <CodeBlock lang="env" code={`# 0G Network - Galileo Testnet
+ZG_EVM_RPC=https://evmrpc-testnet.0g.ai
+ZG_INDEXER_RPC=https://indexer-storage-testnet-turbo.0g.ai
+ZG_PRIVATE_KEY=your_testnet_wallet_private_key
+
+# 0G Compute (from CLI setup below)
+ZG_COMPUTE_PROVIDER=0xa48f01287233509FD694a22Bf840225062E67836
+ZG_SERVICE_URL=your_service_url
+ZG_API_SECRET=your_app_sk
+
+# Contract - already deployed
+MEMORY_ANCHOR_ADDRESS=0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079
+
+# Swarm identity
+SWARM_ID=memorymerge-swarm-001`} />
+            </div>
+          </section>
+
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '8px', color: '#FFFFFF' }}>0G Compute Setup</h3>
+            <p style={{ fontSize: '13px', color: '#8A9BB5', marginBottom: '14px', lineHeight: 1.7 }}>One-time setup. Funds your account and gets API credentials for the inference endpoint.</p>
+            <CodeBlock lang="bash" code={`npm install -g @0glabs/0g-serving-broker
+
+0g-compute-cli setup-network          # Select: Testnet
+0g-compute-cli login                   # Enter private key
+0g-compute-cli deposit --amount 3     # Fund compute account
+
+0g-compute-cli inference acknowledge-provider \
+  --provider 0xa48f01287233509FD694a22Bf840225062E67836
+
+# Get your credentials - copy to .env
+0g-compute-cli inference get-secret \
+  --provider 0xa48f01287233509FD694a22Bf840225062E67836`} />
+          </section>
+
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '8px', color: '#FFFFFF' }}>Run the Example Swarm</h3>
+            <CodeBlock lang="bash" code={`# Default research goal
+npm run example
+
+# Custom goal
+npm run example -- "Research decentralized AI infrastructure in 2026"
+
+# Resume previous session (same SWARM_ID)
+npm run example`} />
+            <div style={{ ...S.card, padding: '14px 18px', marginTop: '14px', borderLeft: '3px solid #00D4AA' }}>
+              <p style={{ fontSize: '13px', color: '#8A9BB5', margin: 0, lineHeight: 1.7 }}>
+                <strong style={{ color: '#00D4AA' }}>Session continuity:</strong> Run the same command again with the same SWARM_ID — the swarm loads all memory from 0G Storage and continues where it left off.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '8px', color: '#FFFFFF' }}>SDK Reference</h3>
+            <CodeBlock lang="typescript" code={`import { createMemoryManager, createReflectionEngine } from 'memorymerge';
+
+const memory = createMemoryManager('my-agent');
+
+// Facts — written to 0G Storage KV
+await memory.writeFact('key', 'value', confidence);
+await memory.readFact('key');
+await memory.getAllFacts();
+await memory.updateFactConfidence('key', 0.9, true);
+
+// Tasks
+await memory.writeTask('task-id', { status, assignedTo, description });
+await memory.updateTaskStatus('task-id', 'complete', result);
+await memory.getAllTasks();
+
+// Insights (generated by reflection engine)
+await memory.getAllInsights();
+
+// Full swarm context — most important method
+const ctx = await memory.getSwarmContext();
+// Returns: { swarmId, goal, facts[], tasks[], insights[] }
+
+// Archive snapshot to 0G Storage Log (permanent)
+const snap = await memory.snapshot(epochNumber);
+// Returns: { rootHash, timestamp, label, factCount }
+// Verify at: https://storagescan-galileo.0g.ai
+
+// Reflection Engine
+const reflection = createReflectionEngine(memory, 20);
+await reflection.tick();            // auto-fires after 20 turns
+await reflection.forceReflection(); // manual trigger`} />
+          </section>
+
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '8px', color: '#FFFFFF' }}>Contract</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '12px', marginBottom: '16px' }}>
+              {[
+                { label: 'Address', value: '0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079' },
+                { label: 'Network', value: '0G Galileo Testnet' },
+                { label: 'Chain ID', value: '16602' },
+                { label: 'Explorer', value: 'chainscan-galileo.0g.ai' },
+              ].map((r, i) => (
+                <div key={i} style={{ ...S.card, padding: '12px 14px' }}>
+                  <div style={{ ...S.label, marginBottom: '4px' }}>{r.label}</div>
+                  <div style={{ fontSize: '12px', fontFamily: 'monospace', color: '#3D8FFF', wordBreak: 'break-all' }}>{r.value}</div>
+                </div>
+              ))}
+            </div>
+            <CodeBlock lang="solidity" code={`// MemoryAnchor.sol — anchors snapshot root hashes on-chain
+function anchorSnapshot(
+    string calldata swarmId,
+    bytes32 rootHash,
+    uint256 epochNumber,
+    string calldata label
+) external;
+
+function getLatestSnapshot(string calldata swarmId)
+    external view returns (MemorySnapshot memory);`} />
+          </section>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer style={{ borderTop: '1px solid #1E2D4A', padding: '24px', marginTop: '24px' }}>
+      <div style={{ maxWidth: '1160px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+        <div style={{ fontSize: '12px', color: '#8A9BB5' }}>MemoryMerge · Built for 0G / Open Agents Hackathon · ETHGlobal 2026</div>
+        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+          {[
+            ['GitHub', 'https://github.com/Techkeyy/memorymerge'],
+            ['Contract', 'https://chainscan-galileo.0g.ai/address/0x4dbFC89D78Bc89578528a848B5bB5fC22b0C4079'],
+            ['StorageScan', 'https://storagescan-galileo.0g.ai'],
+            ['0G Docs', 'https://docs.0g.ai'],
+          ].map(([label, href]) => (
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', color: '#1D6FEB', textDecoration: 'none' }}>
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function App() {
+  const [isLive, setIsLive] = useState(false);
+  const [lastRefresh, setLastRefresh] = useState(Date.now());
+
+  const refresh = useCallback(() => {
+    setLastRefresh(Date.now());
+  }, []);
+
+  useEffect(() => {
+    if (!isLive) return;
+    const interval = window.setInterval(refresh, 5000);
+    return () => window.clearInterval(interval);
+  }, [isLive, refresh]);
+
+  return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#0A0F1E', color: '#FFFFFF', fontFamily: "'Inter',-apple-system,sans-serif" }}>
+      <Nav onNavigate={scrollToSection} />
+
+      <main>
+        <Hero onNavigate={scrollToSection} />
+
+        <section style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 24px 24px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ width: '8px', height: '8px', borderRadius: '999px', backgroundColor: isLive ? '#00D4AA' : '#8A9BB5' }} />
+              <span style={{ fontSize: '12px', color: '#8A9BB5' }}>Preview state · refreshed {timeAgo(lastRefresh)}</span>
+            </div>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <button
+                onClick={() => setIsLive(v => !v)}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 12px', borderRadius: '8px', border: '1px solid #1E2D4A', backgroundColor: isLive ? '#00D4AA12' : 'transparent', color: isLive ? '#00D4AA' : '#8A9BB5', cursor: 'pointer' }}
+              >
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: isLive ? '#00D4AA' : '#8A9BB5' }} />
+                {isLive ? 'Live' : 'Paused'}
+              </button>
+              <button
+                onClick={refresh}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 12px', borderRadius: '8px', border: '1px solid #1E2D4A', backgroundColor: 'transparent', color: '#8A9BB5', cursor: 'pointer' }}
+              >
+                <RefreshCw size={12} /> Refresh
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <Features />
+        <HowItWorks />
+        <Explorer />
+        <Docs />
+      </main>
+
+      <Footer />
+
+      <style>{`
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .animate-spin { animation: spin 1s linear infinite; }
+      `}</style>
+    </div>
   );
 }
