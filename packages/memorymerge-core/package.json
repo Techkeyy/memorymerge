@@ -1,0 +1,30 @@
+{
+  "name": "@memorymerge/core",
+  "version": "0.1.0",
+  "description": "Core SDK for MemoryMerge — pluggable decentralized memory layer for AI agent swarms",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": [
+    "ai-agents",
+    "memory",
+    "decentralized",
+    "0g-storage",
+    "0g-compute",
+    "openclaw",
+    "merkle",
+    "verifiable"
+  ],
+  "author": "Praise",
+  "license": "MIT",
+  "peerDependencies": {
+    "@0gfoundation/0g-ts-sdk": "^1.2.6",
+    "@0glabs/0g-serving-broker": "^0.7.5",
+    "ethers": "6.13.1",
+    "merkletreejs": "^0.4.0",
+    "openai": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Techkeyy/memorymerge"
+  }
+}
