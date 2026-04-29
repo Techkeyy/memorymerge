@@ -313,11 +313,11 @@ function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
       </div>
 
       <h1 style={{ fontSize: '56px', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-1.7px', marginBottom: '18px', background: 'linear-gradient(135deg, #FFFFFF 0%, #B7C4E6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-        Persistent memory for<br />AI agent swarms
+        Cryptographic knowledge provenance for<br />AI agent swarms
       </h1>
 
       <p style={{ fontSize: '18px', color: '#8A9BB5', maxWidth: '640px', margin: '0 auto 32px', lineHeight: 1.7 }}>
-        MemoryMerge is a decentralized Memory OS that gives Planner, Researcher, and Critic agents a single shared, resumable state layer backed by 0G Storage, 0G Compute, and 0G Chain.
+        MemoryMerge is the only agent memory framework where you can cryptographically prove what an AI agent knew at any point in time. Pluggable adapters. OpenClaw-native. Powered by 0G Storage, 0G Compute, and 0G Chain.
       </p>
 
       <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -334,7 +334,7 @@ function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
           { label: 'Network', value: '0G Galileo', sub: 'Testnet' },
           { label: 'Contract', value: '0x4dbF...4079', sub: 'Anchors snapshots' },
           { label: 'Model', value: 'Qwen 2.5 7B', sub: 'TeeML verified' },
-          { label: 'Tracks', value: 'Track 1 + 2', sub: 'Dual submission' },
+          { label: 'Tracks', value: 'Track 1 + 2', sub: 'Merkle verified · Pluggable' },
         ].map((s, i) => (
           <div key={i} style={{ ...S.card, padding: '18px 20px', textAlign: 'left' }}>
             <div style={S.label}>{s.label}</div>
@@ -353,8 +353,8 @@ function Features() {
     { icon: <Cpu size={22} color="#A855F7" />, title: 'Autonomous Reflection', body: 'Every N turns, the reflection engine compresses facts into ranked insights using 0G Compute with TeeML verification.', color: '#A855F7' },
     { icon: <Network size={22} color="#00D4AA" />, title: 'Swarm Coordination', body: 'Planner, Researcher, and Critic coordinate exclusively through shared memory state — no direct messaging required.', color: '#00D4AA' },
     { icon: <Shield size={22} color="#F5A623" />, title: 'On-Chain Proof', body: 'Each snapshot root hash is anchored to the MemoryAnchor contract on 0G Chain for durable, auditable proof.', color: '#F5A623' },
-    { icon: <Zap size={22} color="#3D8FFF" />, title: 'Drop-In SDK', body: 'Three lines of code. Import the MemoryMerge SDK and give any agent persistent decentralized memory.', color: '#3D8FFF' },
-    { icon: <Activity size={22} color="#FF4D6A" />, title: 'Session Continuity', body: 'Restart on a different machine with the same SWARM_ID and the swarm restores all memory automatically.', color: '#FF4D6A' },
+    { icon: <Zap size={22} color="#3D8FFF" />, title: 'Drop-In SDK', body: 'Pluggable adapter interfaces for storage, compute, and anchoring. OpenClaw skill class with remember/recall/getContext hooks. Three lines to integrate.', color: '#3D8FFF' },
+    { icon: <Activity size={22} color="#A855F7" />, title: 'Merkle Verification', body: 'Every snapshot builds a deterministic keccak256 Merkle tree. Any fact can be cryptographically proven or disproven by anyone. Anchored on 0G Chain forever.', color: '#A855F7' },
   ];
 
   return (
@@ -773,6 +773,35 @@ function anchorSnapshot(
 
 function getLatestSnapshot(string calldata swarmId)
     external view returns (MemorySnapshot memory);`} />
+          </section>
+
+          <section>
+            <h3 style={{ fontWeight: 700, fontSize: '20px', marginBottom: '8px', color: '#FFFFFF' }}>
+              Merkle Fact Verification
+            </h3>
+            <p style={{ fontSize: '13px', color: '#8A9BB5', marginBottom: '14px', lineHeight: 1.6 }}>
+              The only agent memory framework with cryptographic proof of agent knowledge.
+            </p>
+            <CodeBlock lang="typescript" code={`import { VerifiableSnapshot, verifyFact } from 'memorymerge';
+
+// Build deterministic Merkle snapshot
+const snapshot = VerifiableSnapshot.build(facts, epoch, swarmId);
+
+// Generate proof for a specific fact
+const proof = VerifiableSnapshot.generateProof(fact, snapshot);
+
+// Anyone can verify independently:
+const result = verifyFact(fact, snapshot.rootHash, proof.proof);
+console.log(result.verified); // true
+console.log(result.message);  // ✓ Fact cryptographically proven`} />
+            <div style={{ ...S.card, padding: '14px 18px', marginTop: '14px', borderLeft: '3px solid #A855F7' }}>
+              <p style={{ fontSize: '13px', color: '#8A9BB5', margin: 0, lineHeight: 1.6 }}>
+                <strong style={{ color: '#A855F7' }}>
+                  Run the demo:
+                </strong>{' '}
+                npm run verify — proves a real fact, rejects a fake one, prints the Merkle root.
+              </p>
+            </div>
           </section>
         </div>
       </div>

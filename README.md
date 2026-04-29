@@ -4,13 +4,14 @@
 
 ### Decentralized Memory OS for AI Agent Swarms
 
-**Verifiable Knowledge Provenance · Persistent · Self-Improving · Powered by 0G**
+**Cryptographic Knowledge Provenance · Pluggable · Self-Improving · Powered by 0G**
 
 [![0G Network](https://img.shields.io/badge/0G-Galileo%20Testnet-blue)](https://0g.ai)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://typescriptlang.org)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Compatible-purple)](https://openclaw.ai)
 [![Track](https://img.shields.io/badge/Track-1%20%2B%202-gold)](https://ethglobal.com)
+[![Merkle Verified](https://img.shields.io/badge/Merkle-Verified-purple)](https://github.com/Techkeyy/memorymerge#merkle-verification)
 
 [Live Demo](#live-demo) · [Quick Start](#quick-start) · [Architecture](#architecture) · [0G Integration](#0g-integration) · [SDK Reference](#sdk-reference)
 
@@ -167,6 +168,120 @@ await memory.inheritVerifiedInsights(
 
 Run the demo: `npm run inherit`
 
+## Plugin Adapter System
+
+MemoryMerge is a modular framework. Every core component
+is swappable via clean TypeScript interfaces.
+
+```typescript
+import { 
+  StorageAdapter, 
+  ComputeAdapter, 
+  AnchorAdapter,
+  TurnCountTrigger,
+  FactCountTrigger,
+  CompositeTrigger,
+  ZeroGStorageAdapter,
+  ZeroGComputeAdapter,
+  ZeroGChainAnchor,
+} from 'memorymerge';
+
+// Use default 0G adapters
+const storage = new ZeroGStorageAdapter();
+const compute = new ZeroGComputeAdapter();
+const anchor  = new ZeroGChainAnchor();
+
+// Or implement your own:
+class MyStorageAdapter implements StorageAdapter {
+  async write(key: string, value: object): Promise<string> { ... }
+  async read(key: string): Promise<object | null> { ... }
+  list(prefix: string): string[] { ... }
+  async archive(snapshot: object, label: string): Promise<string> { ... }
+  async downloadByHash(hash: string): Promise<object | null> { ... }
+}
+
+// Combine triggers:
+const trigger = new CompositeTrigger([
+  new TurnCountTrigger(8),      // fire every 8 turns
+  new FactCountTrigger(20),     // OR when facts exceed 20
+]);
+```
+
+**Available interfaces:**
+- `StorageAdapter` — swap 0G Storage for any backend
+- `ComputeAdapter` — swap 0G Compute for any LLM
+- `AnchorAdapter` — swap 0G Chain for any anchoring strategy
+- `TriggerStrategy` — control when reflection fires
+
+## OpenClaw Skill Integration
+
+Drop MemoryMerge into any OpenClaw agent in three lines:
+
+```typescript
+import { createMemoryMergeSkill } from 'memorymerge/skill';
+
+const skill = createMemoryMergeSkill({
+  agentId: 'my-agent',
+  swarmId: 'my-swarm-001',
+  reflectionInterval: 8,
+});
+
+await skill.initialize();
+
+// OpenClaw turn hooks:
+const memoryContext = await skill.onTurnStart();
+const systemPrompt  = basePrompt + memoryContext;
+const response      = await callLLM(systemPrompt, userInput);
+await skill.onTurnEnd(userInput, response);
+
+// Direct memory operations:
+await skill.remember('user prefers TypeScript', 0.9);
+const results = await skill.recall('TypeScript');
+const stats   = await skill.getStats();
+await skill.reflect();
+```
+
+Run the OpenClaw reference implementation:
+```bash
+npm run openclaw -- --name "Alice" --goal "learn Solidity"
+```
+
+## Merkle Fact Verification
+
+**MemoryMerge is the only agent memory framework where you
+can cryptographically prove what an AI agent knew at any point in time.**
+
+Every reflection cycle builds a deterministic Merkle tree
+from the swarm's facts. The root hash is anchored on 0G Chain.
+Anyone can verify any fact with just the proof and root hash —
+no access to the original snapshot needed.
+
+```typescript
+import { VerifiableSnapshot, verifyFact } from 'memorymerge';
+
+// Build a verifiable snapshot
+const snapshot = VerifiableSnapshot.build(facts, epochNumber, swarmId);
+console.log(snapshot.rootHash); // anchor this on 0G Chain
+
+// Generate proof for a specific fact
+const proof = VerifiableSnapshot.generateProof(fact, snapshot);
+
+// Anyone can verify independently:
+const result = verifyFact(fact, snapshot.rootHash, proof.proof);
+console.log(result.verified); // true — cryptographically proven
+```
+
+**Live verification demo:**
+```bash
+npm run verify
+# Real fact verified : true
+# Fake fact rejected : true
+# Merkle root        : 0x509a83ada122b9bd3a...
+```
+
+The Merkle root is anchored on 0G Chain via MemoryAnchor.sol.
+Any fact can be proven or disproven by anyone with zero trust.
+
 ---
 
 ## Quick Start
@@ -237,6 +352,17 @@ npm run example
 
 # Custom goal
 npm run example -- "Research decentralized AI infrastructure in 2026"
+```
+
+### Available scripts
+
+```bash
+npm run example      # Research swarm demo
+npm run agent        # Interactive agent with per-turn memory
+npm run openclaw     # OpenClaw skill reference implementation  
+npm run inherit      # Cross-swarm knowledge inheritance demo
+npm run verify       # Merkle fact verification demo
+npm run continuous   # Always-on autonomous swarm mode
 ```
 
 ### 5. Verify your memory on 0G StorageScan
