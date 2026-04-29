@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "description": "Persistent decentralized memory OS for AI agent swarms, powered by 0G Storage and 0G Compute",
   "main": "index.js",
+  "exports": {
+    "./skill": "./dist/skill/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/orchestrator/index.ts",
     "agent": "ts-node examples/interactiveAgent.ts",
     "inherit": "ts-node examples/crossSwarmDemo.ts",
+    "openclaw": "ts-node examples/openClawAgent.ts",
     "start": "ts-node src/orchestrator/index.ts",
     "continuous": "ts-node --transpile-only -e \"require('dotenv').config(); const { MemoryMergeOrchestrator } = require('./src/orchestrator/index'); new MemoryMergeOrchestrator().runContinuous(process.argv[2] ?? 'Research the current state of decentralized AI and 0G Labs in 2026');\"",
     "example": "ts-node examples/researchSwarm.ts",

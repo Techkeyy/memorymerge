@@ -19,22 +19,30 @@ Your agent can use natural language commands:
 
 ## SDK integration
 ```typescript
-import { createMemoryManager } from 'memorymerge';
+import { createMemoryMergeSkill } from 'memorymerge/skill';
 
-const memory = createMemoryManager('my-openclaw-agent');
+// Initialize once
+const skill = createMemoryMergeSkill({
+	agentId: 'my-openclaw-agent',
+	swarmId: 'my-swarm-001',
+	reflectionInterval: 8,
+});
 
-// Write a fact to 0G Storage
-await memory.writeFact('user_preference', 'prefers TypeScript', 0.9);
+await skill.initialize();
 
-// Read full context at start of every turn
-const context = await memory.getSwarmContext();
+// In your agent turn handler (OpenClaw hook):
+const memoryContext = await skill.onTurnStart();
+const systemPrompt = basePrompt + memoryContext;
 
-// Pass context to your agent system prompt
-const systemPrompt = `
-You are a helpful assistant.
-Here is what you remember:
-${context.facts.map(f => f.value).join('\n')}
-`;
+const response = await callLLM(systemPrompt, userInput);
+
+await skill.onTurnEnd(userInput, response);
+
+// Manual operations:
+await skill.remember('user prefers TypeScript', 0.9);
+const results = await skill.recall('TypeScript');
+const stats = await skill.getStats();
+await skill.reflect(); // force reflection cycle
 ```
 
 ## 0G components used
