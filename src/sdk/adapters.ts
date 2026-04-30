@@ -179,7 +179,7 @@ export class TurnCountTrigger implements TriggerStrategy {
 
   constructor(private readonly every: number = 8) {}
 
-  shouldTrigger(turnCount: number): boolean {
+  shouldTrigger(turnCount: number, _context?: TriggerContext): boolean {
     return turnCount - this.lastTriggerAt >= this.every;
   }
 
@@ -217,7 +217,7 @@ export class TimedTrigger implements TriggerStrategy {
 
   constructor(private readonly intervalMs: number = 300000) {}
 
-  shouldTrigger(): boolean {
+  shouldTrigger(_turnCount: number, _context?: TriggerContext): boolean {
     return Date.now() - this.lastTriggerAt >= this.intervalMs;
   }
 
