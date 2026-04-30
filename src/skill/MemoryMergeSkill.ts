@@ -7,6 +7,7 @@
  * Installation:
  *   Copy to ~/.openclaw/workspace/skills/memory-merge/
  *   Or import directly in your OpenClaw agent config.
+ *   Package form: npm install @memorymerge-sdk/openclaw
  * 
  * Usage in OpenClaw agent:
  *   const skill = new MemoryMergeSkill({ agentId: 'my-agent' });

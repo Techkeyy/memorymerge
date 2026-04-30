@@ -276,7 +276,7 @@ function Nav({ onNavigate }: { onNavigate: (id: string) => void }) {
             <Brain size={16} color="white" />
           </div>
           <span style={{ fontWeight: 700, fontSize: '15px', letterSpacing: '-0.3px' }}>MemoryMerge</span>
-          <span style={{ fontSize: '10px', padding: '2px 7px', borderRadius: '10px', backgroundColor: '#1D6FEB20', color: '#1D6FEB', fontWeight: 600 }}>BETA</span>
+          <span style={{ fontSize: '10px', padding: '2px 7px', borderRadius: '10px', backgroundColor: '#00D4AA20', color: '#00D4AA', fontWeight: 600 }}>LIVE VERIFIED</span>
         </div>
 
         <nav style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>

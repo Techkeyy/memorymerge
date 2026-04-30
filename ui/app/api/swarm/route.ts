@@ -13,7 +13,7 @@ export async function GET() {
       '.memory-index.json'
     );
 
-    // Read snapshot contents if available
+    // Read verified snapshot contents if available
     const snapshotPath = path.join(
       process.cwd(),
       '..',
@@ -27,10 +27,11 @@ export async function GET() {
       const raw = fs.readFileSync(snapshotPath, 'utf8');
       const parsed = JSON.parse(raw);
       swarmData = parsed.snapshot ?? parsed;
+      const rootHash = parsed.rootHash ?? parsed.snapshotRootHash ?? parsed.snapshot?.rootHash ?? null;
       snapshotData = {
         label: parsed.label ?? 'epoch-unknown',
         archivedAt: parsed.archivedAt ?? Date.now(),
-        rootHash: '0x7443af76ed540c16eef8a84e3d6579dff70986644fb47476bf4d85473217e3eb',
+        rootHash,
       };
     }
 
@@ -45,6 +46,7 @@ export async function GET() {
     if (!swarmData) {
       return NextResponse.json({
         live: false,
+        verified: false,
         message: 'No swarm data found. Run npm run example first.',
         swarmId: process.env.NEXT_PUBLIC_SWARM_ID ?? 'memorymerge-swarm-001',
         goal: '',
@@ -59,6 +61,7 @@ export async function GET() {
 
     return NextResponse.json({
       live: true,
+      verified: Boolean(snapshotData?.rootHash),
       swarmId: swarmData.swarmId ?? 'memorymerge-swarm-001',
       goal: swarmData.goal ?? '',
       facts: swarmData.facts ?? [],
