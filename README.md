@@ -292,9 +292,15 @@ Any fact can be proven or disproven by anyone with zero trust.
 - A funded 0G Galileo testnet wallet (get tokens at https://faucet.0g.ai)
 - 0G Compute CLI configured
 
-### 1. Clone and install
+### 1. Install
 
 ```bash
+# From npm (published package)
+npm install @memorymerge/core
+
+# Also available as:
+npm install @memorymerge/core  # if scope resolves
+# or install from source:
 git clone https://github.com/Techkeyy/memorymerge.git
 cd memorymerge
 npm install
