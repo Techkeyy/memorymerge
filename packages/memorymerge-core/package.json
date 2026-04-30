@@ -1,5 +1,5 @@
 {
-  "name": "@memorymerge/core",
+  "name": "@memorymerge-sdk/core",
   "version": "0.1.0",
   "description": "Pluggable decentralized memory layer for AI agent swarms. Powered by 0G Storage, 0G Compute, and 0G Chain.",
   "main": "dist/index.js",

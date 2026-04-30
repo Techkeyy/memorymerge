@@ -296,10 +296,10 @@ Any fact can be proven or disproven by anyone with zero trust.
 
 ```bash
 # From npm (published package)
-npm install @memorymerge/core
+npm install @memorymerge-sdk/core
 
 # Also available as:
-npm install @memorymerge/core  # if scope resolves
+npm install @memorymerge-sdk/core  # if scope resolves
 # or install from source:
 git clone https://github.com/Techkeyy/memorymerge.git
 cd memorymerge

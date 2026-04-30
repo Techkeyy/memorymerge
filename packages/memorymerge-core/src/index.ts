@@ -4,7 +4,7 @@
  * Pluggable decentralized memory layer for AI agent swarms.
  * Powered by 0G Storage + Compute + Chain.
  * 
- * Install: npm install @memorymerge/core
+ * Install: npm install @memorymerge-sdk/core
  * 
  * @example
  * import { createMemoryManager, VerifiableSnapshot } from "@memorymerge/core";

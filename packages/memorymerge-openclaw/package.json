@@ -1,5 +1,5 @@
 {
-  "name": "@memorymerge/openclaw",
+  "name": "@memorymerge-sdk/openclaw",
   "version": "0.1.0",
   "description": "OpenClaw skill integration for MemoryMerge",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   "author": "Praise",
   "license": "MIT",
   "peerDependencies": {
-    "@memorymerge/core": "^0.1.0"
+    "@memorymerge-sdk/core": "^0.1.0"
   },
   "repository": {
     "type": "git",
