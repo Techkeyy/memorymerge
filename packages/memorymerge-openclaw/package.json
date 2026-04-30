@@ -2,14 +2,13 @@
   "name": "@memorymerge/openclaw",
   "version": "0.1.0",
   "description": "OpenClaw skill integration for MemoryMerge",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
-  "keywords": [
-    "openclaw",
-    "ai-agents",
-    "memory",
-    "skill"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["openclaw", "ai-agents", "memory", "skill"],
   "author": "Praise",
   "license": "MIT",
   "peerDependencies": {
@@ -17,6 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Techkeyy/memorymerge"
+    "url": "https://github.com/Techkeyy/memorymerge",
+    "directory": "packages/memorymerge-openclaw"
   }
 }
