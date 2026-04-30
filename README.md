@@ -298,12 +298,7 @@ Any fact can be proven or disproven by anyone with zero trust.
 # From npm (published package)
 npm install @memorymerge-sdk/core
 
-# Also available as:
-npm install @memorymerge-sdk/core  # if scope resolves
-# or install from source:
-git clone https://github.com/Techkeyy/memorymerge.git
-cd memorymerge
-npm install
+npm install @memorymerge-sdk/core
 ```
 
 ### 2. Configure environment
