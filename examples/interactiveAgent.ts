@@ -76,59 +76,6 @@ IMPORTANT RULES:
 Respond naturally and helpfully. Be concise.`;
 }
 
-// ── Extract facts from a conversation turn ─────────────────────
-async function extractFacts(
-  client: OpenAI,
-  model: string,
-  userMessage: string,
-  agentResponse: string,
-  existingFacts: string[]
-): Promise<Array<{ key: string; value: string; confidence: number }>> {
-  const prompt = `Extract 1-3 important facts from this conversation turn that are worth remembering.
-Focus on: user preferences, goals, names, specific requests, decisions made, or new information learned.
-Do NOT extract facts already in the existing memory.
-
-User said: "${userMessage}"
-Agent responded: "${agentResponse}"
-
-Existing memory (do not duplicate):
-${existingFacts.slice(0, 10).join('\n')}
-
-Return ONLY valid JSON array — no preamble:
-[
-  {
-    "key": "unique_snake_case_key",
-    "value": "specific fact to remember",
-    "confidence": 0.85
-  }
-]
-
-If nothing new is worth remembering, return: []`;
-
-  try {
-    const response = await client.chat.completions.create({
-      model,
-      messages: [
-        { role: 'system', content: 'You are a memory extraction engine. Return only valid JSON.' },
-        { role: 'user', content: prompt },
-      ],
-      temperature: 0.2,
-      max_tokens: 400,
-    });
-
-    const raw = response.choices[0]?.message?.content ?? '[]';
-    const cleaned = raw
-      .replace(/^```json\s*/i, '')
-      .replace(/^```\s*/i, '')
-      .replace(/```\s*$/i, '')
-      .trim();
-
-    return JSON.parse(cleaned);
-  } catch {
-    return [];
-  }
-}
-
 // ── Main Agent Loop ─────────────────────────────────────────────
 async function runAgent() {
   console.log('\n╔════════════════════════════════════════════════════╗');
@@ -293,23 +240,43 @@ async function runAgent() {
 
       console.log(`\n${AGENT_NAME}: ${agentResponse}`);
 
-      // Extract and write new facts to 0G Storage
+      // Write direct turn facts to 0G Storage without a second model call.
       process.stdout.write('\n[Memory] Writing to 0G Storage...');
-      const newFacts = await extractFacts(
-        client,
-        model,
-        userInput,
-        agentResponse,
-        freshContext.facts.map(f => f.value)
-      );
+
+      const directFacts: Array<{ key: string; value: string; confidence: number }> = [
+        {
+          key: 'user_input',
+          value: userInput.trim(),
+          confidence: 1,
+        },
+        {
+          key: 'agent_response',
+          value: agentResponse.trim(),
+          confidence: 1,
+        },
+      ];
+
+      const nameMatch = userInput.match(/\b(?:my name is|i am|i'm|call me)\s+([^,.!?]+)\b/i);
+      if (nameMatch?.[1]) {
+        directFacts.push({
+          key: 'user_name',
+          value: nameMatch[1].trim(),
+          confidence: 0.9,
+        });
+      }
+
+      const projectMatch = userInput.match(/\b(?:my project is|my project name is|i'm working on|i am working on|working on)\s+([^,.!?]+)\b/i);
+      if (projectMatch?.[1]) {
+        directFacts.push({
+          key: 'user_project',
+          value: projectMatch[1].trim(),
+          confidence: 0.85,
+        });
+      }
 
       let factsWritten = 0;
-      for (const fact of newFacts) {
-        await memory.writeFact(
-          `turn_${turnCount}_${fact.key}`,
-          fact.value,
-          fact.confidence
-        );
+      for (const fact of directFacts) {
+        await memory.writeFact(`turn_${turnCount}_${fact.key}`, fact.value, fact.confidence);
         factsWritten++;
       }
 
